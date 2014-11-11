@@ -1,0 +1,4 @@
+ngx_addon_name=ngx_http_toxic_module
+HTTP_MODULES="$HTTP_MODULES ngx_http_toxic_module"
+CFLAGS="-I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib $CFLAGS"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_toxic_module.c"

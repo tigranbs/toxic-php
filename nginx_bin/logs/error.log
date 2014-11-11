@@ -1,0 +1,172 @@
+2014/10/13 13:03:04 [emerg] 8651#0: bind() to 0.0.0.0:80 failed (13: Permission denied)
+2014/10/13 13:03:28 [error] 8658#0: *1 open() "/home/tigran/Desktop/toxic/nginx_bin/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
+2014/10/13 13:08:40 [emerg] 9571#0: bind() to 0.0.0.0:80 failed (13: Permission denied)
+2014/10/13 13:08:45 [emerg] 9599#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2014/10/13 13:08:45 [emerg] 9599#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2014/10/13 13:08:45 [emerg] 9599#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2014/10/13 13:08:45 [emerg] 9599#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2014/10/13 13:08:45 [emerg] 9599#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2014/10/13 13:10:15 [error] 9725#0: *1 open() "/home/tigran/Desktop/toxic/nginx_bin/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888"
+2014/10/22 14:35:10 [emerg] 2076#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/22 14:35:10 [emerg] 2076#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/22 14:35:10 [emerg] 2076#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/23 14:49:24 [emerg] 21302#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/23 14:49:24 [emerg] 21302#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/23 14:49:24 [emerg] 21302#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/23 14:49:24 [emerg] 21302#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/23 14:49:31 [alert] 14932#0: worker process 14933 exited on signal 11 (core dumped)
+2014/10/24 15:58:20 [emerg] 30346#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/24 15:58:20 [emerg] 30346#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/24 15:58:20 [emerg] 30346#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/24 15:58:26 [alert] 10000#0: worker process 10001 exited on signal 11 (core dumped)
+2014/10/24 15:59:44 [alert] 30360#0: worker process 30361 exited on signal 9
+2014/10/24 16:00:38 [alert] 30434#0: worker process 30435 exited on signal 9
+2014/10/26 10:39:21 [alert] 3439#0: worker process 3440 exited on signal 11 (core dumped)
+2014/10/26 10:39:56 [alert] 11323#0: worker process 11324 exited on signal 11 (core dumped)
+2014/10/26 10:39:57 [alert] 11323#0: worker process 11365 exited on signal 11 (core dumped)
+2014/10/26 10:40:01 [alert] 11323#0: worker process 11371 exited on signal 11 (core dumped)
+2014/10/26 10:40:06 [alert] 11323#0: worker process 11373 exited on signal 11 (core dumped)
+2014/10/26 10:40:07 [alert] 11323#0: worker process 11376 exited on signal 11 (core dumped)
+2014/10/26 10:40:36 [alert] 11323#0: worker process 11378 exited on signal 11 (core dumped)
+2014/10/26 10:40:36 [alert] 11323#0: worker process 11417 exited on signal 11 (core dumped)
+2014/10/26 10:40:54 [alert] 11323#0: worker process 11420 exited on signal 11 (core dumped)
+2014/10/26 10:41:47 [alert] 11323#0: worker process 11453 exited on signal 11 (core dumped)
+2014/10/26 10:42:17 [alert] 11323#0: worker process 11487 exited on signal 11 (core dumped)
+2014/10/26 10:43:18 [alert] 11323#0: worker process 11493 exited on signal 11 (core dumped)
+2014/10/26 10:44:56 [alert] 11323#0: worker process 11509 exited on signal 11 (core dumped)
+2014/10/26 10:45:03 [alert] 17844#0: worker process 17845 exited on signal 11 (core dumped)
+2014/10/26 10:45:03 [alert] 17844#0: worker process 17847 exited on signal 11 (core dumped)
+2014/10/26 10:45:05 [alert] 17844#0: worker process 17849 exited on signal 11 (core dumped)
+2014/10/26 10:45:42 [alert] 17844#0: worker process 17851 exited on signal 11 (core dumped)
+2014/10/26 10:47:13 [alert] 17911#0: worker process 17912 exited on signal 11 (core dumped)
+2014/10/26 10:52:13 [alert] 17911#0: worker process 17915 exited on signal 11 (core dumped)
+2014/10/26 10:53:56 [alert] 17911#0: worker process 18040 exited on signal 11 (core dumped)
+2014/10/26 10:54:01 [alert] 36772#0: worker process 36773 exited on signal 11 (core dumped)
+2014/10/26 10:54:02 [alert] 36772#0: worker process 36775 exited on signal 11 (core dumped)
+2014/10/26 10:54:30 [alert] 36772#0: worker process 36777 exited on signal 11 (core dumped)
+2014/10/26 10:54:31 [alert] 36772#0: worker process 36818 exited on signal 11 (core dumped)
+2014/10/26 11:01:38 [alert] 36772#0: worker process 36822 exited on signal 11 (core dumped)
+2014/10/26 11:01:46 [alert] 43101#0: worker process 43102 exited on signal 11 (core dumped)
+2014/10/26 11:04:53 [alert] 43101#0: worker process 43105 exited on signal 11 (core dumped)
+2014/10/26 11:16:48 [alert] 43101#0: worker process 43165 exited on signal 11 (core dumped)
+2014/10/26 11:16:55 [alert] 49705#0: worker process 49706 exited on signal 11 (core dumped)
+2014/10/26 11:16:55 [alert] 49705#0: worker process 49709 exited on signal 11 (core dumped)
+2014/10/26 11:17:52 [alert] 49705#0: worker process 49711 exited on signal 11 (core dumped)
+2014/10/26 11:18:54 [alert] 49705#0: worker process 49748 exited on signal 11 (core dumped)
+2014/10/26 11:19:00 [alert] 55950#0: worker process 55951 exited on signal 11 (core dumped)
+2014/10/26 11:19:00 [alert] 55950#0: worker process 55953 exited on signal 11 (core dumped)
+2014/10/26 11:19:39 [alert] 55950#0: worker process 55955 exited on signal 11 (core dumped)
+2014/10/26 11:29:42 [alert] 55950#0: worker process 55991 exited on signal 11 (core dumped)
+2014/10/26 11:30:46 [alert] 3411#0: worker process 3412 exited on signal 11 (core dumped)
+2014/10/26 11:30:46 [alert] 3411#0: worker process 3455 exited on signal 11 (core dumped)
+2014/10/26 11:34:14 [alert] 3411#0: worker process 3459 exited on signal 11 (core dumped)
+2014/10/26 11:35:27 [alert] 3411#0: worker process 3568 exited on signal 11 (core dumped)
+2014/10/26 11:35:35 [alert] 10026#0: worker process 10027 exited on signal 11 (core dumped)
+2014/10/26 11:35:35 [alert] 10026#0: worker process 10029 exited on signal 11 (core dumped)
+2014/10/26 11:37:21 [alert] 10026#0: worker process 10031 exited on signal 11 (core dumped)
+2014/10/26 11:37:22 [alert] 10026#0: worker process 10071 exited on signal 11 (core dumped)
+2014/10/26 11:45:07 [alert] 10155#0: worker process 10156 exited on signal 11 (core dumped)
+2014/10/26 11:45:07 [alert] 10155#0: worker process 10158 exited on signal 11 (core dumped)
+2014/10/26 11:45:07 [alert] 10155#0: worker process 10160 exited on signal 11 (core dumped)
+2014/10/26 11:45:13 [alert] 10155#0: worker process 10162 exited on signal 11 (core dumped)
+2014/10/26 11:45:43 [alert] 10155#0: worker process 10164 exited on signal 11 (core dumped)
+2014/10/26 11:46:26 [alert] 10183#0: worker process 10185 exited on signal 11 (core dumped)
+2014/10/26 11:48:16 [alert] 10198#0: worker process 10241 exited on signal 11 (core dumped)
+2014/10/26 11:48:17 [alert] 10198#0: worker process 10245 exited on signal 11 (core dumped)
+2014/10/26 12:03:05 [alert] 10299#0: worker process 10537 exited on signal 11 (core dumped)
+2014/10/26 12:03:52 [alert] 10299#0: worker process 10577 exited on signal 11 (core dumped)
+2014/10/26 12:05:20 [alert] 10590#0: worker process 10597 exited on signal 11 (core dumped)
+2014/10/26 12:05:45 [alert] 10590#0: worker process 10608 exited on signal 11 (core dumped)
+2014/10/26 12:05:45 [alert] 10590#0: worker process 10612 exited on signal 11 (core dumped)
+2014/10/26 12:05:46 [alert] 10590#0: worker process 10615 exited on signal 11 (core dumped)
+2014/10/26 12:05:49 [alert] 10590#0: worker process 10619 exited on signal 11 (core dumped)
+2014/10/26 12:06:02 [alert] 10590#0: worker process 10623 exited on signal 11 (core dumped)
+2014/10/26 12:06:02 [alert] 10590#0: worker process 10625 exited on signal 11 (core dumped)
+2014/10/26 12:06:04 [alert] 10590#0: worker process 10629 exited on signal 11 (core dumped)
+2014/10/26 12:06:14 [alert] 10590#0: worker process 10631 exited on signal 11 (core dumped)
+2014/10/26 12:10:14 [alert] 10590#0: worker process 10634 exited on signal 11 (core dumped)
+2014/10/26 12:15:30 [alert] 17095#0: worker process 17167 exited on signal 11 (core dumped)
+2014/10/26 12:15:35 [alert] 23378#0: worker process 23379 exited on signal 11 (core dumped)
+2014/10/26 12:15:35 [alert] 23378#0: worker process 23381 exited on signal 11 (core dumped)
+2014/10/26 12:15:36 [alert] 23378#0: worker process 23383 exited on signal 11 (core dumped)
+2014/10/26 12:15:41 [alert] 23378#0: worker process 23385 exited on signal 11 (core dumped)
+2014/10/26 12:16:11 [alert] 23378#0: worker process 23387 exited on signal 11 (core dumped)
+2014/10/26 12:16:52 [alert] 23378#0: worker process 23392 exited on signal 11 (core dumped)
+2014/10/26 12:25:54 [alert] 29820#0: worker process 29822 exited on signal 11 (core dumped)
+2014/10/26 12:25:59 [alert] 36062#0: worker process 36063 exited on signal 11 (core dumped)
+2014/10/26 12:25:59 [alert] 36062#0: worker process 36065 exited on signal 11 (core dumped)
+2014/10/26 12:26:00 [alert] 36062#0: worker process 36067 exited on signal 11 (core dumped)
+2014/10/26 12:26:05 [alert] 36062#0: worker process 36069 exited on signal 11 (core dumped)
+2014/10/26 12:26:26 [alert] 36062#0: worker process 36096 exited on signal 11 (core dumped)
+2014/10/26 13:58:37 [emerg] 10891#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/26 13:58:37 [emerg] 10891#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 09:15:33 [alert] 6956#0: worker process 6957 exited on signal 9
+2014/10/27 10:33:22 [emerg] 8218#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 10:33:22 [emerg] 8218#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 10:33:22 [emerg] 8218#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 10:33:22 [emerg] 8218#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 13:28:23 [alert] 8237#0: worker process 9279 exited on signal 11 (core dumped)
+2014/10/27 13:31:14 [emerg] 15675#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 13:31:14 [emerg] 15675#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/27 13:49:34 [alert] 15715#0: worker process 15723 exited on signal 11 (core dumped)
+2014/10/27 14:07:52 [alert] 28971#0: worker process 28980 exited on signal 11 (core dumped)
+2014/10/27 15:12:45 [alert] 41683#0: worker process 41687 exited on signal 11 (core dumped)
+2014/10/27 15:12:51 [alert] 3707#0: worker process 3708 exited on signal 11 (core dumped)
+2014/10/27 15:12:51 [alert] 3707#0: worker process 3710 exited on signal 11 (core dumped)
+2014/10/27 15:12:54 [alert] 3707#0: worker process 3712 exited on signal 11 (core dumped)
+2014/10/27 15:13:14 [alert] 3720#0: worker process 3721 exited on signal 11 (core dumped)
+2014/10/27 15:13:45 [alert] 3720#0: worker process 3723 exited on signal 11 (core dumped)
+2014/10/27 15:13:46 [alert] 3720#0: worker process 3756 exited on signal 11 (core dumped)
+2014/10/27 15:14:24 [alert] 3720#0: worker process 3760 exited on signal 11 (core dumped)
+2014/10/27 15:14:24 [alert] 3720#0: worker process 3794 exited on signal 11 (core dumped)
+2014/10/27 15:15:32 [alert] 3720#0: worker process 3806 exited on signal 11 (core dumped)
+2014/10/27 15:15:33 [alert] 3720#0: worker process 3850 exited on signal 11 (core dumped)
+2014/10/27 15:18:21 [alert] 3720#0: worker process 3858 exited on signal 11 (core dumped)
+2014/10/27 15:24:58 [alert] 10347#0: worker process 10363 exited on signal 11 (core dumped)
+2014/10/27 15:26:06 [alert] 16734#0: worker process 16738 exited on signal 11 (core dumped)
+2014/10/27 15:37:14 [alert] 23080#0: worker process 23081 exited on signal 11 (core dumped)
+2014/10/27 16:33:10 [alert] 36871#0: worker process 36872 exited on signal 9
+2014/10/27 16:33:16 [error] 37030#0: *1 open() "/home/tigran/Desktop/sym/web/bundles/bundles/framework/css/structure.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/framework/css/structure.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *2 open() "/home/tigran/Desktop/sym/web/bundles/bundles/framework/css/body.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/framework/css/body.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *2 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/css/demo.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/css/demo.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *2 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-quick-tour.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-quick-tour.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *1 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-configure.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-configure.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *2 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-demo.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-demo.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *1 open() "/home/tigran/Desktop/sym/web/bundles/bundles/framework/css/structure.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/framework/css/structure.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *1 open() "/home/tigran/Desktop/sym/web/bundles/bundles/framework/css/body.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/framework/css/body.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *2 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/css/demo.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/css/demo.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *3 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-quick-tour.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-quick-tour.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *4 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-configure.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-configure.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:16 [error] 37030#0: *5 open() "/home/tigran/Desktop/sym/web/bundles/bundles/acmedemo/images/welcome-demo.gif" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/acmedemo/images/welcome-demo.gif HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/27 16:33:21 [error] 37030#0: *5 open() "/home/tigran/Desktop/sym/web/bundles/bundles/framework/css/structure.css" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /bundles/framework/css/structure.css HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 01:53:05 [alert] 37043#0: worker process 37044 exited on signal 9
+2014/10/28 03:12:49 [emerg] 39529#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/28 03:12:49 [emerg] 39529#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/28 03:12:49 [emerg] 39529#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/10/28 05:39:14 [alert] 43946#0: *4 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/763074 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/sdf"
+2014/10/28 05:39:20 [alert] 43949#0: *9 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/cf227d HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:41:19 [alert] 43967#0: *3 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/724e12 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:41:22 [alert] 43970#0: *11 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/67e748 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:41:23 [alert] 43972#0: *19 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/65407c HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:41:24 [alert] 43974#0: *27 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/31f797 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:41:27 [alert] 43976#0: *35 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/be9096 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:42:00 [alert] 43982#0: *48 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/be9096 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 05:42:05 [alert] 43965#0: worker process 43985 exited on signal 11 (core dumped)
+2014/10/28 05:42:05 [alert] 43965#0: worker process 43987 exited on signal 11 (core dumped)
+2014/10/28 05:42:10 [alert] 43965#0: worker process 43989 exited on signal 11 (core dumped)
+2014/10/28 05:42:14 [alert] 43993#0: *60 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/1e6f7b HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 07:47:54 [alert] 44246#0: worker process 44248 exited on signal 11 (core dumped)
+2014/10/28 07:48:55 [alert] 52012#0: worker process 52015 exited on signal 11 (core dumped)
+2014/10/28 07:49:01 [alert] 58351#0: *4 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/294e63 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/10/28 09:41:50 [alert] 61990#0: *9 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/df05b3 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/05 12:34:56 [alert] 19424#0: *10 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/91e30d HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/11/05 12:41:04 [alert] 20125#0: *19 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/817bd3 HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/11/05 13:02:58 [alert] 20683#0: *26 writev() failed (14: Bad address), client: 127.0.0.1, server: localhost, request: "GET /_wdt/8e1dfe HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2014/11/05 13:04:50 [alert] 20756#0: worker process 20757 exited on signal 11 (core dumped)
+2014/11/05 13:04:50 [alert] 20756#0: worker process 20759 exited on signal 11 (core dumped)
+2014/11/05 13:04:51 [alert] 20756#0: worker process 20761 exited on signal 11 (core dumped)
+2014/11/05 13:04:56 [alert] 20756#0: worker process 20763 exited on signal 11 (core dumped)
+2014/11/05 13:05:19 [alert] 20756#0: worker process 20766 exited on signal 11 (core dumped)
+2014/11/05 13:05:49 [alert] 20756#0: worker process 20798 exited on signal 11 (core dumped)
+2014/11/05 13:07:27 [alert] 20756#0: worker process 20809 exited on signal 11 (core dumped)
+2014/11/05 13:07:33 [alert] 20756#0: worker process 20860 exited on signal 11 (core dumped)

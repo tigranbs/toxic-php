@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="ext">
+        <df name="ctype">
+          <in>ctype.c</in>
+        </df>
+        <df name="date">
+          <df name="lib">
+            <in>astro.c</in>
+            <in>dow.c</in>
+            <in>interval.c</in>
+            <in>parse_date.c</in>
+            <in>parse_iso_intervals.c</in>
+            <in>parse_tz.c</in>
+            <in>timelib.c</in>
+            <in>tm2unixtime.c</in>
+            <in>unixtime2tm.c</in>
+          </df>
+          <in>php_date.c</in>
+        </df>
+        <df name="dom">
+          <in>attr.c</in>
+          <in>cdatasection.c</in>
+          <in>characterdata.c</in>
+          <in>comment.c</in>
+          <in>document.c</in>
+          <in>documentfragment.c</in>
+          <in>documenttype.c</in>
+          <in>dom_iterators.c</in>
+          <in>domconfiguration.c</in>
+          <in>domerror.c</in>
+          <in>domerrorhandler.c</in>
+          <in>domexception.c</in>
+          <in>domimplementation.c</in>
+          <in>domimplementationlist.c</in>
+          <in>domimplementationsource.c</in>
+          <in>domlocator.c</in>
+          <in>domstringlist.c</in>
+          <in>element.c</in>
+          <in>entity.c</in>
+          <in>entityreference.c</in>
+          <in>namednodemap.c</in>
+          <in>namelist.c</in>
+          <in>node.c</in>
+          <in>nodelist.c</in>
+          <in>notation.c</in>
+          <in>php_dom.c</in>
+          <in>processinginstruction.c</in>
+          <in>string_extend.c</in>
+          <in>text.c</in>
+          <in>typeinfo.c</in>
+          <in>userdatahandler.c</in>
+          <in>xpath.c</in>
+        </df>
+        <df name="ereg">
+          <df name="regex">
+            <in>regcomp.c</in>
+            <in>regerror.c</in>
+            <in>regexec.c</in>
+            <in>regfree.c</in>
+          </df>
+          <in>ereg.c</in>
+        </df>
+        <df name="fileinfo">
+          <df name="libmagic">
+            <in>apprentice.c</in>
+            <in>apptype.c</in>
+            <in>ascmagic.c</in>
+            <in>cdf.c</in>
+            <in>cdf_time.c</in>
+            <in>compress.c</in>
+            <in>encoding.c</in>
+            <in>fsmagic.c</in>
+            <in>funcs.c</in>
+            <in>is_tar.c</in>
+            <in>magic.c</in>
+            <in>print.c</in>
+            <in>readcdf.c</in>
+            <in>readelf.c</in>
+            <in>softmagic.c</in>
+          </df>
+          <in>fileinfo.c</in>
+        </df>
+        <df name="filter">
+          <in>callback_filter.c</in>
+          <in>filter.c</in>
+          <in>logical_filters.c</in>
+          <in>sanitizing_filters.c</in>
+        </df>
+        <df name="hash">
+          <in>hash.c</in>
+          <in>hash_adler32.c</in>
+          <in>hash_crc32.c</in>
+          <in>hash_fnv.c</in>
+          <in>hash_gost.c</in>
+          <in>hash_haval.c</in>
+          <in>hash_joaat.c</in>
+          <in>hash_md.c</in>
+          <in>hash_ripemd.c</in>
+          <in>hash_sha.c</in>
+          <in>hash_snefru.c</in>
+          <in>hash_tiger.c</in>
+          <in>hash_whirlpool.c</in>
+        </df>
+        <df name="iconv">
+          <in>iconv.c</in>
+        </df>
+        <df name="json">
+          <in>JSON_parser.c</in>
+          <in>json.c</in>
+          <in>utf8_decode.c</in>
+        </df>
+        <df name="libxml">
+          <in>libxml.c</in>
+        </df>
+        <df name="opcache">
+          <df name="Optimizer">
+            <in>zend_optimizer.c</in>
+          </df>
+          <in>ZendAccelerator.c</in>
+          <in>shared_alloc_mmap.c</in>
+          <in>shared_alloc_posix.c</in>
+          <in>shared_alloc_shm.c</in>
+          <in>zend_accelerator_blacklist.c</in>
+          <in>zend_accelerator_debug.c</in>
+          <in>zend_accelerator_hash.c</in>
+          <in>zend_accelerator_module.c</in>
+          <in>zend_accelerator_util_funcs.c</in>
+          <in>zend_persist.c</in>
+          <in>zend_persist_calc.c</in>
+          <in>zend_shared_alloc.c</in>
+        </df>
+        <df name="pcre">
+          <df name="pcrelib">
+            <in>pcre_chartables.c</in>
+            <in>pcre_compile.c</in>
+            <in>pcre_config.c</in>
+            <in>pcre_exec.c</in>
+            <in>pcre_fullinfo.c</in>
+            <in>pcre_get.c</in>
+            <in>pcre_globals.c</in>
+            <in>pcre_maketables.c</in>
+            <in>pcre_newline.c</in>
+            <in>pcre_ord2utf8.c</in>
+            <in>pcre_refcount.c</in>
+            <in>pcre_study.c</in>
+            <in>pcre_tables.c</in>
+            <in>pcre_ucd.c</in>
+            <in>pcre_valid_utf8.c</in>
+            <in>pcre_version.c</in>
+            <in>pcre_xclass.c</in>
+          </df>
+          <in>php_pcre.c</in>
+        </df>
+        <df name="pdo">
+          <in>pdo.c</in>
+          <in>pdo_dbh.c</in>
+          <in>pdo_sql_parser.c</in>
+          <in>pdo_sqlstate.c</in>
+          <in>pdo_stmt.c</in>
+        </df>
+        <df name="pdo_sqlite">
+          <in>pdo_sqlite.c</in>
+          <in>sqlite_driver.c</in>
+          <in>sqlite_statement.c</in>
+        </df>
+        <df name="phar">
+          <in>dirstream.c</in>
+          <in>func_interceptors.c</in>
+          <in>phar.c</in>
+          <in>phar_object.c</in>
+          <in>phar_path_check.c</in>
+          <in>stream.c</in>
+          <in>tar.c</in>
+          <in>util.c</in>
+          <in>zip.c</in>
+        </df>
+        <df name="posix">
+          <in>posix.c</in>
+        </df>
+        <df name="reflection">
+          <in>php_reflection.c</in>
+        </df>
+        <df name="session">
+          <in>mod_files.c</in>
+          <in>mod_mm.c</in>
+          <in>mod_user.c</in>
+          <in>mod_user_class.c</in>
+          <in>session.c</in>
+        </df>
+        <df name="simplexml">
+          <in>simplexml.c</in>
+          <in>sxe.c</in>
+        </df>
+        <df name="spl">
+          <in>php_spl.c</in>
+          <in>spl_array.c</in>
+          <in>spl_directory.c</in>
+          <in>spl_dllist.c</in>
+          <in>spl_engine.c</in>
+          <in>spl_exceptions.c</in>
+          <in>spl_fixedarray.c</in>
+          <in>spl_functions.c</in>
+          <in>spl_heap.c</in>
+          <in>spl_iterators.c</in>
+          <in>spl_observer.c</in>
+        </df>
+        <df name="sqlite3">
+          <df name="libsqlite">
+            <in>sqlite3.c</in>
+          </df>
+          <in>sqlite3.c</in>
+        </df>
+        <df name="standard">
+          <in>array.c</in>
+          <in>assert.c</in>
+          <in>base64.c</in>
+          <in>basic_functions.c</in>
+          <in>browscap.c</in>
+          <in>crc32.c</in>
+          <in>credits.c</in>
+          <in>crypt.c</in>
+          <in>crypt_blowfish.c</in>
+          <in>crypt_freesec.c</in>
+          <in>crypt_sha256.c</in>
+          <in>crypt_sha512.c</in>
+          <in>css.c</in>
+          <in>cyr_convert.c</in>
+          <in>datetime.c</in>
+          <in>dir.c</in>
+          <in>dl.c</in>
+          <in>dns.c</in>
+          <in>exec.c</in>
+          <in>file.c</in>
+          <in>filestat.c</in>
+          <in>filters.c</in>
+          <in>flock_compat.c</in>
+          <in>formatted_print.c</in>
+          <in>fsock.c</in>
+          <in>ftok.c</in>
+          <in>ftp_fopen_wrapper.c</in>
+          <in>head.c</in>
+          <in>html.c</in>
+          <in>http.c</in>
+          <in>http_fopen_wrapper.c</in>
+          <in>image.c</in>
+          <in>incomplete_class.c</in>
+          <in>info.c</in>
+          <in>iptc.c</in>
+          <in>lcg.c</in>
+          <in>levenshtein.c</in>
+          <in>link.c</in>
+          <in>mail.c</in>
+          <in>math.c</in>
+          <in>md5.c</in>
+          <in>metaphone.c</in>
+          <in>microtime.c</in>
+          <in>pack.c</in>
+          <in>pageinfo.c</in>
+          <in>password.c</in>
+          <in>php_crypt_r.c</in>
+          <in>php_fopen_wrapper.c</in>
+          <in>proc_open.c</in>
+          <in>quot_print.c</in>
+          <in>rand.c</in>
+          <in>scanf.c</in>
+          <in>sha1.c</in>
+          <in>soundex.c</in>
+          <in>streamsfuncs.c</in>
+          <in>string.c</in>
+          <in>strnatcmp.c</in>
+          <in>syslog.c</in>
+          <in>type.c</in>
+          <in>uniqid.c</in>
+          <in>url.c</in>
+          <in>url_scanner_ex.c</in>
+          <in>user_filters.c</in>
+          <in>uuencode.c</in>
+          <in>var.c</in>
+          <in>var_unserializer.c</in>
+          <in>versioning.c</in>
+        </df>
+        <df name="tokenizer">
+          <in>tokenizer.c</in>
+          <in>tokenizer_data.c</in>
+        </df>
+        <df name="xml">
+          <in>compat.c</in>
+          <in>xml.c</in>
+        </df>
+        <df name="xmlreader">
+          <in>php_xmlreader.c</in>
+        </df>
+        <df name="xmlwriter">
+          <in>php_xmlwriter.c</in>
+        </df>
+      </df>
+      <df name="main">
+        <df name="streams">
+          <in>cast.c</in>
+          <in>filter.c</in>
+          <in>glob_wrapper.c</in>
+          <in>memory.c</in>
+          <in>mmap.c</in>
+          <in>plain_wrapper.c</in>
+          <in>streams.c</in>
+          <in>transports.c</in>
+          <in>userspace.c</in>
+          <in>xp_socket.c</in>
+        </df>
+        <in>SAPI.c</in>
+        <in>alloca.c</in>
+        <in>fopen_wrappers.c</in>
+        <in>getopt.c</in>
+        <in>internal_functions_cli.c</in>
+        <in>main.c</in>
+        <in>mergesort.c</in>
+        <in>network.c</in>
+        <in>output.c</in>
+        <in>php_content_types.c</in>
+        <in>php_ini.c</in>
+        <in>php_open_temporary_file.c</in>
+        <in>php_scandir.c</in>
+        <in>php_sprintf.c</in>
+        <in>php_ticks.c</in>
+        <in>php_variables.c</in>
+        <in>reentrancy.c</in>
+        <in>rfc1867.c</in>
+        <in>snprintf.c</in>
+        <in>spprintf.c</in>
+        <in>strlcat.c</in>
+        <in>strlcpy.c</in>
+      </df>
+      <df name="sapi">
+        <df name="cgi">
+          <in>cgi_main.c</in>
+          <in>fastcgi.c</in>
+        </df>
+        <df name="cli">
+          <in>php_cli.c</in>
+          <in>php_cli_process_title.c</in>
+          <in>php_cli_server.c</in>
+          <in>php_http_parser.c</in>
+          <in>ps_title.c</in>
+        </df>
+      </df>
+      <df name="TSRM">
+        <in>TSRM.c</in>
+        <in>tsrm_strtok_r.c</in>
+      </df>
+      <df name="Zend">
+        <in>zend.c</in>
+        <in>zend_API.c</in>
+        <in>zend_alloc.c</in>
+        <in>zend_ast.c</in>
+        <in>zend_builtin_functions.c</in>
+        <in>zend_closures.c</in>
+        <in>zend_compile.c</in>
+        <in>zend_constants.c</in>
+        <in>zend_default_classes.c</in>
+        <in>zend_dtrace.c</in>
+        <in>zend_dynamic_array.c</in>
+        <in>zend_exceptions.c</in>
+        <in>zend_execute.c</in>
+        <in>zend_execute_API.c</in>
+        <in>zend_extensions.c</in>
+        <in>zend_float.c</in>
+        <in>zend_gc.c</in>
+        <in>zend_generators.c</in>
+        <in>zend_hash.c</in>
+        <in>zend_highlight.c</in>
+        <in>zend_indent.c</in>
+        <in>zend_ini.c</in>
+        <in>zend_ini_parser.c</in>
+        <in>zend_ini_scanner.c</in>
+        <in>zend_interfaces.c</in>
+        <in>zend_iterators.c</in>
+        <in>zend_language_parser.c</in>
+        <in>zend_language_scanner.c</in>
+        <in>zend_list.c</in>
+        <in>zend_llist.c</in>
+        <in>zend_multibyte.c</in>
+        <in>zend_object_handlers.c</in>
+        <in>zend_objects.c</in>
+        <in>zend_objects_API.c</in>
+        <in>zend_opcode.c</in>
+        <in>zend_operators.c</in>
+        <in>zend_ptr_stack.c</in>
+        <in>zend_qsort.c</in>
+        <in>zend_signal.c</in>
+        <in>zend_sprintf.c</in>
+        <in>zend_stack.c</in>
+        <in>zend_stream.c</in>
+        <in>zend_string.c</in>
+        <in>zend_strtod.c</in>
+        <in>zend_ts_hash.c</in>
+        <in>zend_variables.c</in>
+        <in>zend_virtual_cwd.c</in>
+        <in>zend_vm_opcodes.c</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>configure</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-fPIC"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <preprocessorList>
+              <Elem>PHP_ATOM_INC</Elem>
+              <Elem>PIC</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="TSRM/TSRM.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="TSRM/tsrm_strtok_r.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_API.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_alloc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ast.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_builtin_functions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_closures.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_compile.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_constants.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_default_classes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_dtrace.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_dynamic_array.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_exceptions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_execute.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_execute_API.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_extensions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_float.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_gc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_generators.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_hash.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_highlight.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_indent.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ini.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ini_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ini_scanner.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_interfaces.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_iterators.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_language_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_language_scanner.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_llist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_multibyte.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_object_handlers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_objects.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_objects_API.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_opcode.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_operators.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ptr_stack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_qsort.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_signal.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_sprintf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_stack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_string.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_strtod.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_ts_hash.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_variables.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_virtual_cwd.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Zend/zend_vm_opcodes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ctype/ctype.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/astro.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/dow.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/interval.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/parse_date.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/parse_iso_intervals.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/parse_tz.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/timelib.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/tm2unixtime.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/lib/unixtime2tm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/date/php_date.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/attr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/cdatasection.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/characterdata.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/comment.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/document.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/documentfragment.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/documenttype.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/dom_iterators.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domconfiguration.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domerror.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domerrorhandler.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domexception.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domimplementation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domimplementationlist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domimplementationsource.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domlocator.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/domstringlist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/element.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/entity.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/entityreference.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/namednodemap.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/namelist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/node.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/nodelist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/notation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/php_dom.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/processinginstruction.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/string_extend.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/text.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/typeinfo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/userdatahandler.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/dom/xpath.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ereg/ereg.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ereg/regex/regcomp.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ereg/regex/regerror.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ereg/regex/regexec.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/ereg/regex/regfree.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/fileinfo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/apprentice.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/apptype.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/ascmagic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/cdf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/cdf_time.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/compress.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/encoding.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/fsmagic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/funcs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/is_tar.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/magic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/print.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/readcdf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/readelf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/fileinfo/libmagic/softmagic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/filter/callback_filter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/filter/filter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/filter/logical_filters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/filter/sanitizing_filters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_adler32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_crc32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_fnv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_gost.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_haval.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_joaat.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_md.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_ripemd.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_sha.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_snefru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_tiger.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/hash/hash_whirlpool.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/iconv/iconv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/json/JSON_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/json/json.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/json/utf8_decode.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/libxml/libxml.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/Optimizer/zend_optimizer.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/ZendAccelerator.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/shared_alloc_mmap.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/shared_alloc_posix.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/shared_alloc_shm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_accelerator_blacklist.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_accelerator_debug.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_accelerator_hash.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_accelerator_module.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_accelerator_util_funcs.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_persist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_persist_calc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/opcache/zend_shared_alloc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_chartables.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_compile.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_config.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_exec.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_fullinfo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_get.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_globals.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_maketables.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_newline.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_ord2utf8.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_refcount.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_study.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_tables.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_ucd.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_valid_utf8.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_version.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/pcrelib/pcre_xclass.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pcre/php_pcre.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo/pdo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo/pdo_dbh.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo/pdo_sql_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo/pdo_sqlstate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo/pdo_stmt.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo_sqlite/pdo_sqlite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo_sqlite/sqlite_driver.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/pdo_sqlite/sqlite_statement.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/dirstream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/func_interceptors.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/phar.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/phar_object.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/phar_path_check.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/tar.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/util.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/phar/zip.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/posix/posix.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/reflection/php_reflection.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/session/mod_files.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/session/mod_mm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/session/mod_user.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/session/mod_user_class.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/session/session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/simplexml/simplexml.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/simplexml/sxe.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/php_spl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_array.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_directory.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_dllist.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_engine.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_exceptions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_fixedarray.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_functions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_heap.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_iterators.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/spl/spl_observer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/sqlite3/libsqlite/sqlite3.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/sqlite3/sqlite3.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/array.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/assert.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/base64.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/basic_functions.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/browscap.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crc32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/credits.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crypt.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crypt_blowfish.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crypt_freesec.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crypt_sha256.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/crypt_sha512.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/css.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/cyr_convert.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/datetime.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/dir.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/dl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/dns.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/exec.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/file.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/filestat.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/filters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/flock_compat.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/formatted_print.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/fsock.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/ftok.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/ftp_fopen_wrapper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/head.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/html.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/http.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/http_fopen_wrapper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/image.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/incomplete_class.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/info.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/iptc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/lcg.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/levenshtein.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/link.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/mail.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/math.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/md5.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/metaphone.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/microtime.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/pack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/pageinfo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/password.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/php_crypt_r.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/php_fopen_wrapper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/proc_open.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/quot_print.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/rand.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/scanf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/sha1.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/soundex.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/streamsfuncs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/string.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/strnatcmp.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/syslog.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/type.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/uniqid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/url.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/url_scanner_ex.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/user_filters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/uuencode.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/var.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/var_unserializer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/standard/versioning.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/tokenizer/tokenizer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/tokenizer/tokenizer_data.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/xml/compat.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/xml/xml.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/xmlreader/php_xmlreader.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ext/xmlwriter/php_xmlwriter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <folder path="0/TSRM">
+        <cTool>
+          <incDir>
+            <pElem>TSRM</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Zend">
+        <cTool>
+          <incDir>
+            <pElem>Zend</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/ctype">
+        <cTool>
+          <incDir>
+            <pElem>ext/ctype</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/date">
+        <cTool>
+          <incDir>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/date</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/dom">
+        <cTool>
+          <incDir>
+            <pElem>ext/dom</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/ereg">
+        <cTool>
+          <incDir>
+            <pElem>ext/ereg</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>regcomp=php_regcomp</Elem>
+            <Elem>regerror=php_regerror</Elem>
+            <Elem>regexec=php_regexec</Elem>
+            <Elem>regfree=php_regfree</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="0/ext/fileinfo">
+        <cTool>
+          <incDir>
+            <pElem>ext/fileinfo/libmagic</pElem>
+            <pElem>ext/fileinfo</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/filter">
+        <cTool>
+          <incDir>
+            <pElem>ext/filter</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/hash">
+        <cTool>
+          <incDir>
+            <pElem>ext/hash</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/iconv">
+        <cTool>
+          <incDir>
+            <pElem>/usr/include</pElem>
+            <pElem>ext/iconv</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/json">
+        <cTool>
+          <incDir>
+            <pElem>ext/json</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/libxml">
+        <cTool>
+          <incDir>
+            <pElem>ext/libxml</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/opcache">
+        <cTool>
+          <incDir>
+            <pElem>ext/opcache</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/pcre">
+        <cTool>
+          <incDir>
+            <pElem>ext/pcre/pcrelib</pElem>
+            <pElem>ext/pcre</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="0/ext/pdo">
+        <cTool>
+          <incDir>
+            <pElem>ext/pdo</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/pdo_sqlite">
+        <cTool>
+          <incDir>
+            <pElem>ext</pElem>
+            <pElem>ext/pdo_sqlite</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>PDO_SQLITE_BUNDLED=1</Elem>
+            <Elem>SQLITE_CORE=1</Elem>
+            <Elem>SQLITE_ENABLE_COLUMN_METADATA=1</Elem>
+            <Elem>SQLITE_ENABLE_FTS3=1</Elem>
+            <Elem>SQLITE_THREADSAFE=0</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="0/ext/phar">
+        <cTool>
+          <incDir>
+            <pElem>ext/phar</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/posix">
+        <cTool>
+          <incDir>
+            <pElem>ext/posix</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/reflection">
+        <cTool>
+          <incDir>
+            <pElem>ext/reflection</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/session">
+        <cTool>
+          <incDir>
+            <pElem>ext/session</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/simplexml">
+        <cTool>
+          <incDir>
+            <pElem>ext/simplexml</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/spl">
+        <cTool>
+          <incDir>
+            <pElem>ext/spl</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/sqlite3">
+        <cTool>
+          <incDir>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>ext/sqlite3</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>SQLITE_CORE=1</Elem>
+            <Elem>SQLITE_ENABLE_COLUMN_METADATA=1</Elem>
+            <Elem>SQLITE_ENABLE_FTS3=1</Elem>
+            <Elem>SQLITE_THREADSAFE=0</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="0/ext/standard">
+        <cTool>
+          <incDir>
+            <pElem>ext/standard</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/tokenizer">
+        <cTool>
+          <incDir>
+            <pElem>ext/tokenizer</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/xml">
+        <cTool>
+          <incDir>
+            <pElem>ext/xml</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/xmlreader">
+        <cTool>
+          <incDir>
+            <pElem>ext/xmlreader</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/ext/xmlwriter">
+        <cTool>
+          <incDir>
+            <pElem>ext/xmlwriter</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/main/streams">
+        <cTool>
+          <incDir>
+            <pElem>main/streams</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/sapi/cgi">
+        <cTool>
+          <incDir>
+            <pElem>sapi/cgi</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/sapi/cli">
+        <cTool>
+          <incDir>
+            <pElem>sapi/cli</pElem>
+            <pElem>include</pElem>
+            <pElem>main</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <item path="main/SAPI.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/alloca.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/fopen_wrappers.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/getopt.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/internal_functions_cli.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/main.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/mergesort.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/network.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/output.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_content_types.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_ini.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_open_temporary_file.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_scandir.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_sprintf.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_ticks.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/php_variables.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/reentrancy.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/rfc1867.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/snprintf.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/spprintf.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/streams/cast.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/filter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/glob_wrapper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/memory.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/mmap.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/plain_wrapper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/streams.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/transports.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/userspace.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/streams/xp_socket.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="main/strlcat.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="main/strlcpy.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>main</pElem>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+            <pElem>ext/date/lib</pElem>
+            <pElem>ext/ereg/regex</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>ext/sqlite3/libsqlite</pElem>
+            <pElem>TSRM</pElem>
+            <pElem>Zend</pElem>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="sapi/cgi/cgi_main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cgi/fastcgi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cli/php_cli.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cli/php_cli_process_title.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cli/php_cli_server.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cli/php_http_parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sapi/cli/ps_title.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

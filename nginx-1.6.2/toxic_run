@@ -1,0 +1,2 @@
+#! /bin/sh
+LD_LIBRARY_PATH="/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/" ./../nginx_bin/sbin/nginx

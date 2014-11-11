@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/ngx_devel_kit/src/ndk_rewrite.h</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/Zend/zend_globals.h</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/ngx_devel_kit/docs/upstream/list</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/test.php</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/Zend/zend_gc.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/Zend/zend.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/main/main.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/objs/Makefile</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/ngx_devel_kit/examples/http/set_var/ngx_http_set_var_examples_module.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/main/php_output.h</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/ngx_devel_kit/docs/modules/set_var</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/main/output.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/src/http/ngx_http.h</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/ngx_http_toxic_module.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/ngx_devel_kit/src/ndk_debug.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/ext/standard/basic_functions.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/Zend/zend_highlight.c</file>
+            <file>file:/home/tigran/Desktop/toxic/nginx-1.6.2/src/http/ngx_http_request.h</file>
+        </group>
+    </open-files>
+</project-private>
