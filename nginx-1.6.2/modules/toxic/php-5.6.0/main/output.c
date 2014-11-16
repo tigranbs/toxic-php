@@ -245,7 +245,17 @@ PHPAPI int php_output_write_unbuffered(const char *str, size_t len TSRMLS_DC)
 		return 0;
 	}
 	if (OG(flags) & PHP_OUTPUT_ACTIVATED) {
-		return sapi_module.ub_write(str, len TSRMLS_CC);
+        if(sapi_module.toxic_output)
+        {
+            zval toxic_index;
+            zend_eval_string("$toxic_index;", &toxic_index, "Get Output Index" TSRMLS_DC);
+
+            return sapi_module.toxic_output(Z_STRVAL(toxic_index), Z_STRLEN(toxic_index), str, len TSRMLS_CC);
+        }
+        else
+        {
+            return sapi_module.ub_write(str, len TSRMLS_CC);
+        }
 	}
 	return php_output_direct(str, len);
 }
@@ -1121,7 +1131,19 @@ static inline void php_output_op(int op, const char *str, size_t len TSRMLS_DC)
 #if PHP_OUTPUT_DEBUG
 			fprintf(stderr, "::: sapi_write('%s', %zu)\n", context.out.data, context.out.used);
 #endif
-			sapi_module.ub_write(context.out.data, context.out.used TSRMLS_CC);
+
+            if(sapi_module.toxic_output)
+            {
+                zval toxic_index;
+                zend_eval_string("$toxic_index;", &toxic_index, "Get Output Index" TSRMLS_DC);
+
+                sapi_module.toxic_output(Z_STRVAL(toxic_index), Z_STRLEN(toxic_index), context.out.data, context.out.used TSRMLS_CC);
+            }
+            else
+            {
+                sapi_module.ub_write(context.out.data, context.out.used TSRMLS_CC);
+            }
+
 
 			if (OG(flags) & PHP_OUTPUT_IMPLICITFLUSH) {
 				sapi_flush(TSRMLS_C);

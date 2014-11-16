@@ -12,7 +12,8 @@ ALL_INCS = -I src/core \
 	-I objs \
 	-I src/http \
 	-I src/http/modules \
-	-I src/mail
+	-I src/mail \
+	-I /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic
 
 
 CORE_DEPS = src/core/nginx.h \

@@ -170,3 +170,867 @@
 2014/11/05 13:05:49 [alert] 20756#0: worker process 20798 exited on signal 11 (core dumped)
 2014/11/05 13:07:27 [alert] 20756#0: worker process 20809 exited on signal 11 (core dumped)
 2014/11/05 13:07:33 [alert] 20756#0: worker process 20860 exited on signal 11 (core dumped)
+2014/11/13 01:48:41 [alert] 16450#0: worker process 16451 exited on signal 11 (core dumped)
+2014/11/13 01:48:42 [alert] 16450#0: worker process 16454 exited on signal 11 (core dumped)
+2014/11/13 01:48:43 [alert] 16450#0: worker process 16456 exited on signal 11 (core dumped)
+2014/11/13 01:49:31 [alert] 16450#0: worker process 16459 exited on signal 11 (core dumped)
+2014/11/13 02:10:42 [alert] 17084#0: worker process 17085 exited on signal 11 (core dumped)
+2014/11/13 02:10:43 [alert] 17084#0: worker process 17097 exited on signal 11 (core dumped)
+2014/11/13 02:11:10 [alert] 17111#0: worker process 17112 exited on signal 11 (core dumped)
+2014/11/13 02:14:52 [alert] 17195#0: worker process 17196 exited on signal 11 (core dumped)
+2014/11/13 02:15:25 [alert] 17213#0: worker process 17214 exited on signal 11 (core dumped)
+2014/11/13 04:12:31 [alert] 17213#0: worker process 17217 exited on signal 11 (core dumped)
+2014/11/13 05:34:56 [emerg] 21700#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:34:56 [emerg] 21700#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:34:56 [emerg] 21700#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:34:56 [emerg] 21700#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:34:56 [emerg] 21700#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:34:56 [emerg] 21700#0: still could not bind()
+2014/11/13 05:35:04 [emerg] 21704#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:04 [emerg] 21704#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:04 [emerg] 21704#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:25 [emerg] 21730#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:25 [emerg] 21730#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:25 [emerg] 21730#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 05:35:30 [alert] 21637#0: worker process 21638 exited on signal 9
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fd4b14fae0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fd4b15927dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fd4b15916a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fd4b1590b00]
+nginx: worker process[0x465678]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x41fa1c]
+nginx: worker process[0x42026b]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fd4b14a8ec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00fb0000-0115d000 rw-p 00000000 00:00 0                                  [heap]
+0115d000-0118e000 rw-p 00000000 00:00 0                                  [heap]
+7fd4afbdc000-7fd4afbf2000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afbf2000-7fd4afdf1000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afdf1000-7fd4afdf2000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afe0c000-7fd4b07da000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fd4b07da000-7fd4b07fb000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b07fb000-7fd4b09fa000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fa000-7fd4b09fb000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fb000-7fd4b09fc000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fc000-7fd4b0b58000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0b58000-7fd4b0d57000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d57000-7fd4b0d5f000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d5f000-7fd4b0d61000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d61000-7fd4b0d62000 rw-p 00000000 00:00 0 
+7fd4b0d62000-7fd4b0d65000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0d65000-7fd4b0f64000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f64000-7fd4b0f65000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f65000-7fd4b0f66000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f66000-7fd4b106b000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b106b000-7fd4b126a000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126a000-7fd4b126b000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126b000-7fd4b126c000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126c000-7fd4b1283000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1283000-7fd4b1483000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1483000-7fd4b1484000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1484000-7fd4b1485000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1485000-7fd4b1487000 rw-p 00000000 00:00 0 
+7fd4b1487000-7fd4b1642000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1642000-7fd4b1842000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1842000-7fd4b1846000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1846000-7fd4b1848000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1848000-7fd4b184d000 rw-p 00000000 00:00 0 
+7fd4b184d000-7fd4b2037000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2037000-7fd4b2236000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2236000-7fd4b22c8000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22c8000-7fd4b22d2000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22d2000-7fd4b22ee000 rw-p 00000000 00:00 0 
+7fd4b22ee000-7fd4b2306000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2306000-7fd4b2505000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2505000-7fd4b2506000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2506000-7fd4b2507000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2507000-7fd4b2544000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2544000-7fd4b2743000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2743000-7fd4b2744000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2744000-7fd4b2745000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2745000-7fd4b274e000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b274e000-7fd4b294e000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294e000-7fd4b294f000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294f000-7fd4b2950000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b2950000-7fd4b297e000 rw-p 00000000 00:00 0 
+7fd4b297e000-7fd4b2997000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2997000-7fd4b2b96000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b96000-7fd4b2b97000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b97000-7fd4b2b98000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b98000-7fd4b2b9c000 rw-p 00000000 00:00 0 
+7fd4b2b9c000-7fd4b2bbf000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2bd5000-7fd4b2c0a000 rw-p 00000000 00:00 0 
+7fd4b2c0a000-7fd4b2da2000 rw-p 00000000 00:00 0 
+7fd4b2db9000-7fd4b2dba000 rw-p 00000000 00:00 0 
+7fd4b2dba000-7fd4b2dbb000 rw-s 00000000 00:04 104389                     /dev/zero (deleted)
+7fd4b2dbb000-7fd4b2dbe000 rw-p 00000000 00:00 0 
+7fd4b2dbe000-7fd4b2dbf000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dbf000-7fd4b2dc0000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dc0000-7fd4b2dc1000 rw-p 00000000 00:00 0 
+7fff2bbc7000-7fff2bbe8000 rw-p 00000000 00:00 0                          [stack]
+7fff2bbfe000-7fff2bc00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:35:44 [alert] 21741#0: worker process 21742 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fd4b14fae0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fd4b15927dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fd4b15916a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fd4b1590b00]
+nginx: worker process[0x465678]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fd4b14a8ec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00fb0000-0115d000 rw-p 00000000 00:00 0                                  [heap]
+0115d000-0118e000 rw-p 00000000 00:00 0                                  [heap]
+7fd4afbdc000-7fd4afbf2000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afbf2000-7fd4afdf1000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afdf1000-7fd4afdf2000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afe0c000-7fd4b07da000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fd4b07da000-7fd4b07fb000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b07fb000-7fd4b09fa000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fa000-7fd4b09fb000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fb000-7fd4b09fc000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fc000-7fd4b0b58000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0b58000-7fd4b0d57000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d57000-7fd4b0d5f000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d5f000-7fd4b0d61000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d61000-7fd4b0d62000 rw-p 00000000 00:00 0 
+7fd4b0d62000-7fd4b0d65000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0d65000-7fd4b0f64000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f64000-7fd4b0f65000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f65000-7fd4b0f66000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f66000-7fd4b106b000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b106b000-7fd4b126a000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126a000-7fd4b126b000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126b000-7fd4b126c000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126c000-7fd4b1283000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1283000-7fd4b1483000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1483000-7fd4b1484000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1484000-7fd4b1485000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1485000-7fd4b1487000 rw-p 00000000 00:00 0 
+7fd4b1487000-7fd4b1642000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1642000-7fd4b1842000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1842000-7fd4b1846000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1846000-7fd4b1848000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1848000-7fd4b184d000 rw-p 00000000 00:00 0 
+7fd4b184d000-7fd4b2037000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2037000-7fd4b2236000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2236000-7fd4b22c8000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22c8000-7fd4b22d2000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22d2000-7fd4b22ee000 rw-p 00000000 00:00 0 
+7fd4b22ee000-7fd4b2306000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2306000-7fd4b2505000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2505000-7fd4b2506000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2506000-7fd4b2507000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2507000-7fd4b2544000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2544000-7fd4b2743000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2743000-7fd4b2744000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2744000-7fd4b2745000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2745000-7fd4b274e000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b274e000-7fd4b294e000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294e000-7fd4b294f000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294f000-7fd4b2950000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b2950000-7fd4b297e000 rw-p 00000000 00:00 0 
+7fd4b297e000-7fd4b2997000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2997000-7fd4b2b96000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b96000-7fd4b2b97000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b97000-7fd4b2b98000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b98000-7fd4b2b9c000 rw-p 00000000 00:00 0 
+7fd4b2b9c000-7fd4b2bbf000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2bd5000-7fd4b2c0a000 rw-p 00000000 00:00 0 
+7fd4b2c0a000-7fd4b2da2000 rw-p 00000000 00:00 0 
+7fd4b2db9000-7fd4b2dba000 rw-p 00000000 00:00 0 
+7fd4b2dba000-7fd4b2dbb000 rw-s 00000000 00:04 104389                     /dev/zero (deleted)
+7fd4b2dbb000-7fd4b2dbe000 rw-p 00000000 00:00 0 
+7fd4b2dbe000-7fd4b2dbf000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dbf000-7fd4b2dc0000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dc0000-7fd4b2dc1000 rw-p 00000000 00:00 0 
+7fff2bbc7000-7fff2bbe8000 rw-p 00000000 00:00 0                          [stack]
+7fff2bbfe000-7fff2bc00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:35:45 [alert] 21741#0: worker process 21745 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fd4b14fae0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fd4b15927dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fd4b15916a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fd4b1590b00]
+nginx: worker process[0x465678]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fd4b14a8ec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00fb0000-0115d000 rw-p 00000000 00:00 0                                  [heap]
+0115d000-0118e000 rw-p 00000000 00:00 0                                  [heap]
+7fd4afbdc000-7fd4afbf2000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afbf2000-7fd4afdf1000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afdf1000-7fd4afdf2000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd4afe0c000-7fd4b07da000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fd4b07da000-7fd4b07fb000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b07fb000-7fd4b09fa000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fa000-7fd4b09fb000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fb000-7fd4b09fc000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fd4b09fc000-7fd4b0b58000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0b58000-7fd4b0d57000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d57000-7fd4b0d5f000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d5f000-7fd4b0d61000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fd4b0d61000-7fd4b0d62000 rw-p 00000000 00:00 0 
+7fd4b0d62000-7fd4b0d65000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0d65000-7fd4b0f64000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f64000-7fd4b0f65000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f65000-7fd4b0f66000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fd4b0f66000-7fd4b106b000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b106b000-7fd4b126a000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126a000-7fd4b126b000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126b000-7fd4b126c000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fd4b126c000-7fd4b1283000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1283000-7fd4b1483000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1483000-7fd4b1484000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1484000-7fd4b1485000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fd4b1485000-7fd4b1487000 rw-p 00000000 00:00 0 
+7fd4b1487000-7fd4b1642000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1642000-7fd4b1842000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1842000-7fd4b1846000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1846000-7fd4b1848000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fd4b1848000-7fd4b184d000 rw-p 00000000 00:00 0 
+7fd4b184d000-7fd4b2037000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2037000-7fd4b2236000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b2236000-7fd4b22c8000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22c8000-7fd4b22d2000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fd4b22d2000-7fd4b22ee000 rw-p 00000000 00:00 0 
+7fd4b22ee000-7fd4b2306000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2306000-7fd4b2505000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2505000-7fd4b2506000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2506000-7fd4b2507000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd4b2507000-7fd4b2544000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2544000-7fd4b2743000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2743000-7fd4b2744000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2744000-7fd4b2745000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fd4b2745000-7fd4b274e000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b274e000-7fd4b294e000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294e000-7fd4b294f000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b294f000-7fd4b2950000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fd4b2950000-7fd4b297e000 rw-p 00000000 00:00 0 
+7fd4b297e000-7fd4b2997000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2997000-7fd4b2b96000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b96000-7fd4b2b97000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b97000-7fd4b2b98000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fd4b2b98000-7fd4b2b9c000 rw-p 00000000 00:00 0 
+7fd4b2b9c000-7fd4b2bbf000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2bd5000-7fd4b2c0a000 rw-p 00000000 00:00 0 
+7fd4b2c0a000-7fd4b2da2000 rw-p 00000000 00:00 0 
+7fd4b2db9000-7fd4b2dba000 rw-p 00000000 00:00 0 
+7fd4b2dba000-7fd4b2dbb000 rw-s 00000000 00:04 104389                     /dev/zero (deleted)
+7fd4b2dbb000-7fd4b2dbe000 rw-p 00000000 00:00 0 
+7fd4b2dbe000-7fd4b2dbf000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dbf000-7fd4b2dc0000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fd4b2dc0000-7fd4b2dc1000 rw-p 00000000 00:00 0 
+7fff2bbc7000-7fff2bbe8000 rw-p 00000000 00:00 0                          [stack]
+7fff2bbfe000-7fff2bc00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:36:41 [alert] 21741#0: worker process 21747 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fcdd205de0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fcdd20f57dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fcdd20f46a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fcdd20f3b00]
+nginx: worker process[0x46568a]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x41fa1c]
+nginx: worker process[0x42026b]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fcdd200bec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00dca000-00f77000 rw-p 00000000 00:00 0                                  [heap]
+00f77000-00fa8000 rw-p 00000000 00:00 0                                  [heap]
+7fcdd073f000-7fcdd0755000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0755000-7fcdd0954000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0954000-7fcdd0955000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd096f000-7fcdd133d000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fcdd133d000-7fcdd135e000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd135e000-7fcdd155d000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155d000-7fcdd155e000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155e000-7fcdd155f000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155f000-7fcdd16bb000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd16bb000-7fcdd18ba000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18ba000-7fcdd18c2000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c2000-7fcdd18c4000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c4000-7fcdd18c5000 rw-p 00000000 00:00 0 
+7fcdd18c5000-7fcdd18c8000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd18c8000-7fcdd1ac7000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac7000-7fcdd1ac8000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac8000-7fcdd1ac9000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac9000-7fcdd1bce000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1bce000-7fcdd1dcd000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcd000-7fcdd1dce000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dce000-7fcdd1dcf000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcf000-7fcdd1de6000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1de6000-7fcdd1fe6000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe6000-7fcdd1fe7000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe7000-7fcdd1fe8000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe8000-7fcdd1fea000 rw-p 00000000 00:00 0 
+7fcdd1fea000-7fcdd21a5000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd21a5000-7fcdd23a5000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a5000-7fcdd23a9000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a9000-7fcdd23ab000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23ab000-7fcdd23b0000 rw-p 00000000 00:00 0 
+7fcdd23b0000-7fcdd2b9a000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2b9a000-7fcdd2d99000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2d99000-7fcdd2e2b000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e2b000-7fcdd2e35000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e35000-7fcdd2e51000 rw-p 00000000 00:00 0 
+7fcdd2e51000-7fcdd2e69000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd2e69000-7fcdd3068000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3068000-7fcdd3069000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3069000-7fcdd306a000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd306a000-7fcdd30a7000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd30a7000-7fcdd32a6000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a6000-7fcdd32a7000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a7000-7fcdd32a8000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a8000-7fcdd32b1000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd32b1000-7fcdd34b1000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b1000-7fcdd34b2000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b2000-7fcdd34b3000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b3000-7fcdd34e1000 rw-p 00000000 00:00 0 
+7fcdd34e1000-7fcdd34fa000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd34fa000-7fcdd36f9000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36f9000-7fcdd36fa000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fa000-7fcdd36fb000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fb000-7fcdd36ff000 rw-p 00000000 00:00 0 
+7fcdd36ff000-7fcdd3722000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3738000-7fcdd376d000 rw-p 00000000 00:00 0 
+7fcdd376d000-7fcdd3905000 rw-p 00000000 00:00 0 
+7fcdd391c000-7fcdd391d000 rw-p 00000000 00:00 0 
+7fcdd391d000-7fcdd391e000 rw-s 00000000 00:04 105790                     /dev/zero (deleted)
+7fcdd391e000-7fcdd3921000 rw-p 00000000 00:00 0 
+7fcdd3921000-7fcdd3922000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3922000-7fcdd3923000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3923000-7fcdd3924000 rw-p 00000000 00:00 0 
+7fff8437b000-7fff8439c000 rw-p 00000000 00:00 0                          [stack]
+7fff843fe000-7fff84400000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:41:51 [alert] 21936#0: worker process 21937 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fcdd205de0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fcdd20f57dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fcdd20f46a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fcdd20f3b00]
+nginx: worker process[0x46568a]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fcdd200bec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00dca000-00f77000 rw-p 00000000 00:00 0                                  [heap]
+00f77000-00fa8000 rw-p 00000000 00:00 0                                  [heap]
+7fcdd073f000-7fcdd0755000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0755000-7fcdd0954000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0954000-7fcdd0955000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd096f000-7fcdd133d000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fcdd133d000-7fcdd135e000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd135e000-7fcdd155d000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155d000-7fcdd155e000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155e000-7fcdd155f000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155f000-7fcdd16bb000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd16bb000-7fcdd18ba000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18ba000-7fcdd18c2000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c2000-7fcdd18c4000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c4000-7fcdd18c5000 rw-p 00000000 00:00 0 
+7fcdd18c5000-7fcdd18c8000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd18c8000-7fcdd1ac7000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac7000-7fcdd1ac8000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac8000-7fcdd1ac9000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac9000-7fcdd1bce000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1bce000-7fcdd1dcd000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcd000-7fcdd1dce000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dce000-7fcdd1dcf000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcf000-7fcdd1de6000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1de6000-7fcdd1fe6000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe6000-7fcdd1fe7000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe7000-7fcdd1fe8000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe8000-7fcdd1fea000 rw-p 00000000 00:00 0 
+7fcdd1fea000-7fcdd21a5000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd21a5000-7fcdd23a5000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a5000-7fcdd23a9000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a9000-7fcdd23ab000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23ab000-7fcdd23b0000 rw-p 00000000 00:00 0 
+7fcdd23b0000-7fcdd2b9a000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2b9a000-7fcdd2d99000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2d99000-7fcdd2e2b000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e2b000-7fcdd2e35000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e35000-7fcdd2e51000 rw-p 00000000 00:00 0 
+7fcdd2e51000-7fcdd2e69000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd2e69000-7fcdd3068000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3068000-7fcdd3069000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3069000-7fcdd306a000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd306a000-7fcdd30a7000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd30a7000-7fcdd32a6000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a6000-7fcdd32a7000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a7000-7fcdd32a8000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a8000-7fcdd32b1000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd32b1000-7fcdd34b1000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b1000-7fcdd34b2000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b2000-7fcdd34b3000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b3000-7fcdd34e1000 rw-p 00000000 00:00 0 
+7fcdd34e1000-7fcdd34fa000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd34fa000-7fcdd36f9000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36f9000-7fcdd36fa000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fa000-7fcdd36fb000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fb000-7fcdd36ff000 rw-p 00000000 00:00 0 
+7fcdd36ff000-7fcdd3722000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3738000-7fcdd376d000 rw-p 00000000 00:00 0 
+7fcdd376d000-7fcdd3905000 rw-p 00000000 00:00 0 
+7fcdd391c000-7fcdd391d000 rw-p 00000000 00:00 0 
+7fcdd391d000-7fcdd391e000 rw-s 00000000 00:04 105790                     /dev/zero (deleted)
+7fcdd391e000-7fcdd3921000 rw-p 00000000 00:00 0 
+7fcdd3921000-7fcdd3922000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3922000-7fcdd3923000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3923000-7fcdd3924000 rw-p 00000000 00:00 0 
+7fff8437b000-7fff8439c000 rw-p 00000000 00:00 0                          [stack]
+7fff843fe000-7fff84400000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:41:52 [alert] 21936#0: worker process 21940 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fcdd205de0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fcdd20f57dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fcdd20f46a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fcdd20f3b00]
+nginx: worker process[0x46568a]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fcdd200bec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00dca000-00f77000 rw-p 00000000 00:00 0                                  [heap]
+00f77000-00fa8000 rw-p 00000000 00:00 0                                  [heap]
+7fcdd073f000-7fcdd0755000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0755000-7fcdd0954000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0954000-7fcdd0955000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd096f000-7fcdd133d000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fcdd133d000-7fcdd135e000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd135e000-7fcdd155d000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155d000-7fcdd155e000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155e000-7fcdd155f000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155f000-7fcdd16bb000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd16bb000-7fcdd18ba000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18ba000-7fcdd18c2000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c2000-7fcdd18c4000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c4000-7fcdd18c5000 rw-p 00000000 00:00 0 
+7fcdd18c5000-7fcdd18c8000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd18c8000-7fcdd1ac7000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac7000-7fcdd1ac8000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac8000-7fcdd1ac9000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac9000-7fcdd1bce000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1bce000-7fcdd1dcd000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcd000-7fcdd1dce000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dce000-7fcdd1dcf000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcf000-7fcdd1de6000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1de6000-7fcdd1fe6000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe6000-7fcdd1fe7000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe7000-7fcdd1fe8000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe8000-7fcdd1fea000 rw-p 00000000 00:00 0 
+7fcdd1fea000-7fcdd21a5000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd21a5000-7fcdd23a5000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a5000-7fcdd23a9000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a9000-7fcdd23ab000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23ab000-7fcdd23b0000 rw-p 00000000 00:00 0 
+7fcdd23b0000-7fcdd2b9a000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2b9a000-7fcdd2d99000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2d99000-7fcdd2e2b000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e2b000-7fcdd2e35000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e35000-7fcdd2e51000 rw-p 00000000 00:00 0 
+7fcdd2e51000-7fcdd2e69000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd2e69000-7fcdd3068000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3068000-7fcdd3069000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3069000-7fcdd306a000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd306a000-7fcdd30a7000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd30a7000-7fcdd32a6000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a6000-7fcdd32a7000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a7000-7fcdd32a8000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a8000-7fcdd32b1000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd32b1000-7fcdd34b1000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b1000-7fcdd34b2000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b2000-7fcdd34b3000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b3000-7fcdd34e1000 rw-p 00000000 00:00 0 
+7fcdd34e1000-7fcdd34fa000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd34fa000-7fcdd36f9000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36f9000-7fcdd36fa000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fa000-7fcdd36fb000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fb000-7fcdd36ff000 rw-p 00000000 00:00 0 
+7fcdd36ff000-7fcdd3722000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3738000-7fcdd376d000 rw-p 00000000 00:00 0 
+7fcdd376d000-7fcdd3905000 rw-p 00000000 00:00 0 
+7fcdd391c000-7fcdd391d000 rw-p 00000000 00:00 0 
+7fcdd391d000-7fcdd391e000 rw-s 00000000 00:04 105790                     /dev/zero (deleted)
+7fcdd391e000-7fcdd3921000 rw-p 00000000 00:00 0 
+7fcdd3921000-7fcdd3922000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3922000-7fcdd3923000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3923000-7fcdd3924000 rw-p 00000000 00:00 0 
+7fff8437b000-7fff8439c000 rw-p 00000000 00:00 0                          [stack]
+7fff843fe000-7fff84400000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 05:42:22 [alert] 21936#0: worker process 21942 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fcdd205de0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fcdd20f57dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fcdd20f46a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fcdd20f3b00]
+nginx: worker process[0x46568a]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fcdd200bec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00dca000-00f77000 rw-p 00000000 00:00 0                                  [heap]
+00f77000-00fa8000 rw-p 00000000 00:00 0                                  [heap]
+7fcdd073f000-7fcdd0755000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0755000-7fcdd0954000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0954000-7fcdd0955000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd096f000-7fcdd133d000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fcdd133d000-7fcdd135e000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd135e000-7fcdd155d000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155d000-7fcdd155e000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155e000-7fcdd155f000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155f000-7fcdd16bb000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd16bb000-7fcdd18ba000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18ba000-7fcdd18c2000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c2000-7fcdd18c4000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c4000-7fcdd18c5000 rw-p 00000000 00:00 0 
+7fcdd18c5000-7fcdd18c8000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd18c8000-7fcdd1ac7000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac7000-7fcdd1ac8000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac8000-7fcdd1ac9000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac9000-7fcdd1bce000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1bce000-7fcdd1dcd000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcd000-7fcdd1dce000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dce000-7fcdd1dcf000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcf000-7fcdd1de6000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1de6000-7fcdd1fe6000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe6000-7fcdd1fe7000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe7000-7fcdd1fe8000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe8000-7fcdd1fea000 rw-p 00000000 00:00 0 
+7fcdd1fea000-7fcdd21a5000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd21a5000-7fcdd23a5000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a5000-7fcdd23a9000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a9000-7fcdd23ab000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23ab000-7fcdd23b0000 rw-p 00000000 00:00 0 
+7fcdd23b0000-7fcdd2b9a000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2b9a000-7fcdd2d99000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2d99000-7fcdd2e2b000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e2b000-7fcdd2e35000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e35000-7fcdd2e51000 rw-p 00000000 00:00 0 
+7fcdd2e51000-7fcdd2e69000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd2e69000-7fcdd3068000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3068000-7fcdd3069000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3069000-7fcdd306a000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd306a000-7fcdd30a7000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd30a7000-7fcdd32a6000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a6000-7fcdd32a7000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a7000-7fcdd32a8000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a8000-7fcdd32b1000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd32b1000-7fcdd34b1000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b1000-7fcdd34b2000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b2000-7fcdd34b3000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b3000-7fcdd34e1000 rw-p 00000000 00:00 0 
+7fcdd34e1000-7fcdd34fa000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd34fa000-7fcdd36f9000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36f9000-7fcdd36fa000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fa000-7fcdd36fb000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fb000-7fcdd36ff000 rw-p 00000000 00:00 0 
+7fcdd36ff000-7fcdd3722000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3738000-7fcdd376d000 rw-p 00000000 00:00 0 
+7fcdd376d000-7fcdd3905000 rw-p 00000000 00:00 0 
+7fcdd391c000-7fcdd391d000 rw-p 00000000 00:00 0 
+7fcdd391d000-7fcdd391e000 rw-s 00000000 00:04 105790                     /dev/zero (deleted)
+7fcdd391e000-7fcdd3921000 rw-p 00000000 00:00 0 
+7fcdd3921000-7fcdd3922000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3922000-7fcdd3923000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3923000-7fcdd3924000 rw-p 00000000 00:00 0 
+7fff8437b000-7fff8439c000 rw-p 00000000 00:00 0                          [stack]
+7fff843fe000-7fff84400000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 06:40:11 [alert] 21936#0: worker process 21951 exited on signal 6 (core dumped)
+*** buffer overflow detected ***: nginx: worker process terminated
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x73e0f)[0x7fcdd205de0f]
+/lib/x86_64-linux-gnu/libc.so.6(__fortify_fail+0x5c)[0x7fcdd20f57dc]
+/lib/x86_64-linux-gnu/libc.so.6(+0x10a6a0)[0x7fcdd20f46a0]
+/lib/x86_64-linux-gnu/libc.so.6(__stpncpy_chk+0x0)[0x7fcdd20f3b00]
+nginx: worker process[0x46568a]
+nginx: worker process[0x429325]
+nginx: worker process[0x424603]
+nginx: worker process[0x424712]
+nginx: worker process[0x42c06b]
+nginx: worker process[0x42e0b1]
+nginx: worker process[0x42e373]
+nginx: worker process[0x42ea5d]
+nginx: worker process[0x4210c6]
+nginx: worker process[0x419cdc]
+nginx: worker process[0x41f8c3]
+nginx: worker process[0x41e3d6]
+nginx: worker process[0x4204e8]
+nginx: worker process[0x404440]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0x7fcdd200bec5]
+nginx: worker process[0x403199]
+======= Memory map: ========
+00400000-00482000 r-xp 00000000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00681000-00682000 r--p 00081000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00682000-00692000 rw-p 00082000 08:01 1316844                            /home/tigran/Desktop/toxic/nginx_bin/sbin/nginx
+00692000-006a1000 rw-p 00000000 00:00 0 
+00dca000-00f77000 rw-p 00000000 00:00 0                                  [heap]
+00f77000-00fa8000 rw-p 00000000 00:00 0                                  [heap]
+7fcdd073f000-7fcdd0755000 r-xp 00000000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0755000-7fcdd0954000 ---p 00016000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd0954000-7fcdd0955000 rw-p 00015000 08:01 4067247                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fcdd096f000-7fcdd133d000 r--p 00000000 08:01 4461294                    /usr/lib/locale/locale-archive
+7fcdd133d000-7fcdd135e000 r-xp 00000000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd135e000-7fcdd155d000 ---p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155d000-7fcdd155e000 r--p 00020000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155e000-7fcdd155f000 rw-p 00021000 08:01 4067317                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7fcdd155f000-7fcdd16bb000 r-xp 00000000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd16bb000-7fcdd18ba000 ---p 0015c000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18ba000-7fcdd18c2000 r--p 0015b000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c2000-7fcdd18c4000 rw-p 00163000 08:01 4459728                    /usr/lib/x86_64-linux-gnu/libxml2.so.2.9.1
+7fcdd18c4000-7fcdd18c5000 rw-p 00000000 00:00 0 
+7fcdd18c5000-7fcdd18c8000 r-xp 00000000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd18c8000-7fcdd1ac7000 ---p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac7000-7fcdd1ac8000 r--p 00002000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac8000-7fcdd1ac9000 rw-p 00003000 08:01 4067240                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fcdd1ac9000-7fcdd1bce000 r-xp 00000000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1bce000-7fcdd1dcd000 ---p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcd000-7fcdd1dce000 r--p 00104000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dce000-7fcdd1dcf000 rw-p 00105000 08:01 4064236                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fcdd1dcf000-7fcdd1de6000 r-xp 00000000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1de6000-7fcdd1fe6000 ---p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe6000-7fcdd1fe7000 r--p 00017000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe7000-7fcdd1fe8000 rw-p 00018000 08:01 4063330                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fcdd1fe8000-7fcdd1fea000 rw-p 00000000 00:00 0 
+7fcdd1fea000-7fcdd21a5000 r-xp 00000000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd21a5000-7fcdd23a5000 ---p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a5000-7fcdd23a9000 r--p 001bb000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23a9000-7fcdd23ab000 rw-p 001bf000 08:01 4063337                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fcdd23ab000-7fcdd23b0000 rw-p 00000000 00:00 0 
+7fcdd23b0000-7fcdd2b9a000 r-xp 00000000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2b9a000-7fcdd2d99000 ---p 007ea000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2d99000-7fcdd2e2b000 r--p 007e9000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e2b000-7fcdd2e35000 rw-p 0087b000 08:01 1847802                    /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.so
+7fcdd2e35000-7fcdd2e51000 rw-p 00000000 00:00 0 
+7fcdd2e51000-7fcdd2e69000 r-xp 00000000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd2e69000-7fcdd3068000 ---p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3068000-7fcdd3069000 r--p 00017000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd3069000-7fcdd306a000 rw-p 00018000 08:01 4067431                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fcdd306a000-7fcdd30a7000 r-xp 00000000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd30a7000-7fcdd32a6000 ---p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a6000-7fcdd32a7000 r--p 0003c000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a7000-7fcdd32a8000 rw-p 0003d000 08:01 4067373                    /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7fcdd32a8000-7fcdd32b1000 r-xp 00000000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd32b1000-7fcdd34b1000 ---p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b1000-7fcdd34b2000 r--p 00009000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b2000-7fcdd34b3000 rw-p 0000a000 08:01 4064239                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7fcdd34b3000-7fcdd34e1000 rw-p 00000000 00:00 0 
+7fcdd34e1000-7fcdd34fa000 r-xp 00000000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd34fa000-7fcdd36f9000 ---p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36f9000-7fcdd36fa000 r--p 00018000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fa000-7fcdd36fb000 rw-p 00019000 08:01 4067285                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fcdd36fb000-7fcdd36ff000 rw-p 00000000 00:00 0 
+7fcdd36ff000-7fcdd3722000 r-xp 00000000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3738000-7fcdd376d000 rw-p 00000000 00:00 0 
+7fcdd376d000-7fcdd3905000 rw-p 00000000 00:00 0 
+7fcdd391c000-7fcdd391d000 rw-p 00000000 00:00 0 
+7fcdd391d000-7fcdd391e000 rw-s 00000000 00:04 105790                     /dev/zero (deleted)
+7fcdd391e000-7fcdd3921000 rw-p 00000000 00:00 0 
+7fcdd3921000-7fcdd3922000 r--p 00022000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3922000-7fcdd3923000 rw-p 00023000 08:01 4063338                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fcdd3923000-7fcdd3924000 rw-p 00000000 00:00 0 
+7fff8437b000-7fff8439c000 rw-p 00000000 00:00 0                          [stack]
+7fff843fe000-7fff84400000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+2014/11/13 06:40:38 [alert] 21936#0: worker process 22424 exited on signal 6 (core dumped)
+2014/11/13 07:10:44 [emerg] 22907#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 07:10:44 [emerg] 22907#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 07:10:44 [emerg] 22907#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/13 07:11:03 [alert] 22870#0: worker process 22871 exited on signal 9
+2014/11/14 00:22:37 [emerg] 5300#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/14 00:40:31 [alert] 5310#0: worker process 5311 exited on signal 11 (core dumped)
+2014/11/16 02:39:28 [alert] 9682#0: worker process 9683 exited on signal 11 (core dumped)
+2014/11/16 02:39:58 [alert] 22796#0: worker process 22797 exited on signal 11 (core dumped)
+2014/11/16 02:39:58 [alert] 22796#0: worker process 22808 exited on signal 11 (core dumped)
+2014/11/16 02:39:58 [alert] 22796#0: worker process 22810 exited on signal 11 (core dumped)
+2014/11/16 02:40:04 [alert] 22796#0: worker process 22812 exited on signal 11 (core dumped)
+2014/11/16 02:40:34 [alert] 22796#0: worker process 22814 exited on signal 11 (core dumped)
+2014/11/16 02:41:07 [alert] 22796#0: worker process 22841 exited on signal 11 (core dumped)
+2014/11/16 02:42:08 [alert] 29171#0: worker process 29172 exited on signal 11 (core dumped)
+2014/11/16 02:42:08 [alert] 29171#0: worker process 29186 exited on signal 11 (core dumped)
+2014/11/16 02:43:08 [alert] 29171#0: worker process 29188 exited on signal 11 (core dumped)
+2014/11/16 02:45:30 [alert] 29171#0: worker process 29194 exited on signal 11 (core dumped)
+2014/11/16 02:55:14 [alert] 35628#0: worker process 35629 exited on signal 11 (core dumped)
+2014/11/16 02:58:05 [alert] 42173#0: worker process 42174 exited on signal 11 (core dumped)
+2014/11/16 02:59:30 [alert] 48616#0: worker process 48617 exited on signal 11 (core dumped)
+2014/11/16 03:02:00 [alert] 48616#0: worker process 48631 exited on signal 11 (core dumped)
+2014/11/16 03:05:52 [alert] 54972#0: worker process 54973 exited on signal 9
+2014/11/16 03:06:34 [alert] 61418#0: worker process 61419 exited on signal 11 (core dumped)
+2014/11/16 03:10:58 [alert] 61418#0: worker process 61428 exited on signal 11 (core dumped)
+2014/11/16 03:35:11 [alert] 2735#0: worker process 2736 exited on signal 11 (core dumped)
+2014/11/16 04:14:02 [alert] 9665#0: worker process 9666 exited on signal 11 (core dumped)
+2014/11/16 04:17:30 [alert] 23339#0: worker process 23340 exited on signal 11 (core dumped)
+2014/11/16 04:28:44 [emerg] 36088#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/16 04:28:44 [emerg] 36088#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/16 04:28:44 [emerg] 36088#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/16 04:28:52 [alert] 29682#0: worker process 29683 exited on signal 9
+2014/11/16 04:48:09 [alert] 36114#0: worker process 36115 exited on signal 11 (core dumped)
+2014/11/16 05:28:23 [emerg] 16155#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/16 05:28:24 [alert] 61977#0: worker process 61978 exited on signal 11 (core dumped)
+2014/11/16 05:29:35 [alert] 16163#0: worker process 16164 exited on signal 11 (core dumped)
+2014/11/16 05:31:10 [alert] 16246#0: worker process 16247 exited on signal 11 (core dumped)
+2014/11/16 05:43:43 [alert] 16436#0: worker process 16437 exited on signal 11 (core dumped)
+2014/11/16 05:44:35 [alert] 16492#0: worker process 16493 exited on signal 11 (core dumped)
+2014/11/16 05:44:36 [alert] 16492#0: worker process 16495 exited on signal 11 (core dumped)
+2014/11/16 05:44:37 [alert] 16492#0: worker process 16497 exited on signal 11 (core dumped)
+2014/11/16 05:44:38 [alert] 16492#0: worker process 16499 exited on signal 11 (core dumped)
+2014/11/16 05:44:39 [alert] 16492#0: worker process 16502 exited on signal 11 (core dumped)
+2014/11/16 05:44:40 [alert] 16492#0: worker process 16504 exited on signal 11 (core dumped)
+2014/11/16 05:44:40 [alert] 16492#0: worker process 16506 exited on signal 11 (core dumped)
+2014/11/16 05:44:41 [alert] 16492#0: worker process 16508 exited on signal 11 (core dumped)
+2014/11/16 05:44:46 [alert] 16492#0: worker process 16510 exited on signal 11 (core dumped)
+2014/11/16 05:44:47 [alert] 16492#0: worker process 16512 exited on signal 11 (core dumped)
+2014/11/16 05:44:48 [alert] 16492#0: worker process 16514 exited on signal 11 (core dumped)
+2014/11/16 05:44:48 [alert] 16492#0: worker process 16516 exited on signal 11 (core dumped)
+2014/11/16 05:45:39 [alert] 16492#0: worker process 16518 exited on signal 11 (core dumped)
+2014/11/16 05:45:41 [alert] 16492#0: worker process 16524 exited on signal 11 (core dumped)
+2014/11/16 05:45:42 [alert] 16492#0: worker process 16526 exited on signal 11 (core dumped)
+2014/11/16 05:48:04 [alert] 16625#0: worker process 16626 exited on signal 11 (core dumped)
+2014/11/16 05:48:07 [alert] 16625#0: worker process 16628 exited on signal 11 (core dumped)
+2014/11/16 05:48:08 [alert] 16625#0: worker process 16631 exited on signal 11 (core dumped)
+2014/11/16 05:48:10 [alert] 16625#0: worker process 16633 exited on signal 11 (core dumped)
+2014/11/16 05:48:11 [alert] 16625#0: worker process 16635 exited on signal 11 (core dumped)
+2014/11/16 05:48:11 [alert] 16625#0: worker process 16637 exited on signal 11 (core dumped)
+2014/11/16 05:48:12 [alert] 16625#0: worker process 16640 exited on signal 11 (core dumped)
+2014/11/16 05:50:12 [alert] 16625#0: worker process 16642 exited on signal 11 (core dumped)
+2014/11/16 05:55:23 [alert] 16752#0: worker process 16753 exited on signal 11 (core dumped)
+2014/11/16 05:55:25 [alert] 16752#0: worker process 16755 exited on signal 11 (core dumped)
+2014/11/16 05:56:05 [alert] 16769#0: worker process 16770 exited on signal 11 (core dumped)
+2014/11/16 05:56:19 [alert] 16769#0: worker process 16773 exited on signal 11 (core dumped)
+2014/11/16 05:56:19 [alert] 16769#0: worker process 16776 exited on signal 11 (core dumped)
+2014/11/16 05:56:20 [alert] 16769#0: worker process 16778 exited on signal 11 (core dumped)
+2014/11/16 05:58:05 [alert] 16769#0: worker process 16780 exited on signal 11 (core dumped)
+2014/11/16 06:17:31 [alert] 17071#0: worker process 17072 exited on signal 11 (core dumped)
+2014/11/16 06:17:32 [alert] 17071#0: worker process 17074 exited on signal 11 (core dumped)
+2014/11/16 06:17:37 [alert] 17071#0: worker process 17076 exited on signal 11 (core dumped)
+2014/11/16 06:17:37 [alert] 17071#0: worker process 17079 exited on signal 11 (core dumped)
