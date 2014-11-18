@@ -227,7 +227,13 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         else
         {
             base_str = (char*)malloc(sizeof(char) * len);
-            strncpy(base_str, str, len);
+//            strncpy(base_str, str, len);
+            unsigned int i;
+            for(i=0;i<len;i++)
+            {
+                base_str[i] = str[i];
+            }
+            base_str[len] = '\0';
         }
         base_len += len;
     };
@@ -262,7 +268,16 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         zval *ret_val, *url_arg, *request_index_arg;
         MAKE_STD_ZVAL(url_arg);
         MAKE_STD_ZVAL(request_index_arg);
-        ZVAL_STRING(url_arg, (char *)r->uri.data, strlen((const char *)r->uri.data));
+        int k;
+        url_arg->value.str.val = malloc(sizeof(char) * r->uri.len);
+        for(k=0;k<(int)r->uri.len; k++)
+        {
+            url_arg->value.str.val[k] = (char)r->uri.data[k];
+        }
+        url_arg->value.str.val[r->uri.len] = '\0';
+        url_arg->value.str.len = (int)r->uri.len;
+        url_arg->type = IS_STRING;
+//        ZVAL_STRING(url_arg, (char *)r->uri.data, r->uri.len);
         ZVAL_STRING(request_index_arg, output.key, strlen(output.key));
         start_args[0] = &url_arg;
         start_args[1] = &request_index_arg;

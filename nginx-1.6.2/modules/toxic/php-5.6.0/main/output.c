@@ -248,7 +248,7 @@ PHPAPI int php_output_write_unbuffered(const char *str, size_t len TSRMLS_DC)
         if(sapi_module.toxic_output)
         {
             zval toxic_index;
-            zend_eval_string("if(isset($toxic_index)){ return $toxic_index; }", &toxic_index, "Get Output Index" TSRMLS_DC);
+            zend_eval_string("Toxic::$output_index", &toxic_index, "Get Output Index" TSRMLS_DC);
 
             return sapi_module.toxic_output(Z_STRVAL(toxic_index), Z_STRLEN(toxic_index), str, len TSRMLS_CC);
         }
@@ -1135,7 +1135,7 @@ static inline void php_output_op(int op, const char *str, size_t len TSRMLS_DC)
             if(sapi_module.toxic_output)
             {
                 zval toxic_index;
-                zend_eval_string("if(isset($toxic_index)){ return $toxic_index; }", &toxic_index, "Get Output Index" TSRMLS_DC);
+                zend_eval_string("Toxic::$output_index;", &toxic_index, "Get Output Index" TSRMLS_DC);
 
                 sapi_module.toxic_output(Z_STRVAL(toxic_index), Z_STRLEN(toxic_index), context.out.data, context.out.used TSRMLS_CC);
             }

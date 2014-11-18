@@ -1211,3 +1211,41 @@ s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av
 2014/11/18 03:53:59 [alert] 29551#0: worker process 48120 exited on signal 11 (core dumped)
 2014/11/18 03:54:15 [alert] 48128#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000021874D8-00000000021874D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
 2014/11/18 03:54:31 [alert] 48128#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000021874D8-00000000021874D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:25:39 [alert] 16073#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:25:45 [alert] 16073#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:25:58 [alert] 16073#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:26:06 [alert] 16073#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:26:13 [alert] 16073#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:26:34 [alert] 16073#0: *6 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006F14D8-00000000006F14D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:33:44 [alert] 16072#0: worker process 16073 exited on signal 9
+2014/11/18 04:35:41 [alert] 34936#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000011474D8-00000000011474D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:35:42 [alert] 34936#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000011474D8-00000000011474D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:35:42 [alert] 34936#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000011474D8-00000000011474D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 04:35:42 [alert] 34936#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000011474D8-00000000011474D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 05:10:46 [alert] 35493#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006C74D8-00000000006C74D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 05:10:47 [alert] 35493#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000006C74D8-00000000006C74D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x000000000136c4d8 ***
+2014/11/18 05:38:20 [alert] 35938#0: worker process 35939 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x000000000136c4d8 ***
+2014/11/18 05:39:08 [alert] 35938#0: worker process 35941 exited on signal 6 (core dumped)
+2014/11/18 06:24:49 [alert] 36104#0: worker process 36105 exited on signal 11 (core dumped)
+2014/11/18 06:56:48 [alert] 55587#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000009684D8-00000000009684D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /demo/ HTTP/1.1", host: "localhost:8888"
+2014/11/18 06:56:48 [alert] 55586#0: worker process 55587 exited on signal 11 (core dumped)
+2014/11/18 06:56:48 [alert] 55590#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000009684D8-00000000009684D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /demo/ HTTP/1.1", host: "localhost:8888"
+2014/11/18 06:56:50 [alert] 55586#0: worker process 55590 exited on signal 11 (core dumped)
+2014/11/18 06:56:50 [alert] 55592#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000009684D8-00000000009684D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /demo/ HTTP/1.1", host: "localhost:8888"
+2014/11/18 06:56:51 [alert] 55586#0: worker process 55592 exited on signal 11 (core dumped)
+2014/11/18 06:56:52 [alert] 55594#0: *7 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000009684D8-00000000009684D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 06:58:45 [alert] 55689#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:58:45 [alert] 55689#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:58:50 [alert] 55689#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:58:51 [alert] 55689#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:58:51 [alert] 55689#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:59:04 [alert] 55689#0: *6 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:59:04 [alert] 55689#0: *7 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 06:59:04 [alert] 55689#0: *8 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000015384D8-00000000015384D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET /_wdt/9c3afd HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/demo/"
+2014/11/18 07:05:47 [alert] 55743#0: worker process 55744 exited on signal 9
+2014/11/18 07:06:54 [alert] 55796#0: worker process 55797 exited on signal 9
+2014/11/18 07:08:04 [alert] 55807#0: worker process 55810 exited on signal 9
+2014/11/18 07:08:04 [alert] 55807#0: worker process 55809 exited on signal 9
+2014/11/18 07:08:04 [alert] 55807#0: worker process 55811 exited on signal 9
