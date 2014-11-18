@@ -214,45 +214,47 @@ static void ngx_http_toxic_body_handler ( ngx_http_request_t *r ) {
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
+
+    char * base_str;
+    int base_len = 0;
+
     void callback_output(const char *str, unsigned int len) {
-        ngx_chain_t  out;
-        ngx_buf_t   *b;
-        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
-        if (b == NULL) {
-            return;
+        if(base_len > 0)
+        {
+            base_str = (char*)realloc(base_str, sizeof(char) * (len + base_len));
+            strncat(base_str, str, len);
         }
-
-        /* attach this buffer to the buffer chain */
-        out.buf = b;
-        out.next = NULL;
-
-        /* adjust the pointers of the buffer */
-        b->pos = (u_char*)str;
-        b->last = (u_char*)str + len;
-        b->memory = 1;    /* this buffer is in memory */
-        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
-
-        /* set the status line */
-        r->headers_out.status = NGX_HTTP_OK;
-
-        /* send the buffer chain of your response */
-        ngx_http_output_filter(r, &out);
+        else
+        {
+            base_str = (char*)malloc(sizeof(char) * len);
+            strncpy(base_str, str, len);
+        }
+        base_len += len;
     };
     ngx_int_t    rc;
 //    ngx_buf_t   *b;
 //    ngx_chain_t  out;
 //    ngx_str_t ret_data;
 
-    rc = ngx_http_read_client_request_body(r,ngx_http_toxic_body_handler);
+    if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
 
-    if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-            return rc;
+        rc = ngx_http_read_client_request_body(r,ngx_http_toxic_body_handler);
+        if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
+                return rc;
+        }
+
+        zval **post;
+
+        zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
+        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
+
     }
+
 
 
     toxic_request_callback output;
     output.callback = callback_output;
-    output.key = "0123456789";
+    output.key = toxic_random_string(10);
 
     callbacks[0] = output;
 
@@ -264,30 +266,36 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         ZVAL_STRING(request_index_arg, output.key, strlen(output.key));
         start_args[0] = &url_arg;
         start_args[1] = &request_index_arg;
-        zval **post;
 
-        zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
-        add_assoc_stringl_ex(*post, (const char*) "post_var12", 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
-//        zend_eval_string(new_call_text, &ret_val, post_variable TSRMLS_CC);
         call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 2, start_args, 0, NULL TSRMLS_CC);
 
-//        if (Z_STRLEN(*ret_val) > 0) {
-//            ret_data.data = (u_char*)Z_STRVAL(ret_val[0]);
-//            ret_data.len = Z_STRLEN(ret_val[0]);
+        r->headers_out.content_type_len = sizeof("text/html") - 1;
+        r->headers_out.content_type.data = (u_char *) "text/html";
+        r->headers_out.status = NGX_HTTP_OK;
+        r->headers_out.content_length_n = base_len;
+        ngx_http_send_header(r);
 
-//        } else {
-//            ret_data.data = (u_char*)"$output is not defined.";
-//            ret_data.len = strlen("$output is not defined.");
-//        }
-//        zend_rebuild_symbol_table();
-//    }
-//    else
-//    {
-//        ret_data.data = (u_char*)"12345";
-//        ret_data.len = 5;
-//    }
 
-    return 0;
+        ngx_buf_t   *b;
+        ngx_chain_t  out;
+        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
+        if (b == NULL) {
+            return 0;
+        }
+        out.buf = b;
+        out.next = NULL;
+
+        /* adjust the pointers of the buffer */
+        b->pos = (u_char*)base_str;
+        b->last = (u_char*)base_str + base_len;
+        b->memory = 1;    /* this buffer is in memory */
+        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
+
+        /* send the buffer chain of your response */
+
+
+
+    return ngx_http_output_filter(r, &out);
 }
 
 /*

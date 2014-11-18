@@ -1034,3 +1034,180 @@ ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsysca
 2014/11/16 06:17:32 [alert] 17071#0: worker process 17074 exited on signal 11 (core dumped)
 2014/11/16 06:17:37 [alert] 17071#0: worker process 17076 exited on signal 11 (core dumped)
 2014/11/16 06:17:37 [alert] 17071#0: worker process 17079 exited on signal 11 (core dumped)
+2014/11/16 14:08:16 [alert] 3282#0: worker process 3283 exited on signal 11 (core dumped)
+2014/11/16 14:08:17 [alert] 3282#0: worker process 3377 exited on signal 11 (core dumped)
+2014/11/16 14:08:17 [alert] 3282#0: worker process 3388 exited on signal 11 (core dumped)
+2014/11/16 14:08:17 [alert] 3282#0: worker process 3390 exited on signal 11 (core dumped)
+2014/11/16 14:08:17 [alert] 3282#0: worker process 3392 exited on signal 11 (core dumped)
+2014/11/16 14:08:20 [alert] 3282#0: worker process 3396 exited on signal 11 (core dumped)
+2014/11/16 14:08:56 [alert] 3282#0: worker process 3398 exited on signal 11 (core dumped)
+2014/11/16 14:09:55 [alert] 3510#0: worker process 3511 exited on signal 11 (core dumped)
+2014/11/16 14:09:56 [alert] 3510#0: worker process 3513 exited on signal 11 (core dumped)
+2014/11/16 14:09:57 [alert] 3510#0: worker process 3515 exited on signal 11 (core dumped)
+2014/11/16 14:09:58 [alert] 3510#0: worker process 3517 exited on signal 11 (core dumped)
+2014/11/16 14:10:48 [alert] 3510#0: worker process 3519 exited on signal 11 (core dumped)
+2014/11/16 14:11:30 [alert] 3556#0: worker process 3557 exited on signal 11 (core dumped)
+2014/11/16 14:11:31 [alert] 3556#0: worker process 3559 exited on signal 11 (core dumped)
+2014/11/16 14:12:12 [alert] 3556#0: worker process 3562 exited on signal 11 (core dumped)
+2014/11/16 14:15:43 [alert] 3630#0: worker process 3631 exited on signal 9
+2014/11/16 14:18:13 [alert] 3749#0: worker process 3750 exited on signal 11 (core dumped)
+2014/11/16 14:18:15 [alert] 3749#0: worker process 3752 exited on signal 11 (core dumped)
+2014/11/16 14:18:47 [alert] 3749#0: worker process 3754 exited on signal 11 (core dumped)
+2014/11/16 14:19:41 [alert] 3749#0: worker process 3758 exited on signal 11 (core dumped)
+2014/11/17 02:37:37 [alert] 4683#0: *1 the http output chain is empty, client: 127.0.0.1, server: localhost, request: "POST / HTTP/1.1", host: "localhost:8888"
+2014/11/17 02:37:38 [alert] 4683#0: *2 the http output chain is empty, client: 127.0.0.1, server: localhost, request: "POST / HTTP/1.1", host: "localhost:8888"
+2014/11/17 02:37:48 [alert] 4683#0: *3 the http output chain is empty, client: 127.0.0.1, server: localhost, request: "POST / HTTP/1.1", host: "localhost:8888"
+2014/11/17 02:38:47 [alert] 4683#0: *4 the http output chain is empty, client: 127.0.0.1, server: localhost, request: "POST / HTTP/1.1", host: "localhost:8888"
+2014/11/17 03:19:47 [alert] 5509#0: worker process 5510 exited on signal 7 (core dumped)
+2014/11/17 03:19:49 [alert] 5509#0: worker process 5512 exited on signal 7 (core dumped)
+2014/11/17 03:20:26 [alert] 5509#0: worker process 5514 exited on signal 7 (core dumped)
+2014/11/17 03:20:50 [alert] 5589#0: worker process 5590 exited on signal 7 (core dumped)
+2014/11/17 03:20:52 [alert] 5589#0: worker process 5592 exited on signal 7 (core dumped)
+2014/11/17 03:25:20 [alert] 5693#0: worker process 5694 exited on signal 7 (core dumped)
+2014/11/17 03:25:22 [alert] 5693#0: worker process 5696 exited on signal 7 (core dumped)
+*** Error in `nginx: worker process': malloc(): memory corruption: 0x000000000143ddd0 ***
+2014/11/17 04:12:44 [alert] 6484#0: worker process 6485 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': malloc(): memory corruption: 0x000000000143ddd0 ***
+2014/11/17 04:12:45 [alert] 6484#0: worker process 6489 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': malloc(): memory corruption: 0x000000000143ddd0 ***
+2014/11/17 04:13:54 [alert] 6484#0: worker process 6491 exited on signal 6 (core dumped)
+2014/11/17 04:19:27 [alert] 6608#0: worker process 6609 exited on signal 11 (core dumped)
+2014/11/17 04:19:27 [alert] 6608#0: worker process 6659 exited on signal 11 (core dumped)
+2014/11/17 04:19:28 [alert] 6608#0: worker process 6661 exited on signal 11 (core dumped)
+2014/11/17 04:19:29 [alert] 6608#0: worker process 6673 exited on signal 11 (core dumped)
+2014/11/17 04:19:29 [alert] 6608#0: worker process 6675 exited on signal 11 (core dumped)
+2014/11/17 04:19:30 [alert] 6608#0: worker process 6679 exited on signal 11 (core dumped)
+2014/11/17 04:19:30 [alert] 6608#0: worker process 6681 exited on signal 11 (core dumped)
+2014/11/17 04:22:19 [alert] 6775#0: worker process 6776 exited on signal 11 (core dumped)
+2014/11/17 04:22:19 [alert] 6775#0: worker process 6802 exited on signal 11 (core dumped)
+2014/11/17 04:22:19 [alert] 6775#0: worker process 6805 exited on signal 11 (core dumped)
+2014/11/17 04:22:20 [alert] 6775#0: worker process 6809 exited on signal 11 (core dumped)
+2014/11/17 04:22:55 [alert] 6775#0: worker process 6811 exited on signal 11 (core dumped)
+2014/11/17 04:22:57 [alert] 6775#0: worker process 6826 exited on signal 11 (core dumped)
+2014/11/17 04:23:26 [alert] 6775#0: worker process 6828 exited on signal 11 (core dumped)
+*** Error in `nginx: worker process': malloc(): memory corruption: 0x0000000000a20a80 ***
+2014/11/17 04:24:11 [alert] 6878#0: worker process 6879 exited on signal 6 (core dumped)
+2014/11/17 04:26:09 [alert] 6878#0: worker process 6883 exited on signal 11 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:31:23 [alert] 6954#0: worker process 6955 exited on signal 6 (core dumped)
+2014/11/17 04:44:42 [alert] 7085#0: worker process 7086 exited on signal 11 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:51:57 [alert] 7311#0: worker process 7312 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:51:58 [alert] 7311#0: worker process 7314 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:51:59 [alert] 7311#0: worker process 7316 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:52:04 [alert] 7311#0: worker process 7318 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:52:34 [alert] 7311#0: worker process 7321 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:53:35 [alert] 7311#0: worker process 7325 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:55:33 [alert] 7311#0: worker process 7331 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 04:55:34 [alert] 7311#0: worker process 7347 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:03:20 [alert] 7455#0: worker process 7456 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:03:21 [alert] 7455#0: worker process 7458 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:03:23 [alert] 7455#0: worker process 7460 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:03:24 [alert] 7455#0: worker process 7462 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:07:29 [alert] 7455#0: worker process 7464 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': free(): invalid pointer: 0x0000000000e054a8 ***
+2014/11/17 05:07:29 [alert] 7455#0: worker process 7494 exited on signal 6 (core dumped)
+2014/11/17 05:08:52 [alert] 7558#0: worker process 7559 exited on signal 11 (core dumped)
+2014/11/17 05:08:52 [alert] 7558#0: worker process 7561 exited on signal 11 (core dumped)
+2014/11/17 05:08:53 [alert] 7558#0: worker process 7563 exited on signal 11 (core dumped)
+2014/11/17 05:08:58 [alert] 7558#0: worker process 7565 exited on signal 11 (core dumped)
+2014/11/17 05:09:43 [alert] 7558#0: worker process 7567 exited on signal 11 (core dumped)
+2014/11/17 05:09:44 [alert] 7558#0: worker process 7590 exited on signal 11 (core dumped)
+2014/11/17 05:10:14 [alert] 7558#0: worker process 7592 exited on signal 11 (core dumped)
+2014/11/17 05:10:39 [alert] 7604#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:39 [alert] 7604#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:39 [alert] 7604#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:40 [alert] 7604#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:40 [alert] 7604#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:40 [alert] 7604#0: *6 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:10:41 [alert] 7604#0: *7 zero size buf in writer t:0 r:0 f:0 0000000000000000 000000000074E4A8-000000000074E4A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 05:12:52 [alert] 7621#0: worker process 7622 exited on signal 11 (core dumped)
+2014/11/17 05:12:53 [alert] 7621#0: worker process 7625 exited on signal 11 (core dumped)
+2014/11/17 05:14:02 [alert] 7621#0: worker process 7627 exited on signal 11 (core dumped)
+2014/11/17 05:49:39 [emerg] 8081#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/17 05:49:39 [emerg] 8081#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/17 05:49:39 [emerg] 8081#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x0000000000dc94a8 ***
+2014/11/17 08:11:36 [alert] 9462#0: worker process 9463 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x0000000000dc94a8 ***
+2014/11/17 08:12:14 [alert] 9462#0: worker process 9465 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x00000000010c54a8 ***
+2014/11/17 08:13:12 [alert] 9524#0: worker process 9525 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x00000000010c54a8 ***
+2014/11/17 08:13:13 [alert] 9524#0: worker process 9527 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid pointer: 0x00000000010c54a8 ***
+2014/11/17 08:13:47 [alert] 9524#0: worker process 9529 exited on signal 6 (core dumped)
+2014/11/17 08:14:03 [emerg] 9542#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2014/11/17 08:14:03 [emerg] 9542#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+*** Error in `nginx: worker process': realloc(): invalid next size: 0x0000000001a2bd10 ***
+2014/11/17 10:28:48 [alert] 10406#0: worker process 10407 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid next size: 0x0000000001a2bd10 ***
+2014/11/17 10:28:49 [alert] 10406#0: worker process 10409 exited on signal 6 (core dumped)
+*** Error in `nginx: worker process': realloc(): invalid next size: 0x0000000001a2bd10 ***
+2014/11/17 10:29:49 [alert] 10406#0: worker process 10411 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 10:30:29 [alert] 10475#0: worker process 10476 exited on signal 6 (core dumped)
+s: malloc.c:2372: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+2014/11/17 10:30:37 [alert] 10475#0: worker process 10486 exited on signal 6 (core dumped)
+2014/11/17 10:33:13 [alert] 10520#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:13 [alert] 10520#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:13 [alert] 10520#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:15 [alert] 10520#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:16 [alert] 10520#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:16 [alert] 10520#0: *6 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:16 [alert] 10520#0: *7 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:17 [alert] 10520#0: *8 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:17 [alert] 10520#0: *9 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:17 [alert] 10520#0: *10 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:33:18 [alert] 10520#0: *11 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000C104A8-0000000000C104A8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:44:22 [alert] 10525#0: worker process 10526 exited on signal 11 (core dumped)
+2014/11/17 10:44:30 [alert] 29237#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000F734D8-0000000000F734D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:44:35 [alert] 29237#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000F734D8-0000000000F734D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:44:35 [alert] 29237#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000F734D8-0000000000F734D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:44:41 [alert] 29237#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000F734D8-0000000000F734D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 10:44:50 [alert] 29237#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000F734D8-0000000000F734D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/17 11:44:43 [alert] 29236#0: worker process 29237 exited on signal 11
+2014/11/17 13:34:57 [alert] 21957#0: worker process 21958 exited on signal 11 (core dumped)
+2014/11/17 13:40:08 [alert] 22222#0: worker process 22223 exited on signal 11 (core dumped)
+2014/11/17 13:46:06 [alert] 22321#0: worker process 22322 exited on signal 11 (core dumped)
+2014/11/18 03:17:27 [alert] 4161#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:31 [alert] 4161#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:31 [alert] 4161#0: *3 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:32 [alert] 4161#0: *4 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:34 [alert] 4161#0: *5 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:34 [alert] 4161#0: *6 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:34 [alert] 4161#0: *7 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:17:42 [alert] 4161#0: *8 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:12 [alert] 4161#0: *9 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:18 [alert] 4161#0: *10 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:19 [alert] 4161#0: *11 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:21 [alert] 4161#0: *12 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:21 [alert] 4161#0: *13 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:21 [alert] 4161#0: *14 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:22 [alert] 4161#0: *15 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:22 [alert] 4161#0: *16 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:22 [alert] 4161#0: *17 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:41 [alert] 4161#0: *18 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:18:42 [alert] 4161#0: *19 zero size buf in writer t:0 r:0 f:0 0000000000000000 0000000000CAB498-0000000000CAB498 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:39:51 [alert] 4160#0: worker process 4161 exited on signal 11 (core dumped)
+2014/11/18 03:40:02 [alert] 29448#0: worker process 29449 exited on signal 11 (core dumped)
+2014/11/18 03:40:03 [alert] 29448#0: worker process 29451 exited on signal 11 (core dumped)
+2014/11/18 03:40:59 [alert] 29448#0: worker process 29453 exited on signal 11 (core dumped)
+2014/11/18 03:43:44 [alert] 29551#0: worker process 29552 exited on signal 11 (core dumped)
+2014/11/18 03:44:14 [alert] 29551#0: worker process 29554 exited on signal 11 (core dumped)
+2014/11/18 03:53:53 [alert] 29551#0: worker process 29564 exited on signal 11 (core dumped)
+2014/11/18 03:53:59 [alert] 29551#0: worker process 48120 exited on signal 11 (core dumped)
+2014/11/18 03:54:15 [alert] 48128#0: *1 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000021874D8-00000000021874D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
+2014/11/18 03:54:31 [alert] 48128#0: *2 zero size buf in writer t:0 r:0 f:0 0000000000000000 00000000021874D8-00000000021874D8 0000000000000000 0-0, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8888"
