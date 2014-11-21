@@ -1,6 +1,6 @@
 
 CC =	cc
-CFLAGS = -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g 
+CFLAGS = -I  /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g 
 CPP =	cc -E
 LINK =	$(CC)
 
@@ -12,8 +12,7 @@ ALL_INCS = -I src/core \
 	-I objs \
 	-I src/http \
 	-I src/http/modules \
-	-I src/mail \
-	-I /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic
+	-I src/mail
 
 
 CORE_DEPS = src/core/nginx.h \
@@ -324,7 +323,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
 	objs/addon/toxic/ngx_http_toxic_module.o \
 	objs/ngx_modules.o \
-	-lpthread -lcrypt -lpcre -lz -lcrypt   -lresolv -lcrypt -lrt -lrt -lm -ldl -lnsl  -lxml2 -lxml2 -lxml2 -lcrypt -lxml2 -lxml2 -lxml2 -lcrypt -L /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/ -lphp5
+	-lpthread -lcrypt /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.a -lcrypt -lresolv -lcrypt -lrt -lrt -lm -ldl -lnsl -lxml2 -lxml2 -lxml2 -lcrypt -lxml2 -lxml2 -lxml2 -lcrypt -lpcre -lz
 	
 
 

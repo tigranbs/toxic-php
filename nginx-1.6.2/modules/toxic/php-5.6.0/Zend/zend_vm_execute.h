@@ -18,7 +18,6 @@
    +----------------------------------------------------------------------+
 */
 
-
 #ifdef ZEND_WIN32
 # pragma warning(once : 4101)
 # pragma warning(once : 6235)
@@ -2400,8 +2399,7 @@ static int ZEND_FASTCALL  ZEND_ECHO_SPEC_CONST_HANDLER(ZEND_OPCODE_HANDLER_ARGS)
 	if (IS_CONST == IS_TMP_VAR && Z_TYPE_P(z) == IS_OBJECT) {
 		INIT_PZVAL(z);
 	}
-
-    zend_print_variable(z);
+	zend_print_variable(z);
 
 	CHECK_EXCEPTION();
 	ZEND_VM_NEXT_OPCODE();

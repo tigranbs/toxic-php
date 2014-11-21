@@ -118,7 +118,7 @@ extern EMBED_SAPI_API sapi_module_struct php_embed_module = {
 	NULL,                          /* activate */
 	php_embed_deactivate,           /* deactivate */
   
-    php_embed_ub_write,             /* unbuffered write */
+	php_embed_ub_write,             /* unbuffered write */
 	php_embed_flush,                /* flush */
 	NULL,                          /* get uid */
 	NULL,                          /* getenv */

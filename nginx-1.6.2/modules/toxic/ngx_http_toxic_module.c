@@ -249,11 +249,18 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
                 return rc;
         }
 
-        zval **post;
+        zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
+        parse_post_function = out_function("parse_str");
+        MAKE_STD_ZVAL(post_data);
+        ZVAL_STRINGL(post_data, (char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
 
         zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
-        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
-
+        parse_post_args[0] = (zval **) malloc(sizeof(zval **));
+        parse_post_args[0] = &post_data;
+        parse_post_args[1] = (zval **) malloc(sizeof(zval **));
+        parse_post_args[1] = post;
+//        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
+        call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
     }
 
 
@@ -278,11 +285,13 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         url_arg->value.str.len = (int)r->uri.len;
         url_arg->type = IS_STRING;
 //        ZVAL_STRING(url_arg, (char *)r->uri.data, r->uri.len);
-        ZVAL_STRING(request_index_arg, output.key, strlen(output.key));
+        ZVAL_STRINGL(request_index_arg, output.key, strlen(output.key), 0);
         start_args[0] = &url_arg;
         start_args[1] = &request_index_arg;
 
         call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 2, start_args, 0, NULL TSRMLS_CC);
+
+        zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
         r->headers_out.content_type_len = sizeof("text/html") - 1;
         r->headers_out.content_type.data = (u_char *) "text/html";
@@ -338,6 +347,7 @@ static char * ngx_http_toxic(ngx_conf_t *cf, void *post, void *data)
         char** argv = NULL;
         first_init();
         php_embed_module.toxic_output = toxic_output;
+        php_embed_module.is_toxic = 1;
         php_embed_init(argc, argv PTSRMLS_CC);
         zend_first_try {
             zend_eval_string((char *)name->data, NULL,

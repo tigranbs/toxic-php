@@ -16,14 +16,9 @@ function Start($url, $toxic_index)
 {
 	Toxic::$output_index = $toxic_index;
 
-file_put_contents("/home/tigran/fffff", "Start", FILE_APPEND);
-   
-   
-    file_put_contents("/home/tigran/fffff", "Output Function", FILE_APPEND);
 
+	var_dump($_POST);
 
-echo aa();
-
-file_put_contents("/home/tigran/fffff", "Output !!!", FILE_APPEND);
+	echo aa();
 }
 

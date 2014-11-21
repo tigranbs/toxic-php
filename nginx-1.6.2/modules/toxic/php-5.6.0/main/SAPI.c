@@ -79,7 +79,7 @@ SAPI_API void sapi_startup(sapi_module_struct *sf)
 	zend_signal_startup();
 #endif
 
-	sf->ini_entries = NULL;
+    sf->ini_entries = NULL;
 	sapi_module = *sf;
 
 #ifdef ZTS
