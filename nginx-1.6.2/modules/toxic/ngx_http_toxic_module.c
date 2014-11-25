@@ -217,7 +217,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
 
     char * base_str;
     int base_len = 0;
-
+    SG(headers_sent) = 0;
     void callback_output(const char *str, unsigned int len) {
         if(base_len > 0)
         {
