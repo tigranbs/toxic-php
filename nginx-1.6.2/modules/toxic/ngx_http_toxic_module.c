@@ -23,6 +23,11 @@ typedef struct {
     void(*callback)(const char *str, unsigned int str_length);
 } toxic_request_callback;
 
+typedef struct {
+    int done;
+    int again;
+} toxic_ctx;
+
 static toxic_request_callback callbacks[10];
 
 void first_init()
@@ -62,30 +67,6 @@ static int toxic_output(const char *request_index, unsigned int request_index_le
 
         return str_length;
 }
-
-//static void toxic_parse_headers(ngx_http_request_t *r)
-//{
-//    int len = r->header_in->end - r->header_in->start;
-//    char str[len+1];
-////    int v;
-//
-////    for(v=0; v<len; v++)
-////    {
-////        str[v] = *r->header_in->end;
-////        r->header_in->end--;
-////    }
-//
-//    strncpy(str, "content-type: text/html; charset=UTF-8\r\n", len);
-//
-//    zval **http_args[1], http_funcname, *retval=NULL, *http_obj=NULL;
-//    http_args[0] =(zval **) malloc(sizeof(zval **));
-//    ZVAL_STRING(&http_funcname, "http_parse_headers", 0);
-//    zval *http_str_z;
-//    MAKE_STD_ZVAL(http_str_z);
-//    ZVAL_STRING(http_str_z, (char*)str, len);
-//    http_args[0] = &http_str_z;
-//    call_user_function_ex(EG(function_table), &http_obj, &http_funcname, &retval, 1, http_args, 0, NULL TSRMLS_CC);
-//}
 
 
 static char *ngx_http_toxic(ngx_conf_t *cf, void *post, void *data);
@@ -214,7 +195,6 @@ static void ngx_http_toxic_body_handler ( ngx_http_request_t *r ) {
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
-
     char * base_str;
     int base_len = 0;
     SG(headers_sent) = 0;
@@ -253,7 +233,34 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
         parse_post_function = out_function("parse_str");
         MAKE_STD_ZVAL(post_data);
-        ZVAL_STRINGL(post_data, (char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
+        ngx_buf_t * buf;
+        ngx_chain_t * chain;
+        char *post_body= "";
+        int post_len=0;
+        chain = r->request_body->bufs;
+        while (chain) {
+            buf = chain->buf;
+            int len = buf->end - buf->start;
+            if(post_len > 0)
+            {
+                post_body = (char*)realloc(post_body, sizeof(char) * (len + post_len));
+                strncat(post_body, (char *)buf->start, len);
+            }
+            else
+            {
+                post_body = (char*)malloc(sizeof(char) * len);
+    //            strncpy(base_str, str, len);
+                int i;
+                for(i=0;i<len;i++)
+                {
+                    post_body[i] = buf->start[i];
+                }
+                post_body[len] = '\0';
+            }
+            post_len += len;
+            chain = chain->next;
+        }
+        ZVAL_STRINGL(post_data, post_body, post_len, 0);
 
         zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
         parse_post_args[0] = (zval **) malloc(sizeof(zval **));
