@@ -300,10 +300,9 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 2, start_args, 0, NULL TSRMLS_CC);
 
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
-        sapi_headers_struct *sapi_headers;
-        sapi_headers = &SG(sapi_headers);
-        r->headers_out.content_type_len = sizeof(sapi_headers->mimetype) - 1;
-        r->headers_out.content_type.data = (u_char *) sapi_headers->mimetype;
+
+        r->headers_out.content_type_len = sizeof("text/html") - 1;
+        r->headers_out.content_type.data = (u_char *) "text/html";
         r->headers_out.status = NGX_HTTP_OK;
         r->headers_out.content_length_n = base_len;
         ngx_http_send_header(r);
