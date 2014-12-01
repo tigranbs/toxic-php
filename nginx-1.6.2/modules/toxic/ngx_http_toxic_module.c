@@ -278,6 +278,19 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
+    toxic_ctx *ctx;
+
+    ctx = ngx_http_get_module_ctx(r, ngx_http_toxic_module);
+    ctx->done = 1;
+#if defined(nginx_version) && nginx_version >= 8011
+    r->main->count--;
+#endif
+    /* waiting_more_body my rewrite phase handler */
+    if (ctx->waiting_more_body) {
+        ctx->waiting_more_body = 0;
+        ngx_http_core_run_phases(r);
+    }
+
     zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
     parse_post_function = out_function("parse_str");
     MAKE_STD_ZVAL(post_data);
