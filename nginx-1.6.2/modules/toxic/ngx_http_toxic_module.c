@@ -221,13 +221,14 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
 
         ngx_buf_t   *b;
-        ngx_chain_t  out;
+        ngx_chain_t  *out;
+        out = ngx_pcalloc(r->pool, sizeof(out));
         b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
         if (b == NULL) {
             return 0;
         }
-        out.buf = b;
-        out.next = NULL;
+        out->buf = b;
+        out->next = NULL;
 
         /* adjust the pointers of the buffer */
         b->pos = (u_char*)base_str;
@@ -236,10 +237,16 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
         b->last_buf = 1;  /* this is the last buffer in the buffer chain */
 
         /* send the buffer chain of your response */
+        ngx_int_t rc;
+        rc = ngx_http_output_filter ( r , out );
+        while( rc == NGX_AGAIN ) {
+            if( out->next == NULL )
+                break;
+            rc = ngx_http_output_filter ( r , out->next );
+            out = out->next;
+        }
 
-
-
-    return ngx_http_output_filter(r, &out);
+    return NGX_DONE;
 }
 
 
@@ -333,11 +340,11 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
                     return rc;
             }
 
-//            if (rc == NGX_AGAIN) {
-//               ctx->waiting_more_body = 1;
-//               ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
-//               return NGX_DONE;
-//            }
+            if (rc == NGX_AGAIN) {
+               ctx->waiting_more_body = 1;
+               ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
+               return NGX_DONE;
+            }
     }
 
     ngx_http_finalize_request(r, toxic_excecute(r, "text/html"));
