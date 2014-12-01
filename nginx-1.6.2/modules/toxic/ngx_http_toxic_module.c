@@ -333,9 +333,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
 //        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
     call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
     toxic_excecute(r, "application/pdf");
-
-    ctx->body_end = 0;
-    ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
+    ngx_http_finalize_request(r,0);
 }
 
 /*
@@ -382,8 +380,6 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
     {
         return toxic_excecute(r, "text/html");
     }
-
-    ngx_add_timer(r->connection->read, 30000);
 
     return NGX_OK;
 }
