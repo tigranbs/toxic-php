@@ -158,6 +158,9 @@ ngx_module_t ngx_http_toxic_module = {
     NGX_MODULE_V1_PADDING
 };
 
+static ngx_int_t
+ngx_http_toxic_handler(ngx_http_request_t *r);
+
 static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 {
     char * base_str;
@@ -262,7 +265,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     /* waiting_more_body my rewrite phase handler */
     if (ctx->waiting_more_body) {
         ctx->waiting_more_body = 0;
-        ngx_http_core_run_phases(r);
+        ngx_http_toxic_handler(r);
     }
 
     zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
