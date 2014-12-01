@@ -265,7 +265,8 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     /* waiting_more_body my rewrite phase handler */
     if (ctx->waiting_more_body) {
         ctx->waiting_more_body = 0;
-        ngx_http_toxic_handler(r);
+        ngx_http_read_client_request_body(r,toxic_post_body_handler);
+        return;
     }
 
     zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
@@ -331,6 +332,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
 
                 return NGX_DONE;
             }
+
            ctx = ngx_pcalloc(r->pool, sizeof(toxic_ctx));
               if (ctx == NULL) {
                   return NGX_ERROR;
