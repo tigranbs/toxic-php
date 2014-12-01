@@ -23,9 +23,10 @@ typedef struct {
     void(*callback)(const char *str, unsigned int str_length);
 } toxic_request_callback;
 
-typedef struct {
-    int done;
-    int again;
+typedef struct
+{
+  unsigned          done:1;
+  unsigned          waiting_more_body:1;
 } toxic_ctx;
 
 static toxic_request_callback callbacks[10];
@@ -189,11 +190,8 @@ static void ngx_http_toxic_body_handler ( ngx_http_request_t *r ) {
 }
 
 
-/*
- * Main handler function of the module.
- */
-static ngx_int_t
-ngx_http_toxic_handler(ngx_http_request_t *r)
+
+static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 {
     char * base_str;
     int base_len = 0;
@@ -218,59 +216,6 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         }
         base_len += len;
     };
-    ngx_int_t    rc;
-//    ngx_buf_t   *b;
-//    ngx_chain_t  out;
-//    ngx_str_t ret_data;
-
-    if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
-
-        rc = ngx_http_read_client_request_body(r,ngx_http_toxic_body_handler);
-        if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-                return rc;
-        }
-
-        zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
-        parse_post_function = out_function("parse_str");
-        MAKE_STD_ZVAL(post_data);
-        ngx_buf_t * buf;
-        ngx_chain_t * chain;
-        char *post_body= "";
-        int post_len=0;
-        chain = r->request_body->bufs;
-        while (chain) {
-            buf = chain->buf;
-            int len = buf->end - buf->start;
-            if(post_len > 0)
-            {
-                post_body = (char*)realloc(post_body, sizeof(char) * (len + post_len));
-                strncat(post_body, (char *)buf->start, len);
-            }
-            else
-            {
-                post_body = (char*)malloc(sizeof(char) * len);
-    //            strncpy(base_str, str, len);
-                int i;
-                for(i=0;i<len;i++)
-                {
-                    post_body[i] = buf->start[i];
-                }
-                post_body[len] = '\0';
-            }
-            post_len += len;
-            chain = chain->next;
-        }
-        ZVAL_STRINGL(post_data, post_body, post_len, 0);
-
-        zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
-        parse_post_args[0] = (zval **) malloc(sizeof(zval **));
-        parse_post_args[0] = &post_data;
-        parse_post_args[1] = (zval **) malloc(sizeof(zval **));
-        parse_post_args[1] = post;
-//        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
-        call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
-    }
-
 
 
     toxic_request_callback output;
@@ -328,6 +273,100 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
 
 
     return ngx_http_output_filter(r, &out);
+}
+
+
+static void toxic_post_body_handler(ngx_http_request_t *r)
+{
+    zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
+    parse_post_function = out_function("parse_str");
+    MAKE_STD_ZVAL(post_data);
+    ngx_buf_t * buf;
+    ngx_chain_t * chain;
+    char *post_body= "";
+    int post_len=0;
+    chain = r->request_body->bufs;
+    while (chain) {
+        buf = chain->buf;
+        int len = buf->end - buf->start;
+        if(post_len > 0)
+        {
+            post_body = (char*)realloc(post_body, sizeof(char) * (len + post_len));
+            strncat(post_body, (char *)buf->start, len);
+        }
+        else
+        {
+            post_body = (char*)malloc(sizeof(char) * len);
+//            strncpy(base_str, str, len);
+            int i;
+            for(i=0;i<len;i++)
+            {
+                post_body[i] = buf->start[i];
+            }
+            post_body[len] = '\0';
+        }
+        post_len += len;
+        chain = chain->next;
+    }
+    ZVAL_STRINGL(post_data, post_body, post_len, 0);
+
+    zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
+    parse_post_args[0] = (zval **) malloc(sizeof(zval **));
+    parse_post_args[0] = &post_data;
+    parse_post_args[1] = (zval **) malloc(sizeof(zval **));
+    parse_post_args[1] = post;
+//        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
+    call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
+    toxic_excecute(r);
+}
+
+/*
+ * Main handler function of the module.
+ */
+static ngx_int_t
+ngx_http_toxic_handler(ngx_http_request_t *r)
+{
+    ngx_int_t    rc;
+    toxic_ctx       *ctx;
+//    ngx_buf_t   *b;
+//    ngx_chain_t  out;
+//    ngx_str_t ret_data;
+
+    if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
+        ctx = ngx_http_get_module_ctx(r, ngx_http_toxic_module);
+
+           if (ctx != NULL) {
+                if (ctx->done) {
+                    return NGX_DECLINED;
+                }
+
+                return NGX_DONE;
+            }
+           ctx = ngx_pcalloc(r->pool, sizeof(toxic_ctx));
+              if (ctx == NULL) {
+                  return NGX_ERROR;
+              }
+
+        ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
+
+            rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
+            if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
+                    return rc;
+            }
+
+            if (rc == NGX_AGAIN) {
+               ctx->waiting_more_body = 1;
+
+               return NGX_DONE;
+            }
+    }
+    else
+    {
+        toxic_excecute(r);
+    }
+
+
+    return NGX_DECLINED;
 }
 
 /*
