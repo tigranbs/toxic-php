@@ -388,7 +388,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
     }
 
 
-    ngx_add_timer(r->connection->read, 30000);
+//    ngx_add_timer(r->connection->read, 30000);
 
     return NGX_OK;
 }
