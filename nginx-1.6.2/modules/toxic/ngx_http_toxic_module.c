@@ -1,6 +1,7 @@
 #include <ngx_config.h>
 #include <ngx_core.h>
 #include <ngx_http.h>
+#include <ngx_event.h>
 
 #include <sapi/embed/php_embed.h>
 #include <zend_stream.h>
@@ -385,6 +386,9 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
     if (ctx->body_end) {
         ngx_http_core_run_phases(r);
     }
+
+
+    ngx_add_timer(r->connection->read, 30000);
 
     return NGX_OK;
 }
