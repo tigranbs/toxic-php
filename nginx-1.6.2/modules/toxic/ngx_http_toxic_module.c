@@ -333,11 +333,11 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
                     return rc;
             }
 
-            if (rc == NGX_AGAIN) {
-               ctx->waiting_more_body = 1;
-               ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
-               return NGX_DONE;
-            }
+//            if (rc == NGX_AGAIN) {
+//               ctx->waiting_more_body = 1;
+//               ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
+//               return NGX_DONE;
+//            }
     }
 
     ngx_http_finalize_request(r, toxic_excecute(r, "text/html"));
