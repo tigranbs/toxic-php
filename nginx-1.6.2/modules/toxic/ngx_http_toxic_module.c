@@ -157,41 +157,6 @@ ngx_module_t ngx_http_toxic_module = {
     NULL,                          /* exit master */
     NGX_MODULE_V1_PADDING
 };
-static void ngx_http_toxic_body_handler ( ngx_http_request_t *r );
-
-ngx_int_t  ngx_http_toxic_phase_handler (ngx_http_request_t *r ) {
-
-        ngx_int_t rc = NGX_OK;
-    if(r->request_body == NULL) {
-         // Getting POST again
-            rc = ngx_http_read_client_request_body(r,  ngx_http_toxic_body_handler   );
-
-        if (rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-            return rc;
-        }
-
-        return NGX_DONE;
-    }
-
-    // body finished
-     if(r->request_body->rest) {
-        return NGX_DONE;
-    }
-     return rc;
-}
-
-
-static void ngx_http_toxic_body_handler ( ngx_http_request_t *r ) {
-        ngx_int_t rc = NGX_OK;
-
-        rc = ngx_http_toxic_phase_handler ( r );
-        if (rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-            ngx_http_finalize_request(r,0);
-        }
-        return;
-}
-
-
 
 static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 {
@@ -332,8 +297,6 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     parse_post_args[1] = post;
 //        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
     call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
-    toxic_excecute(r, "application/pdf");
-    ngx_http_finalize_request(r,0);
 }
 
 /*
@@ -372,14 +335,12 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
 
             if (rc == NGX_AGAIN) {
                ctx->waiting_more_body = 1;
-
+               ngx_http_set_ctx(r, ctx, ngx_http_toxic_module);
                return NGX_DONE;
             }
     }
-    else
-    {
-        return toxic_excecute(r, "text/html");
-    }
+
+    ngx_http_finalize_request(r, toxic_excecute(r, "text/html"));
 
     return NGX_OK;
 }
