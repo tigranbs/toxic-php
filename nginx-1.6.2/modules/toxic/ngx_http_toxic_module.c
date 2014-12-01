@@ -191,7 +191,7 @@ static void ngx_http_toxic_body_handler ( ngx_http_request_t *r ) {
 
 
 
-static ngx_int_t toxic_excecute(ngx_http_request_t *r)
+static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 {
     char * base_str;
     int base_len = 0;
@@ -246,8 +246,8 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
-        r->headers_out.content_type_len = sizeof("text/html") - 1;
-        r->headers_out.content_type.data = (u_char *) "text/html";
+        r->headers_out.content_type_len = strlen(content_type);
+        r->headers_out.content_type.data = (u_char *) content_type;
         r->headers_out.status = NGX_HTTP_OK;
         r->headers_out.content_length_n = base_len;
         ngx_http_send_header(r);
@@ -317,7 +317,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     parse_post_args[1] = post;
 //        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
     call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
-    toxic_excecute(r);
+    toxic_excecute(r, "application/pdf");
 }
 
 /*
@@ -362,11 +362,11 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
     }
     else
     {
-        toxic_excecute(r);
+        toxic_excecute(r, "text/html");
     }
 
 
-    return NGX_DECLINED;
+    return NGX_OK;
 }
 
 /*
