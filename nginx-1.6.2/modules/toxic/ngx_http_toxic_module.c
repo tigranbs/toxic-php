@@ -45,12 +45,6 @@ void first_init()
 
 static int toxic_output(const char *request_index, unsigned int request_index_length, const char *str, unsigned int str_length TSRMLS_DC)
 {
-//        zval *str_z;
-//        MAKE_STD_ZVAL(str_z);
-//        ZVAL_STRING(str_z, str, str_length);
-
-//        args[0] = &str_z;
-//        call_user_function_ex(EG(function_table), &obj, &funcname, &retval, 1, args, 0, NULL TSRMLS_CC);
     if(request_index)
     {
         int i;
@@ -224,14 +218,13 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
 
         ngx_buf_t   *b;
-        ngx_chain_t  *out;
-        out = ngx_pcalloc(r->pool, sizeof(out));
+        ngx_chain_t  out;
         b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
         if (b == NULL) {
             return 0;
         }
-        out->buf = b;
-        out->next = NULL;
+        out.buf = b;
+        out.next = NULL;
 
         /* adjust the pointers of the buffer */
         b->pos = (u_char*)base_str;
@@ -240,14 +233,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
         b->last_buf = 1;  /* this is the last buffer in the buffer chain */
 
         /* send the buffer chain of your response */
-        ngx_int_t rc;
-        rc = ngx_http_output_filter ( r , out );
-        while( rc == NGX_AGAIN ) {
-            if( out->next == NULL )
-                break;
-            rc = ngx_http_output_filter ( r , out->next );
-            out = out->next;
-        }
+        ngx_http_output_filter ( r , &out );
 
     return NGX_DONE;
 }
