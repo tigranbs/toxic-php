@@ -8,7 +8,8 @@ char * toxic_random_string(int length)
 {
     char alphanum[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     int aplha_length = strlen(alphanum);
-    char * ret_val = (char *) malloc(sizeof(char) * length);
+    char * ret_val;
+    ret_val = (char *) malloc(sizeof(char) * length);
     int i;
     for(i=0;i<length;i++)
     {
