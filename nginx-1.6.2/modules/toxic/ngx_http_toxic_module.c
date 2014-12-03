@@ -164,7 +164,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
     r->headers_out.content_type_len = strlen(content_type);
     r->headers_out.content_type.data = (u_char *) content_type;
     r->headers_out.status = NGX_HTTP_OK;
-//    r->headers_out.content_length_n = base_len;
+    r->headers_out.content_length_n = 99999999;
     ngx_http_send_header(r);
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
