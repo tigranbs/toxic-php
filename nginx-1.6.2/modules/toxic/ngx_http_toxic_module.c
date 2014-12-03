@@ -157,28 +157,53 @@ ngx_http_toxic_handler(ngx_http_request_t *r);
 
 static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 {
-    char * base_str;
-    int base_len = 0;
+//    char * base_str;
+//    int base_len = 0;
     SG(headers_sent) = 0;
+
+    r->headers_out.content_type_len = strlen(content_type);
+    r->headers_out.content_type.data = (u_char *) content_type;
+    r->headers_out.status = NGX_HTTP_OK;
+//    r->headers_out.content_length_n = base_len;
 
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
-        char * temp_buf;
-        if(base_len == 0)
-        {
-            temp_buf = (char*)malloc(len + 1);
-            strncpy(temp_buf, str, len);
-        }
-        else
-        {
-            temp_buf = (char*)malloc(len + 1 + base_len);
-            strncpy(temp_buf, base_str, base_len);
-            strncat(temp_buf, str, len);
-        }
+//        char * temp_buf;
+//        if(base_len == 0)
+//        {
+//            temp_buf = (char*)malloc(len + 1);
+//            strncpy(temp_buf, str, len);
+//        }
+//        else
+//        {
+//            temp_buf = (char*)malloc(len + 1 + base_len);
+//            strncpy(temp_buf, base_str, base_len);
+//            strncat(temp_buf, str, len);
+//        }
 
-        base_len += len;
-//        if(base_len > 0) free(base_str);
-        base_str = temp_buf;
+//        base_len += len;
+////        if(base_len > 0) free(base_str);
+//        base_str = temp_buf;
+
+        ngx_http_send_header(r);
+
+        ngx_buf_t   *b;
+        ngx_chain_t  out;
+        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
+        if (b == NULL) {
+            return;
+        }
+        out.buf = b;
+        out.next = NULL;
+
+        /* adjust the pointers of the buffer */
+        b->pos = (u_char*)str;
+        b->last = (u_char*)str + len;
+        b->memory = 1;    /* this buffer is in memory */
+        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
+
+        /* send the buffer chain of your response */
+        ngx_http_output_filter ( r , &out );
     };
 
 
@@ -210,30 +235,30 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
-        r->headers_out.content_type_len = strlen(content_type);
-        r->headers_out.content_type.data = (u_char *) content_type;
-        r->headers_out.status = NGX_HTTP_OK;
-        r->headers_out.content_length_n = base_len;
-        ngx_http_send_header(r);
+//        r->headers_out.content_type_len = strlen(content_type);
+//        r->headers_out.content_type.data = (u_char *) content_type;
+//        r->headers_out.status = NGX_HTTP_OK;
+//        r->headers_out.content_length_n = base_len;
+//        ngx_http_send_header(r);
 
 
-        ngx_buf_t   *b;
-        ngx_chain_t  out;
-        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
-        if (b == NULL) {
-            return 0;
-        }
-        out.buf = b;
-        out.next = NULL;
+//        ngx_buf_t   *b;
+//        ngx_chain_t  out;
+//        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
+//        if (b == NULL) {
+//            return 0;
+//        }
+//        out.buf = b;
+//        out.next = NULL;
 
-        /* adjust the pointers of the buffer */
-        b->pos = (u_char*)base_str;
-        b->last = (u_char*)base_str + base_len;
-        b->memory = 1;    /* this buffer is in memory */
-        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
+//        /* adjust the pointers of the buffer */
+//        b->pos = (u_char*)base_str;
+//        b->last = (u_char*)base_str + base_len;
+//        b->memory = 1;    /* this buffer is in memory */
+//        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
 
-        /* send the buffer chain of your response */
-        ngx_http_output_filter ( r , &out );
+//        /* send the buffer chain of your response */
+//        ngx_http_output_filter ( r , &out );
 
     return NGX_DONE;
 }
