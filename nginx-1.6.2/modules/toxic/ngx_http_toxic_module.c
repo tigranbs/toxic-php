@@ -158,14 +158,9 @@ ngx_http_toxic_handler(ngx_http_request_t *r);
 static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 {
 //    char * base_str;
-//    int base_len = 0;
+    int base_len = 0;
     SG(headers_sent) = 0;
 
-    r->headers_out.content_type_len = strlen(content_type);
-    r->headers_out.content_type.data = (u_char *) content_type;
-    r->headers_out.status = NGX_HTTP_OK;
-    r->headers_out.content_length_n = 99999999;
-    ngx_http_send_header(r);
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
 //        char * temp_buf;
@@ -181,7 +176,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 //            strncat(temp_buf, str, len);
 //        }
 
-//        base_len += len;
+        base_len += len;
 ////        if(base_len > 0) free(base_str);
 //        base_str = temp_buf;
 
@@ -233,11 +228,11 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
-//        r->headers_out.content_type_len = strlen(content_type);
-//        r->headers_out.content_type.data = (u_char *) content_type;
-//        r->headers_out.status = NGX_HTTP_OK;
-//        r->headers_out.content_length_n = base_len;
-//        ngx_http_send_header(r);
+        r->headers_out.content_type_len = strlen(content_type);
+        r->headers_out.content_type.data = (u_char *) content_type;
+        r->headers_out.status = NGX_HTTP_OK;
+        r->headers_out.content_length_n = base_len;
+        ngx_http_send_header(r);
 
 
 //        ngx_buf_t   *b;
