@@ -184,9 +184,6 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 //        base_len += len;
 ////        if(base_len > 0) free(base_str);
 //        base_str = temp_buf;
-
-        ngx_http_send_header(r);
-
         ngx_buf_t   *b;
         ngx_chain_t  out;
         b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
