@@ -77,6 +77,7 @@ static ngx_conf_post_handler_pt ngx_http_toxic_p = ngx_http_toxic;
  */
 typedef struct {
     ngx_str_t   name;
+    ngx_http_upstream_conf_t  upstream;
 } ngx_http_toxic_loc_conf_t;
 
 /* The function which initializes memory for the module configuration structure
@@ -155,48 +156,45 @@ ngx_module_t ngx_http_toxic_module = {
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r);
 
-static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
+static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
 {
 //    char * base_str;
+    ngx_chain_t *out_chain;
+    out_chain = ngx_pcalloc(r->pool, sizeof(ngx_chain_t));
     int base_len = 0;
     SG(headers_sent) = 0;
 
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
-//        char * temp_buf;
-//        if(base_len == 0)
-//        {
-//            temp_buf = (char*)malloc(len + 1);
-//            strncpy(temp_buf, str, len);
-//        }
-//        else
-//        {
-//            temp_buf = (char*)malloc(len + 1 + base_len);
-//            strncpy(temp_buf, base_str, base_len);
-//            strncat(temp_buf, str, len);
-//        }
-
-        base_len += len;
-////        if(base_len > 0) free(base_str);
-//        base_str = temp_buf;
-
+        if(out_chain->buf)
+        {
+            out_chain->buf->last_buf = 0;
+            out_chain->next = (ngx_chain_t*)malloc(sizeof(ngx_chain_t));
+            out_chain = out_chain->next;
+        }
         ngx_buf_t   *b;
-        ngx_chain_t  out;
         b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
         if (b == NULL) {
             return;
         }
-        out.buf = b;
-        out.next = NULL;
-
-        /* adjust the pointers of the buffer */
-        b->pos = (u_char*)str;
-        b->last = (u_char*)str + len;
+        out_chain->buf = b;
+        b->pos = (u_char*)malloc(sizeof(u_char) * len+1);
+        unsigned int i;
+        for(i=0;i<len;i++)
+        {
+            b->pos[i] = (u_char)str[i];
+        }
+        b->pos[i] = '\0';
+        b->last = b->pos + len + 1;
         b->memory = 1;    /* this buffer is in memory */
-        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
+        b->last_in_chain = 1;
+        b->last_buf = 1;
+        b->file = ngx_pcalloc(r->pool, sizeof(ngx_file_t));
+        b->file->directio = 0;
+        b->in_file = 0;
 
-        /* send the buffer chain of your response */
-        ngx_http_output_filter ( r , &out );
+        base_len += len;
+        out_chain->next = NULL;
     };
 
 
@@ -206,7 +204,6 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
 
     callbacks[0] = output;
 
-//    if (r->method != NGX_HTTP_HEAD) {
         zval *ret_val, *url_arg, *request_index_arg;
         MAKE_STD_ZVAL(url_arg);
         MAKE_STD_ZVAL(request_index_arg);
@@ -232,26 +229,10 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char *content_type)
         r->headers_out.content_type.data = (u_char *) content_type;
         r->headers_out.status = NGX_HTTP_OK;
         r->headers_out.content_length_n = base_len;
+
         ngx_http_send_header(r);
-
-
-//        ngx_buf_t   *b;
-//        ngx_chain_t  out;
-//        b = ngx_pcalloc(r->pool, sizeof(ngx_buf_t));
-//        if (b == NULL) {
-//            return 0;
-//        }
-//        out.buf = b;
-//        out.next = NULL;
-
-//        /* adjust the pointers of the buffer */
-//        b->pos = (u_char*)base_str;
-//        b->last = (u_char*)base_str + base_len;
-//        b->memory = 1;    /* this buffer is in memory */
-//        b->last_buf = 1;  /* this is the last buffer in the buffer chain */
-
-//        /* send the buffer chain of your response */
-//        ngx_http_output_filter ( r , &out );
+        /* send the buffer chain of your response */
+        ngx_http_output_filter ( r , out_chain );
 
     return NGX_DONE;
 }
@@ -301,14 +282,14 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         parse_post_args[1] = post;
     //        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
         call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
-        toxic_excecute(r, "application/pdf");
+
+        toxic_excecute(r, "text/html");
     }
     else
     {
         toxic_excecute(r, "text/html");
     }
-
-    ngx_http_finalize_request(r, NGX_DONE);
+    ngx_http_finalize_request(r, NGX_OK);
 }
 
 /*
@@ -317,9 +298,10 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
-    ngx_int_t    rc;
+    ngx_int_t                   rc;
 
     rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
+
     if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
             return rc;
     }
