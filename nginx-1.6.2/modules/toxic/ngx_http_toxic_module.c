@@ -22,6 +22,7 @@ int first_time_run=1;
 typedef struct {
     char *key;
     void(*callback)(const char *str, unsigned int str_length);
+    void(*header_callback)(sapi_headers_struct *sapi_headers TSRMLS_DC);
 } toxic_request_callback;
 
 typedef struct
@@ -65,6 +66,12 @@ static int toxic_output(const char *request_index, unsigned int request_index_le
         return str_length;
 }
 
+
+static int toxic_send_header(sapi_headers_struct *sapi_headers TSRMLS_DC)
+{
+    callbacks[0].header_callback(sapi_headers);
+    return SAPI_HEADER_SENT_SUCCESSFULLY;
+}
 
 static char *ngx_http_toxic(ngx_conf_t *cf, void *post, void *data);
 
@@ -163,6 +170,8 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
     out_chain = ngx_pcalloc(r->pool, sizeof(ngx_chain_t));
     int base_len = 0;
     SG(headers_sent) = 0;
+    SG(callback_run) = 0;
+    SG(request_info).no_headers = 0;
 
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
@@ -198,8 +207,30 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
     };
 
 
+    void header_callback(sapi_headers_struct *sapi_headers TSRMLS_DC) {
+//        sapi_headers_struct *sapi_headers;
+        if(sapi_headers->mimetype)
+        {
+            r->headers_out.content_type_len = strlen(sapi_headers->mimetype);
+            r->headers_out.content_type.data = (u_char *)malloc(sizeof(u_char) * r->headers_out.content_type_len);
+            r->headers_out.content_type.len = r->headers_out.content_type_len;
+            strncpy((char*)r->headers_out.content_type.data, sapi_headers->mimetype, r->headers_out.content_type_len);
+            r->headers_out.status = sapi_headers->http_response_code;
+            sapi_headers->mimetype = NULL;
+        }
+        else
+        {
+            r->headers_out.content_type_len = strlen("text/html");
+            r->headers_out.content_type.data = (u_char *)malloc(sizeof(u_char) * r->headers_out.content_type_len);
+            r->headers_out.content_type.len = r->headers_out.content_type_len;
+            strncpy((char*)r->headers_out.content_type.data, "text/html", r->headers_out.content_type_len);
+            r->headers_out.status = sapi_headers->http_response_code;
+        }
+    }
+
     toxic_request_callback output;
     output.callback = callback_output;
+    output.header_callback = header_callback;
     output.key = "aaaaaaa";
 
     callbacks[0] = output;
@@ -225,15 +256,15 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
 
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
-        r->headers_out.content_type_len = strlen(content_type);
-        r->headers_out.content_type.data = (u_char *) content_type;
-        r->headers_out.status = NGX_HTTP_OK;
         r->headers_out.content_length_n = base_len;
 
         ngx_http_send_header(r);
         /* send the buffer chain of your response */
-        ngx_http_output_filter ( r , out_chain );
-
+        if(out_chain->buf)
+        {
+            ngx_http_output_filter ( r , out_chain );
+        }
+        zend_llist_destroy(&SG(sapi_headers).headers);
     return NGX_DONE;
 }
 
@@ -334,6 +365,7 @@ static char * ngx_http_toxic(ngx_conf_t *cf, void *post, void *data)
         char** argv = NULL;
         first_init();
         php_embed_module.toxic_output = toxic_output;
+        php_embed_module.send_headers = toxic_send_header;
         php_embed_module.is_toxic = 1;
         php_embed_init(argc, argv PTSRMLS_CC);
         zend_first_try {
