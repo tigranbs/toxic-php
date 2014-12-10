@@ -239,6 +239,7 @@ struct _sapi_module_struct {
 	int (*header_handler)(sapi_header_struct *sapi_header, sapi_header_op_enum op, sapi_headers_struct *sapi_headers TSRMLS_DC);
 	int (*send_headers)(sapi_headers_struct *sapi_headers TSRMLS_DC);
 	void (*send_header)(sapi_header_struct *sapi_header, void *server_context TSRMLS_DC);
+    void (*toxic_header_handler)(sapi_header_line ctr);
 
 	int (*read_post)(char *buffer, uint count_bytes TSRMLS_DC);
 	char *(*read_cookies)(TSRMLS_D);

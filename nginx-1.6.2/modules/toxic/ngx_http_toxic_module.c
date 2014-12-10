@@ -3,9 +3,6 @@
 #include <ngx_http.h>
 #include <ngx_event.h>
 
-#include <sapi/embed/php_embed.h>
-#include <zend_stream.h>
-#include <SAPI.h>
 #include <toxic.h>
 
 zval out_function(char * fname)
@@ -23,6 +20,7 @@ typedef struct {
     char *key;
     void(*callback)(const char *str, unsigned int str_length);
     void(*header_callback)(sapi_headers_struct *sapi_headers TSRMLS_DC);
+    void(*header_function)(sapi_header_line ctr);
 } toxic_request_callback;
 
 typedef struct
@@ -71,6 +69,11 @@ static int toxic_send_header(sapi_headers_struct *sapi_headers TSRMLS_DC)
 {
     callbacks[0].header_callback(sapi_headers);
     return SAPI_HEADER_SENT_SUCCESSFULLY;
+}
+
+static void toxic_header_function(sapi_header_line ctr)
+{
+    callbacks[0].header_function(ctr);
 }
 
 static char *ngx_http_toxic(ngx_conf_t *cf, void *post, void *data);
@@ -163,6 +166,13 @@ ngx_module_t ngx_http_toxic_module = {
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r);
 
+
+//static unsigned int check_headers(char *header_str)
+//{
+//    if(strstr(header_str, "Content-Type") == NULL) return 1;
+//    return 0;
+//}
+
 static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
 {
 //    char * base_str;
@@ -216,7 +226,39 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
             r->headers_out.content_type.len = r->headers_out.content_type_len;
             strncpy((char*)r->headers_out.content_type.data, sapi_headers->mimetype, r->headers_out.content_type_len);
             r->headers_out.status = sapi_headers->http_response_code;
-            sapi_headers->mimetype = NULL;
+
+            ngx_table_elt_t  *cc, **ccp;
+
+            ccp = r->headers_out.cache_control.elts;
+
+            if (ccp == NULL) {
+
+                if (ngx_array_init(&r->headers_out.cache_control, r->pool,
+                                   1, sizeof(ngx_table_elt_t *))
+                    != NGX_OK)
+                {
+                    return;
+                }
+            }
+
+            ccp = ngx_array_push(&r->headers_out.cache_control);
+            if (ccp == NULL) {
+                return;
+            }
+
+            cc = ngx_list_push(&r->headers_out.headers);
+            if (cc == NULL) {
+                return;
+            }
+
+            cc->hash = 1;
+            ngx_str_set(&cc->key, "Cache-Control");
+            ngx_str_set(&cc->value, "private");
+
+            *ccp = cc;
+
+
+            efree(sapi_headers->mimetype);
         }
         else
         {
@@ -228,10 +270,45 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
         }
     }
 
+    void header_function (sapi_header_line ctr)
+    {
+        ngx_table_elt_t  *h;
+
+        if (ctr.line) {
+            if(strstr(ctr.line, "Content-type") != NULL) return;
+            if(strstr(ctr.line, "Content-Len") != NULL) return;
+            if(strstr(ctr.line, "Cache") != NULL) return;
+            int i, key_index=0;
+            for(i=0;i < (int)ctr.line_len; i++)
+            {
+                if(ctr.line[i] == ':')
+                {
+                    key_index = i;
+                    break;
+                }
+            }
+            if(key_index == 0) return;
+            h = ngx_list_push(&r->headers_out.headers);
+            if (h == NULL) {
+                return;
+            }
+            h->key.len = key_index;
+            h->key.data = (u_char *)ngx_alloc(sizeof(u_char) * h->key.len, NULL);
+            if(!h->key.data) return;
+            h->value.len = (ctr.line_len - 1) - h->key.len;
+            if(h->value.len <= 0) return;
+            h->value.data = (u_char *)ngx_alloc(sizeof(u_char) * h->value.len, NULL);
+            if(!h->value.data) return;
+            strncpy((char*)h->key.data, ctr.line, h->key.len);
+            strncpy((char*)h->value.data, ctr.line + h->key.len + 1, h->value.len);
+        }
+    }
+
     toxic_request_callback output;
     output.callback = callback_output;
     output.header_callback = header_callback;
-    output.key = "aaaaaaa";
+    output.header_function = header_function;
+    output.key = toxic_random_string(10);
 
     callbacks[0] = output;
 
@@ -264,7 +341,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r, char * content_type)
         {
             ngx_http_output_filter ( r , out_chain );
         }
-        zend_llist_destroy(&SG(sapi_headers).headers);
+
     return NGX_DONE;
 }
 
@@ -366,6 +443,7 @@ static char * ngx_http_toxic(ngx_conf_t *cf, void *post, void *data)
         first_init();
         php_embed_module.toxic_output = toxic_output;
         php_embed_module.send_headers = toxic_send_header;
+        php_embed_module.toxic_header_handler = toxic_header_function;
         php_embed_module.is_toxic = 1;
         php_embed_init(argc, argv PTSRMLS_CC);
         zend_first_try {

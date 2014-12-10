@@ -39,13 +39,16 @@
 PHP_FUNCTION(header)
 {
 	zend_bool rep = 1;
-	sapi_header_line ctr = {0};
+    sapi_header_line ctr = {0};
 
 	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s|bl", &ctr.line,
 				&ctr.line_len, &rep, &ctr.response_code) == FAILURE)
 		return;
 
-	sapi_header_op(rep ? SAPI_HEADER_REPLACE:SAPI_HEADER_ADD, &ctr TSRMLS_CC);
+    if(sapi_module.toxic_header_handler)
+        sapi_module.toxic_header_handler(ctr);
+
+//	sapi_header_op(rep ? SAPI_HEADER_REPLACE:SAPI_HEADER_ADD, &ctr TSRMLS_CC);
 }
 /* }}} */
 
