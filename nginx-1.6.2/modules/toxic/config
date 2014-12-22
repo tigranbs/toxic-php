@@ -1,5 +1,5 @@
 ngx_addon_name=ngx_http_toxic_module
 HTTP_MODULES="$HTTP_MODULES ngx_http_toxic_module"
 CFLAGS="-I $NGX_ADDON_DEPS $ngx_addon_dir $(/usr/local/bin/php-config --includes) $CFLAGS"
-CORE_LIBS="$CORE_LIBS /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.a $(/usr/local/bin/php-config --libs)"
+CORE_LIBS="$CORE_LIBS $ngx_addon_dir/php-5.6.0/libs/libphp5.a $(/usr/local/bin/php-config --libs)"
 NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_toxic_module.c"
