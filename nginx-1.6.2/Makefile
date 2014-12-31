@@ -12,10 +12,10 @@ install:
 	$(MAKE) -f objs/Makefile install
 
 upgrade:
-	/home/tigran/Desktop/toxic/nginx_bin/sbin/nginx -t
+	../nginx_bin/sbin/nginx -t
 
-	kill -USR2 `cat /home/tigran/Desktop/toxic/nginx_bin/logs/nginx.pid`
+	kill -USR2 `cat ../nginx_bin/logs/nginx.pid`
 	sleep 1
-	test -f /home/tigran/Desktop/toxic/nginx_bin/logs/nginx.pid.oldbin
+	test -f ../nginx_bin/logs/nginx.pid.oldbin
 
-	kill -QUIT `cat /home/tigran/Desktop/toxic/nginx_bin/logs/nginx.pid.oldbin`
+	kill -QUIT `cat ../nginx_bin/logs/nginx.pid.oldbin`

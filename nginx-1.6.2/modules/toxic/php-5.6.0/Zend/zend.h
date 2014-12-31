@@ -877,3 +877,12 @@ ZEND_API void zend_restore_error_handling(zend_error_handling *saved TSRMLS_DC);
  * indent-tabs-mode: t
  * End:
  */
+ 
+#ifndef TOXIC_EXIT
+#define TOXIC_EXIT
+
+static void (*ngx_toxic_exit) (int status);
+int toxic_exit(int status);
+
+#endif
+ 

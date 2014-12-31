@@ -176,7 +176,7 @@ char *argv[];
 	else
 		regress();
 
-	exit(0);
+	toxic_exit(0);
 }
 
 dosplit(string, seps)

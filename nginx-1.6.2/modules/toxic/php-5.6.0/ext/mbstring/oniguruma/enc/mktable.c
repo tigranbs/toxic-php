@@ -255,7 +255,7 @@ static int IsAlpha(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -294,7 +294,7 @@ static int IsBlank(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -336,7 +336,7 @@ static int IsCntrl(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -414,7 +414,7 @@ static int IsGraph(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -546,7 +546,7 @@ static int IsLower(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -624,7 +624,7 @@ static int IsPrint(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -723,7 +723,7 @@ static int IsPunct(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -765,7 +765,7 @@ static int IsSpace(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -892,7 +892,7 @@ static int IsUpper(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;
@@ -1085,7 +1085,7 @@ static int IsWord(int enc, int c)
     break;
 
   default:
-    exit(-1);
+    toxic_exit(-1);
   }
 
   return 0;

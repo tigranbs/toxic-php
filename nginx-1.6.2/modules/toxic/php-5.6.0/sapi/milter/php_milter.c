@@ -1048,7 +1048,7 @@ int main(int argc, char *argv[])
 				SG(headers_sent) = 1;
 				php_milter_usage(argv[0]);
 				php_output_teardown();
-				exit(1);
+				toxic_exit(1);
 				break;
 			}
 		}
@@ -1095,7 +1095,7 @@ int main(int argc, char *argv[])
 				SG(headers_sent) = 1;
 				php_milter_usage(argv[0]);
 				php_output_teardown();
-				exit(1);
+				toxic_exit(1);
 				break;
 
 			case 'p': /* socket */
@@ -1109,13 +1109,13 @@ int main(int argc, char *argv[])
 					sapi_shutdown();
 					tsrm_shutdown();
 
-					exit(1);
+					toxic_exit(1);
 				}
 				SG(headers_sent) = 1;
 				SG(request_info).no_headers = 1;
 				php_printf("PHP %s (%s) (built: %s %s)\nCopyright (c) 1997-2014 The PHP Group\n%s", PHP_VERSION, sapi_module.name, __DATE__, __TIME__, get_zend_version());
 				php_output_teardown();
-				exit(1);
+				toxic_exit(1);
 				break;
 
 			case 'V': /* verbose */
@@ -1135,7 +1135,7 @@ int main(int argc, char *argv[])
 			SG(headers_sent) = 1;
 			SG(request_info).no_headers = 1;
 			PUTS(param_error);
-			exit(1);
+			toxic_exit(1);
 		}
 
 		CG(interactive) = interactive;
@@ -1152,12 +1152,12 @@ int main(int argc, char *argv[])
 			switch(fork()) {
 				case -1: /* Uh-oh, we have a problem forking. */
 					fprintf(stderr, "Uh-oh, couldn't fork!\n");
-					exit(errno);
+					toxic_exit(errno);
 					break;
 				case 0: /* Child */
 					break;
 				default: /* Parent */
-					exit(0);
+					toxic_exit(0);
 			}
 		}
 			
@@ -1199,7 +1199,7 @@ err:
 	sapi_shutdown();
 	tsrm_shutdown();
 
-	exit(exit_status);
+	toxic_exit(exit_status);
 }
 /* }}} */
 

@@ -1,6 +1,6 @@
 
 CC =	cc
-CFLAGS = -I  /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g 
+CFLAGS = -I  modules/toxic -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g 
 CPP =	cc -E
 LINK =	$(CC)
 
@@ -323,7 +323,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
 	objs/addon/toxic/ngx_http_toxic_module.o \
 	objs/ngx_modules.o \
-	-lpthread -lcrypt /home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/php-5.6.0/libs/libphp5.a -lcrypt -lresolv -lcrypt -lrt -lrt -lm -ldl -lnsl -lxml2 -lxml2 -lxml2 -lcrypt -lxml2 -lxml2 -lxml2 -lcrypt -lpcre -lz
+	-lpthread -lcrypt modules/toxic/php-5.6.0/libs/libphp5.a -lcrypt -lresolv -lcrypt -lrt -lrt -lm -ldl -lnsl -lxml2 -lxml2 -lxml2 -lcrypt -lxml2 -lxml2 -lxml2 -lcrypt -lpcre -lz
 	
 
 
@@ -1091,56 +1091,56 @@ objs/src/http/modules/ngx_http_upstream_keepalive_module.o:	$(CORE_DEPS) $(HTTP_
 
 
 objs/addon/toxic/ngx_http_toxic_module.o:	$(ADDON_DEPS) \
-	/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/ngx_http_toxic_module.c
+	modules/toxic/ngx_http_toxic_module.c
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/toxic/ngx_http_toxic_module.o \
-		/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic/ngx_http_toxic_module.c
+		modules/toxic/ngx_http_toxic_module.c
 
 
 manpage:	objs/nginx.8
 
 objs/nginx.8:	man/nginx.8 objs/ngx_auto_config.h
-	sed -e "s|%%PREFIX%%|/home/tigran/Desktop/toxic/nginx_bin|" \
-		-e "s|%%PID_PATH%%|/home/tigran/Desktop/toxic/nginx_bin/logs/nginx.pid|" \
-		-e "s|%%CONF_PATH%%|/home/tigran/Desktop/toxic/nginx_bin/conf/nginx.conf|" \
-		-e "s|%%ERROR_LOG_PATH%%|/home/tigran/Desktop/toxic/nginx_bin/logs/error.log|" \
+	sed -e "s|%%PREFIX%%|../nginx_bin|" \
+		-e "s|%%PID_PATH%%|../nginx_bin/logs/nginx.pid|" \
+		-e "s|%%CONF_PATH%%|../nginx_bin/conf/nginx.conf|" \
+		-e "s|%%ERROR_LOG_PATH%%|../nginx_bin/logs/error.log|" \
 		< man/nginx.8 > $@
 
 install:	objs/nginx 		
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin' || mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin'
+	test -d '$(DESTDIR)../nginx_bin' || mkdir -p '$(DESTDIR)../nginx_bin'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin' 		|| mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin'
-	test ! -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin/nginx' 		|| mv '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin/nginx' 			'$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin/nginx.old'
-	cp objs/nginx '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/sbin/nginx'
+	test -d '$(DESTDIR)../nginx_bin/sbin' 		|| mkdir -p '$(DESTDIR)../nginx_bin/sbin'
+	test ! -f '$(DESTDIR)../nginx_bin/sbin/nginx' 		|| mv '$(DESTDIR)../nginx_bin/sbin/nginx' 			'$(DESTDIR)../nginx_bin/sbin/nginx.old'
+	cp objs/nginx '$(DESTDIR)../nginx_bin/sbin/nginx'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf' 		|| mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
+	test -d '$(DESTDIR)../nginx_bin/conf' 		|| mkdir -p '$(DESTDIR)../nginx_bin/conf'
 
-	cp conf/koi-win '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/koi-utf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/win-utf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
+	cp conf/koi-win '$(DESTDIR)../nginx_bin/conf'
+	cp conf/koi-utf '$(DESTDIR)../nginx_bin/conf'
+	cp conf/win-utf '$(DESTDIR)../nginx_bin/conf'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/mime.types' 		|| cp conf/mime.types '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/mime.types '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/mime.types.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/mime.types' 		|| cp conf/mime.types '$(DESTDIR)../nginx_bin/conf'
+	cp conf/mime.types '$(DESTDIR)../nginx_bin/conf/mime.types.default'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/fastcgi_params' 		|| cp conf/fastcgi_params '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/fastcgi_params 		'$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/fastcgi_params.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/fastcgi_params' 		|| cp conf/fastcgi_params '$(DESTDIR)../nginx_bin/conf'
+	cp conf/fastcgi_params 		'$(DESTDIR)../nginx_bin/conf/fastcgi_params.default'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/fastcgi.conf' 		|| cp conf/fastcgi.conf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/fastcgi.conf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/fastcgi.conf.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/fastcgi.conf' 		|| cp conf/fastcgi.conf '$(DESTDIR)../nginx_bin/conf'
+	cp conf/fastcgi.conf '$(DESTDIR)../nginx_bin/conf/fastcgi.conf.default'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/uwsgi_params' 		|| cp conf/uwsgi_params '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/uwsgi_params 		'$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/uwsgi_params.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/uwsgi_params' 		|| cp conf/uwsgi_params '$(DESTDIR)../nginx_bin/conf'
+	cp conf/uwsgi_params 		'$(DESTDIR)../nginx_bin/conf/uwsgi_params.default'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/scgi_params' 		|| cp conf/scgi_params '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf'
-	cp conf/scgi_params 		'$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/scgi_params.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/scgi_params' 		|| cp conf/scgi_params '$(DESTDIR)../nginx_bin/conf'
+	cp conf/scgi_params 		'$(DESTDIR)../nginx_bin/conf/scgi_params.default'
 
-	test -f '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/nginx.conf' 		|| cp conf/nginx.conf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/nginx.conf'
-	cp conf/nginx.conf '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/conf/nginx.conf.default'
+	test -f '$(DESTDIR)../nginx_bin/conf/nginx.conf' 		|| cp conf/nginx.conf '$(DESTDIR)../nginx_bin/conf/nginx.conf'
+	cp conf/nginx.conf '$(DESTDIR)../nginx_bin/conf/nginx.conf.default'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs' 		|| mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs'
+	test -d '$(DESTDIR)../nginx_bin/logs' 		|| mkdir -p '$(DESTDIR)../nginx_bin/logs'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs' || 		mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs'
+	test -d '$(DESTDIR)../nginx_bin/logs' || 		mkdir -p '$(DESTDIR)../nginx_bin/logs'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/html' 		|| cp -R html '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin'
+	test -d '$(DESTDIR)../nginx_bin/html' 		|| cp -R html '$(DESTDIR)../nginx_bin'
 
-	test -d '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs' || 		mkdir -p '$(DESTDIR)/home/tigran/Desktop/toxic/nginx_bin/logs'
+	test -d '$(DESTDIR)../nginx_bin/logs' || 		mkdir -p '$(DESTDIR)../nginx_bin/logs'

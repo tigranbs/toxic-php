@@ -159,7 +159,7 @@ void base64_decode_xmlrpc(struct buffer_st *bfr, const char *source, int length)
 	      /*
 		if (i > 0) {
                     fprintf(stderr, "Input file incomplete.\n");
-		    exit(1);
+		    toxic_exit(1);
 		}
 	      */
 		return;
@@ -169,7 +169,7 @@ void base64_decode_xmlrpc(struct buffer_st *bfr, const char *source, int length)
 	      /*
 	      fprintf(stderr, "Offset %i length %i\n", offset, length);
 	      fprintf(stderr, "character '%c:%x:%c' in input file.\n", c, c, dtable[c]);
-	      exit(1);
+	      toxic_exit(1);
 	      */
 	      i--;
 	      continue;

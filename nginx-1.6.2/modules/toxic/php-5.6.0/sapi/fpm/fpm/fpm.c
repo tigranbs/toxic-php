@@ -69,7 +69,7 @@ int fpm_init(int argc, char **argv, char *config, char *prefix, char *pid, int t
 	    0 > fpm_event_init_main()) {
 
 		if (fpm_globals.test_successful) {
-			exit(FPM_EXIT_OK);
+			toxic_exit(FPM_EXIT_OK);
 		} else {
 			zlog(ZLOG_ERROR, "FPM initialization failed");
 			return -1;

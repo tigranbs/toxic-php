@@ -655,7 +655,7 @@ static int parse_opt( int argc, char * argv[], int *climode,
             break;
         case '?':
             if ( *((*(p-1))+2) == 's' )
-                exit( 99 );
+                toxic_exit( 99 );
         case 'h':
         case 'i':
         case 'l':
@@ -854,7 +854,7 @@ void start_children( int children )
         sigaction( SIGUSR1, &act, &old_usr1 ) ||
         sigaction( SIGQUIT, &act, &old_quit )) {
         perror( "Can't set signals" );
-        exit( 1 );
+        toxic_exit( 1 );
     }
     s_stop = 0;
     while( 1 ) {
@@ -871,7 +871,7 @@ void start_children( int children )
                 return ;
             case -1:
                 perror( "php (pre-forking)" );
-                exit( 1 );
+                toxic_exit( 1 );
                 break;
             default: /* parent process */
                 running++;
@@ -885,7 +885,7 @@ void start_children( int children )
         running--;
     }
     kill( -getpgrp(), SIGUSR1 );
-    exit( 0 );
+    toxic_exit( 0 );
 }
 
 void setArgv0( int argc, char * argv[] )
@@ -985,7 +985,7 @@ int main( int argc, char * argv[] )
         if ( bindFd == -1 ) {
             fprintf( stderr,
                      "Failed to bind socket [%s]: %s\n", php_bind, strerror( errno ) );
-            exit( 2 );
+            toxic_exit( 2 );
         }
         if ( bindFd != 0 ) {
             dup2( bindFd, 0 );

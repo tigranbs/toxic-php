@@ -89,7 +89,7 @@ void zend_accel_error(int type, const char *format, ...)
 			zend_bailout();
 			break;
 		case ACCEL_LOG_FATAL:
-			exit(-2);
+			toxic_exit(-2);
 			break;
 	}
 	fflush(fLog);

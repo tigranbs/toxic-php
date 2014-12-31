@@ -1404,7 +1404,7 @@ out:
 	 * exiting.
 	 */
 	cleanup_ps_args(argv);
-	exit(exit_status);
+	toxic_exit(exit_status);
 }
 /* }}} */
 

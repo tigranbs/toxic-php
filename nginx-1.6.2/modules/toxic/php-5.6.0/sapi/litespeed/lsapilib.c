@@ -2584,7 +2584,7 @@ static void dump_debug_info( lsapi_child_status * pStatus, long tmCur )
     snprintf( achCmd, 1024, "gdb --batch -ex \"attach %d\" -ex \"set height 0\" -ex \"bt\" >&2;PATH=$PATH:/usr/sbin lsof -p %d >&2", pStatus->m_pid, pStatus->m_pid );
     if ( system( achCmd ) == -1 )
         perror( "system()" );
-    exit( 0 );
+    toxic_exit( 0 );
 }
 
 static void lsapi_check_child_status( long tmCur )

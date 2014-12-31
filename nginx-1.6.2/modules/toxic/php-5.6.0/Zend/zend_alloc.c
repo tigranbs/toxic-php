@@ -91,7 +91,7 @@ static void zend_mm_panic(const char *message)
 #if ZEND_DEBUG && defined(HAVE_KILL) && defined(HAVE_GETPID)
 	kill(getpid(), SIGSEGV);
 #endif
-	exit(1);
+	toxic_exit(1);
 }
 
 /*******************/
@@ -1059,7 +1059,7 @@ ZEND_API zend_mm_heap *zend_mm_startup_ex(const zend_mm_mem_handlers *handlers, 
 	for (i = 0; i < ZEND_MM_MAX_SMALL_SIZE; i++) {
 		printf("%3d%c: %3ld %d %2ld\n", i, (i == ZEND_MM_MIN_SIZE?'*':' '), (long)ZEND_MM_TRUE_SIZE(i), ZEND_MM_SMALL_SIZE(ZEND_MM_TRUE_SIZE(i)), (long)ZEND_MM_BUCKET_INDEX(ZEND_MM_TRUE_SIZE(i)));
 	}
-	exit(0);
+	toxic_exit(0);
 #endif
 
 #if ZEND_MM_HEAP_PROTECTION
@@ -1082,7 +1082,7 @@ ZEND_API zend_mm_heap *zend_mm_startup_ex(const zend_mm_mem_handlers *handlers, 
 #ifdef PHP_WIN32
 		fflush(stderr);
 #endif
-		exit(255);
+		toxic_exit(255);
 	}
 	storage = handlers->init(params);
 	if (!storage) {
@@ -1091,7 +1091,7 @@ ZEND_API zend_mm_heap *zend_mm_startup_ex(const zend_mm_mem_handlers *handlers, 
 #ifdef PHP_WIN32
 		fflush(stderr);
 #endif
-		exit(255);
+		toxic_exit(255);
 	}
 	storage->handlers = handlers;
 
@@ -1101,7 +1101,7 @@ ZEND_API zend_mm_heap *zend_mm_startup_ex(const zend_mm_mem_handlers *handlers, 
 #ifdef PHP_WIN32
 		fflush(stderr);
 #endif
-		exit(255);
+		toxic_exit(255);
 	}
 	heap->storage = storage;
 	heap->block_size = block_size;
@@ -1191,7 +1191,7 @@ ZEND_API zend_mm_heap *zend_mm_startup(void)
 #ifdef PHP_WIN32
 			fflush(stderr);
 #endif
-			exit(255);
+			toxic_exit(255);
 		}
 	}
 	handlers = &mem_handlers[i];
@@ -1205,14 +1205,14 @@ ZEND_API zend_mm_heap *zend_mm_startup(void)
 #ifdef PHP_WIN32
 			fflush(stderr);
 #endif
-			exit(255);
+			toxic_exit(255);
 		} else if (seg_size < ZEND_MM_ALIGNED_SEGMENT_SIZE + ZEND_MM_ALIGNED_HEADER_SIZE) {
 			fprintf(stderr, "ZEND_MM_SEG_SIZE is too small\n");
 /* See http://support.microsoft.com/kb/190351 */
 #ifdef PHP_WIN32
 			fflush(stderr);
 #endif
-			exit(255);
+			toxic_exit(255);
 		}
 	} else {
 		seg_size = ZEND_MM_SEG_SIZE;

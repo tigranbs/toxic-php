@@ -217,7 +217,6 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         temp_chain->next = NULL;
     };
 
-
     void header_callback(sapi_headers_struct *sapi_headers TSRMLS_DC) {
 //        sapi_headers_struct *sapi_headers;
         if(sapi_headers->mimetype)
@@ -274,17 +273,36 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         }
     }
 
+    zval *ret_val, *url_arg, *request_index_arg;
+    MAKE_STD_ZVAL(url_arg);
+    MAKE_STD_ZVAL(request_index_arg);
+
+    void exit_request(int status){
+        zend_eval_string("$_POST = array();", ret_val, "Cleen");
+
+        /* send the buffer chain of your response */
+        if(out_chain->buf)
+        {
+            r->headers_out.content_length_n = base_len;
+
+            ngx_http_send_header(r);
+
+            ngx_http_output_filter ( r , out_chain );
+        }
+        ngx_http_finalize_request(r, NGX_OK);
+    }
+
+
     toxic_request_callback output;
     output.callback = callback_output;
     output.header_callback = header_callback;
     output.header_function = header_function;
     output.key = "aaaaa"; //toxic_random_string(10);
+    ngx_toxic_exit = exit_request;
 
     callbacks[0] = output;
 
-        zval *ret_val, *url_arg, *request_index_arg;
-        MAKE_STD_ZVAL(url_arg);
-        MAKE_STD_ZVAL(request_index_arg);
+
 //        int k;
 //        url_arg->value.str.val = malloc(sizeof(char) * r->uri.len);
 //        for(k=0;k<(int)r->uri.len; k++)
@@ -301,18 +319,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
         call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 2, start_args, 0, NULL TSRMLS_CC);
 
-        zend_eval_string("$_POST = array();", ret_val, "Cleen");
-
-        /* send the buffer chain of your response */
-        if(out_chain->buf)
-        {
-            r->headers_out.content_length_n = base_len;
-
-            ngx_http_send_header(r);
-
-            ngx_http_output_filter ( r , out_chain );
-        }
-        ngx_http_finalize_request(r, NGX_OK);
+        ngx_toxic_exit(1);
 
     return NGX_DONE;
 }
@@ -413,6 +420,9 @@ static char * ngx_http_toxic(ngx_conf_t *cf, void *post, void *data)
         php_embed_module.send_headers = toxic_send_header;
         php_embed_module.toxic_header_handler = toxic_header_function;
         php_embed_module.is_toxic = 1;
+        // problem with function getuuid();
+        ///TODO: Need to do get_stat function to return current user context struct stat
+        php_embed_module.get_stat = NULL;
         php_embed_init(argc, argv PTSRMLS_CC);
         zend_first_try {
             zend_eval_string((char *)name->data, NULL,

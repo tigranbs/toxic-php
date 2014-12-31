@@ -97,7 +97,7 @@ inline static void * __zend_malloc(size_t len)
 		return tmp;
 	}
 	fprintf(stderr, "Out of memory\n");
-	exit(1);
+	toxic_exit(1);
 }
 
 inline static void * __zend_calloc(size_t nmemb, size_t len)
@@ -114,7 +114,7 @@ inline static void * __zend_realloc(void *p, size_t len)
 		return p;
 	}
 	fprintf(stderr, "Out of memory\n");
-	exit(1);
+	toxic_exit(1);
 }
 
 

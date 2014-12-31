@@ -6104,7 +6104,7 @@ print_indent_tree(FILE* f, Node* node, int indent)
     while (IS_NOT_NULL(node = NCDR(node))) {
       if (NTYPE(node) != type) {
 	fprintf(f, "ERROR: list/alt right is not a cons. %d\n", NTYPE(node));
-	exit(0);
+	toxic_exit(0);
       }
       print_indent_tree(f, NCAR(node), indent + add);
     }
@@ -6146,7 +6146,7 @@ print_indent_tree(FILE* f, Node* node, int indent)
 
     default:
       fprintf(f, "ERROR: undefined ctype.\n");
-      exit(0);
+      toxic_exit(0);
     }
     break;
 

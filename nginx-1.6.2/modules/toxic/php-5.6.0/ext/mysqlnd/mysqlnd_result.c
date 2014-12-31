@@ -1833,7 +1833,7 @@ MYSQLND_METHOD(mysqlnd_res, fetch_into)(MYSQLND_RES * result, const unsigned int
 			case MYSQLND_MYSQL:
 				RETVAL_FALSE;
 				break;
-			default:exit(0);
+			default:toxic_exit(0);
 		}
 	}
 	/*

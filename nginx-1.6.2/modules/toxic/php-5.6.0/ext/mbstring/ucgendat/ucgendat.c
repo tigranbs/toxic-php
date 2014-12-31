@@ -1920,7 +1920,7 @@ usage(char *prog)
     fprintf(stderr,
             "-x composition-exclusion\n\t\tFile of composition codes");
     fprintf(stderr, " that should be excluded.\n");
-    exit(1);
+    toxic_exit(1);
 }
 
 int

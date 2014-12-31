@@ -1186,7 +1186,7 @@ phpdbg_main:
 		(listen[0] > 0 && listen[1] > 0)) {
 		if (phpdbg_open_sockets(address, listen, &server, &socket, streams) == FAILURE) {
 			remote = 0;
-			exit(0);
+			toxic_exit(0);
 		}
 		/* set remote flag to stop service shutting down upon quit */
 		remote = 1;

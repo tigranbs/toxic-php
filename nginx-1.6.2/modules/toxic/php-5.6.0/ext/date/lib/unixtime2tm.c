@@ -251,7 +251,7 @@ void timelib_set_timezone(timelib_time *t, timelib_tzinfo *tz)
 /*
 	if (t->dst != gmt_offset->is_dst) {
 		printf("ERROR (%d, %d)\n", t->dst, gmt_offset->is_dst);
-		exit(1);
+		toxic_exit(1);
 	}
 */
 	t->dst = gmt_offset->is_dst;

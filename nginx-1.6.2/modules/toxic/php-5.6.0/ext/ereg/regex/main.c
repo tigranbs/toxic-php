@@ -67,12 +67,12 @@ char *argv[];
 	if (errflg) {
 		fprintf(stderr, "usage: %s ", progname);
 		fprintf(stderr, "[-c copt][-C][-d] [re]\n");
-		exit(2);
+		toxic_exit(2);
 	}
 
 	if (optind >= argc) {
 		regress(stdin);
-		exit(status);
+		toxic_exit(status);
 	}
 
 	err = regcomp(&re, argv[optind++], copts);
@@ -80,13 +80,13 @@ char *argv[];
 		len = regerror(err, &re, erbuf, sizeof(erbuf));
 		fprintf(stderr, "error %s, %d/%d `%s'\n",
 			eprint(err), len, sizeof(erbuf), erbuf);
-		exit(status);
+		toxic_exit(status);
 	}
 	regprint(&re, stdout);	
 
 	if (optind >= argc) {
 		regfree(&re);
-		exit(status);
+		toxic_exit(status);
 	}
 
 	if (eopts&REG_STARTEND) {
@@ -98,7 +98,7 @@ char *argv[];
 		len = regerror(err, &re, erbuf, sizeof(erbuf));
 		fprintf(stderr, "error %s, %d/%d `%s'\n",
 			eprint(err), len, sizeof(erbuf), erbuf);
-		exit(status);
+		toxic_exit(status);
 	}
 	if (!(copts&REG_NOSUB)) {
 		len = (int)(subs[0].rm_eo - subs[0].rm_so);
@@ -116,7 +116,7 @@ char *argv[];
 					(int)(subs[i].rm_eo - subs[i].rm_so),
 					argv[optind] + subs[i].rm_so);
 	}
-	exit(status);
+	toxic_exit(status);
 }
 
 /*
@@ -149,7 +149,7 @@ FILE *in;
 		nf = split(inbuf, f, MAXF, "\t\t");
 		if (nf < 3) {
 			fprintf(stderr, "bad input, line %d\n", line);
-			exit(1);
+			toxic_exit(1);
 		}
 		for (i = 0; i < nf; i++)
 			if (strcmp(f[i], "\"\"") == 0)

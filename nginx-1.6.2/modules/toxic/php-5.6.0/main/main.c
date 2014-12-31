@@ -1209,7 +1209,7 @@ static void php_error_cb(int type, const char *error_filename, const uint error_
 		case E_CORE_ERROR:
 			if(!module_initialized) {
 				/* bad error in module startup - no way we can live with this */
-				exit(-2);
+				toxic_exit(-2);
 			}
 		/* no break - intentionally */
 		case E_ERROR:

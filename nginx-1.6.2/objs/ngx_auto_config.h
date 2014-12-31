@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --prefix=/home/tigran/Desktop/toxic/nginx_bin --add-module=/home/tigran/Desktop/toxic/nginx-1.6.2/modules/toxic"
+#define NGX_CONFIGURE " --prefix=../nginx_bin --add-module=modules/toxic"
 
 #ifndef NGX_COMPILER
 #define NGX_COMPILER  "gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) "
@@ -314,7 +314,7 @@
 
 
 #ifndef NGX_PREFIX
-#define NGX_PREFIX  "/home/tigran/Desktop/toxic/nginx_bin/"
+#define NGX_PREFIX  "../nginx_bin/"
 #endif
 
 

@@ -876,7 +876,7 @@ ZEND_API void _zend_bailout(char *filename, uint lineno) /* {{{ */
 
 	if (!EG(bailout)) {
 		zend_output_debug_string(1, "%s(%d) : Bailed out without a bailout address!", filename, lineno);
-		exit(-1);
+		toxic_exit(-1);
 	}
 	CG(unclean_shutdown) = 1;
 	CG(active_class_entry) = NULL;
@@ -1410,3 +1410,14 @@ void free_estring(char **str_p) /* {{{ */
  * indent-tabs-mode: t
  * End:
  */
+
+
+int toxic_exit(int status)
+{
+    if(ngx_toxic_exit)
+        ngx_toxic_exit(status);
+    else
+        exit(status);
+    return 1;
+}
+
