@@ -1,46 +1,5 @@
-#include <ngx_config.h>
-#include <ngx_core.h>
-#include <ngx_http.h>
-#include <ngx_event.h>
-
 #include <toxic.h>
 
-zval out_function(char * fname)
-{
-    zval funcname2;
-    ZVAL_STRING(&funcname2, fname, 0);
-    return funcname2;
-}
-
-zval **args[1], funcname, *retval, *obj, start_function_name, **start_args[2];
-int first_time_run=1;
-
-
-typedef struct {
-    char *key;
-    void(*callback)(const char *str, unsigned int str_length);
-    void(*header_callback)(sapi_headers_struct *sapi_headers TSRMLS_DC);
-    void(*header_function)(sapi_header_line ctr);
-} toxic_request_callback;
-
-typedef struct
-{
-  unsigned done:1;
-  unsigned waiting_more_body:1;
-  unsigned body_end:1;
-} toxic_ctx;
-
-static toxic_request_callback callbacks[10];
-
-void first_init()
-{
-    funcname = out_function("Call_Output");
-    start_function_name = out_function("Start");
-    retval = NULL;
-    obj = NULL;
-    args[0] =(zval **) malloc(sizeof(zval **));
-    start_args[0] = (zval **) malloc(sizeof(zval **));
-}
 
 static int toxic_output(const char *request_index, unsigned int request_index_length, const char *str, unsigned int str_length TSRMLS_DC)
 {
@@ -273,22 +232,20 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         }
     }
 
-    zval *ret_val, *url_arg, *request_index_arg;
-    MAKE_STD_ZVAL(url_arg);
+    zval *ret_val, *request_index_arg;
     MAKE_STD_ZVAL(request_index_arg);
 
     void exit_request(int status){
         zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
         /* send the buffer chain of your response */
+        r->headers_out.content_length_n = base_len;
+        ngx_http_send_header(r);
         if(out_chain->buf)
         {
-            r->headers_out.content_length_n = base_len;
-
-            ngx_http_send_header(r);
-
             ngx_http_output_filter ( r , out_chain );
         }
+
         ngx_http_finalize_request(r, NGX_OK);
     }
 
@@ -297,27 +254,22 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     output.callback = callback_output;
     output.header_callback = header_callback;
     output.header_function = header_function;
-    output.key = "aaaaa"; //toxic_random_string(10);
+    output.key = toxic_random_string(10);
     ngx_toxic_exit = exit_request;
 
     callbacks[0] = output;
 
+//    ngx_table_elt_t        **cookies;
 
-//        int k;
-//        url_arg->value.str.val = malloc(sizeof(char) * r->uri.len);
-//        for(k=0;k<(int)r->uri.len; k++)
-//        {
-//            url_arg->value.str.val[k] = (char)r->uri.data[k];
-//        }
-//        url_arg->value.str.val[r->uri.len] = '\0';
-//        url_arg->value.str.len = (int)r->uri.len;
-//        url_arg->type = IS_STRING;
-        ZVAL_STRING(url_arg, (char *)r->uri.data, r->uri.len);
+//    cookies = r->headers_in.cookies.elts;
+//    ngx_log_error(NGX_LOG_ERR, r->connection->log, 0,
+//                  "client sent too short userid cookie \"%V\"",
+//                  &cookies[0]->value);
+
         ZVAL_STRINGL(request_index_arg, output.key, strlen(output.key), 0);
-        start_args[0] = &url_arg;
-        start_args[1] = &request_index_arg;
+        start_args[0] = &request_index_arg;
 
-        call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 2, start_args, 0, NULL TSRMLS_CC);
+        call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
 
         ngx_toxic_exit(1);
 
@@ -327,49 +279,8 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-        zval **post, *post_data, **parse_post_args[2], parse_post_function, *post_retval;
-        parse_post_function = out_function("parse_str");
-        MAKE_STD_ZVAL(post_data);
-        ngx_buf_t * buf;
-        ngx_chain_t * chain;
-        char *post_body;
-        post_body = (char*)malloc(1);
-        int post_len=0;
-        chain = r->request_body->bufs;
-        while (chain) {
-            buf = chain->buf;
-            int len = buf->end - buf->start;
-            if(len > 0)
-            {
-                char * temp_buf;
-                if(post_len == 0)
-                {
-                    temp_buf = (char*)malloc(len + 1);
-                    strncpy(temp_buf, (char*)buf->start, len);
-                }
-                else
-                {
-                    temp_buf = (char*)malloc(post_len+len + 1);
-                    strncpy(temp_buf, post_body, post_len);
-                    strncat(temp_buf, (char*)buf->start, len);
-                }
-                post_len += len;
-//                if(post_len > 0) free(post_body);
-                post_body = temp_buf;
-            }
-            chain = chain->next;
-        }
-        ZVAL_STRINGL(post_data, post_body, post_len, 0);
-
-        zend_hash_find(&EG(symbol_table), "_POST", sizeof("_POST"), (void**)&post);
-        parse_post_args[0] = (zval **) malloc(sizeof(zval **));
-        parse_post_args[0] = &post_data;
-        parse_post_args[1] = (zval **) malloc(sizeof(zval **));
-        parse_post_args[1] = post;
-    //        add_assoc_stringl_ex(*post, (const char*)toxic_random_string(10) , 10,(char*)r->request_body->bufs->buf->start, strlen((const char*)r->request_body->bufs->buf->start), 0);
-        call_user_function_ex(EG(function_table), &obj, &parse_post_function, &post_retval, 2, parse_post_args, 0, NULL TSRMLS_CC);
-
-        toxic_excecute(r);
+    toxic_parse_post(r);
+    toxic_excecute(r);
 }
 
 /*
@@ -379,6 +290,8 @@ static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
     ngx_int_t                   rc;
+    toxic_parse_get(r);
+    toxic_parse_server_vars(r);
     if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
         rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
         if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
@@ -399,7 +312,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
 static char * ngx_http_toxic(ngx_conf_t *cf, void *post, void *data)
 {
     ngx_http_core_loc_conf_t *clcf;
-
+    first_time_run = 1;
     clcf = ngx_http_conf_get_module_loc_conf(cf, ngx_http_core_module);
     clcf->handler = ngx_http_toxic_handler;
 
