@@ -102,7 +102,6 @@ static ngx_http_module_t ngx_http_toxic_module_ctx = {
     NULL                           /* merge location configuration */
 };
 
-
 /*
  * The module which binds the context and commands
  *
@@ -278,15 +277,17 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     return NGX_DONE;
 }
 
+
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
+
     pid_t pid;
     pid = fork();
     if (pid == 0)
     {
         toxic_parse_post(r);
         toxic_excecute(r);
-        return;
+        exit(1);
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
