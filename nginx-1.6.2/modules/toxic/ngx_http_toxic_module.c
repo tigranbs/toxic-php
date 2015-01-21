@@ -277,6 +277,11 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 }
 
 
+static void cleanup(void *data)
+{
+    exit(1);
+}
+
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
     pid_t pid;
@@ -285,7 +290,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     {
         toxic_parse_post(r);
         toxic_excecute(r);
-        exit(1);
+        r->pool->cleanup->handler = cleanup;
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
