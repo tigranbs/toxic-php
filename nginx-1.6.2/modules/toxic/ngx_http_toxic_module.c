@@ -286,11 +286,6 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     {
         toxic_parse_post(r);
         toxic_excecute(r);
-        while(1)
-        {
-            if(r->connection->close)
-                exit(1);
-        }
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
