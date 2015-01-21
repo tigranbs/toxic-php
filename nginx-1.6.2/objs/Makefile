@@ -210,6 +210,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
 	objs/addon/toxic/ngx_http_toxic_module.o \
+	objs/addon/toxic/toxic.o \
 	objs/ngx_modules.o
 
 	$(LINK) -o objs/nginx \
@@ -322,6 +323,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
 	objs/addon/toxic/ngx_http_toxic_module.o \
+	objs/addon/toxic/toxic.o \
 	objs/ngx_modules.o \
 	-lpthread -lcrypt modules/toxic/php-5.6.0/libs/libphp5.a -lcrypt -lresolv -lcrypt -lrt -lrt -lm -ldl -lnsl -lxml2 -lxml2 -lxml2 -lcrypt -lxml2 -lxml2 -lxml2 -lcrypt -lpcre -lz
 	
@@ -1095,6 +1097,13 @@ objs/addon/toxic/ngx_http_toxic_module.o:	$(ADDON_DEPS) \
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/toxic/ngx_http_toxic_module.o \
 		modules/toxic/ngx_http_toxic_module.c
+
+
+objs/addon/toxic/toxic.o:	$(ADDON_DEPS) \
+	modules/toxic/toxic.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/toxic/toxic.o \
+		modules/toxic/toxic.c
 
 
 manpage:	objs/nginx.8
