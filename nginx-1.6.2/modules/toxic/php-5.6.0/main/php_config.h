@@ -1185,7 +1185,7 @@
 /* #undef HAVE_MSSQL */
 
 /* Whether you have MySQL */
-#define HAVE_MYSQL 1
+/* #undef HAVE_MYSQL */
 
 /* */
 /* #undef HAVE_MYSQLILIB */
@@ -2141,16 +2141,16 @@
 /* #undef MYSQLI_USE_MYSQLND */
 
 /* Enable compressed protocol support */
-#define MYSQLND_COMPRESSION_WANTED 1
+/* #undef MYSQLND_COMPRESSION_WANTED */
 
 /* Enable mysqlnd code that uses OpenSSL directly */
 /* #undef MYSQLND_HAVE_SSL */
 
 /* Enable core mysqlnd SSL code */
-#define MYSQLND_SSL_SUPPORTED 1
+/* #undef MYSQLND_SSL_SUPPORTED */
 
 /* Whether mysqlnd is enabled */
-#define MYSQL_USE_MYSQLND 1
+/* #undef MYSQL_USE_MYSQLND */
 
 /* */
 /* #undef NDBM_INCLUDE_FILE */
@@ -2201,7 +2201,7 @@
 #define PHP_BLOWFISH_CRYPT 1
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2014-12-31"
+#define PHP_BUILD_DATE "2015-01-21"
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2240,7 +2240,7 @@
 /* #undef PHP_MHASH_BC */
 
 /* */
-#define PHP_MYSQL_UNIX_SOCK_ADDR "/var/run/mysqld/mysqld.sock"
+/* #undef PHP_MYSQL_UNIX_SOCK_ADDR */
 
 /* */
 /* #undef PHP_OCI8_DEF_DIR */
@@ -2279,7 +2279,7 @@
 #define PHP_STD_DES_CRYPT 1
 
 /* uname -a output */
-#define PHP_UNAME "Linux ubuntu 3.13.0-43-generic #72-Ubuntu SMP Mon Dec 8 19:35:06 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux"
+#define PHP_UNAME "Linux tigran-toxic 3.13.0-37-generic #64-Ubuntu SMP Mon Sep 22 21:28:38 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

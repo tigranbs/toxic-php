@@ -27,6 +27,7 @@ void first_init()
     obj = NULL;
     args[0] =(zval **) malloc(sizeof(zval **));
     start_args[0] = (zval **) malloc(sizeof(zval **));
+    first_time_run = 1;
 }
 
 zval out_function(char * fname)

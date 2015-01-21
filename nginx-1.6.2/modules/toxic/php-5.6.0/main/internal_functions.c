@@ -39,7 +39,6 @@
 #include "ext/hash/php_hash.h"
 #include "ext/iconv/php_iconv.h"
 #include "ext/json/php_json.h"
-#include "ext/mysql/php_mysql.h"
 #include "ext/pdo/php_pdo.h"
 #include "ext/pdo_sqlite/php_pdo_sqlite.h"
 #include "ext/phar/php_phar.h"
@@ -53,7 +52,6 @@
 #include "ext/xml/php_xml.h"
 #include "ext/xmlreader/php_xmlreader.h"
 #include "ext/xmlwriter/php_xmlwriter.h"
-#include "ext/mysqlnd/php_mysqlnd.h"
 
 
 static zend_module_entry *php_builtin_extensions[] = {
@@ -69,7 +67,7 @@ static zend_module_entry *php_builtin_extensions[] = {
 	phpext_hash_ptr,
 	phpext_iconv_ptr,
 	phpext_json_ptr,
-	phpext_mysql_ptr,
+	phpext_spl_ptr,
 	phpext_pdo_ptr,
 	phpext_pdo_sqlite_ptr,
 	phpext_phar_ptr,
@@ -77,13 +75,11 @@ static zend_module_entry *php_builtin_extensions[] = {
 	phpext_reflection_ptr,
 	phpext_session_ptr,
 	phpext_simplexml_ptr,
-	phpext_spl_ptr,
 	phpext_standard_ptr,
 	phpext_tokenizer_ptr,
 	phpext_xml_ptr,
 	phpext_xmlreader_ptr,
 	phpext_xmlwriter_ptr,
-	phpext_mysqlnd_ptr,
 
 };
 
