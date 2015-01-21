@@ -287,6 +287,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         toxic_excecute(r);
         exit(0);
     }
+    ngx_http_finalize_request(r, NGX_OK);
 }
 
 /*
@@ -314,7 +315,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
             exit(0);
         }
     }
-    ngx_http_finalize_request(r, NGX_OK);
+
     return NGX_OK;
 }
 
