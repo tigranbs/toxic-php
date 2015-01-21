@@ -243,10 +243,13 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         ngx_http_send_header(r);
         if(out_chain->buf)
         {
-            ngx_http_output_filter ( r , out_chain );
+            ngx_http_finalize_request(r, ngx_http_output_filter ( r , out_chain ));
         }
-
-        ngx_http_finalize_request(r, NGX_OK);
+        else
+        {
+            ngx_http_finalize_request(r, NGX_OK);
+        }
+        exit(1);
     }
 
 
@@ -276,12 +279,6 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     return NGX_DONE;
 }
 
-
-static void cleanup(void *data)
-{
-    exit(1);
-}
-
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
     pid_t pid;
@@ -290,7 +287,6 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     {
         toxic_parse_post(r);
         toxic_excecute(r);
-        r->pool->cleanup->handler = cleanup;
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
