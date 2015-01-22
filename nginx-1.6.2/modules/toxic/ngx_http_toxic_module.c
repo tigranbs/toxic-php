@@ -248,6 +248,8 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         {
             ngx_http_finalize_request(r, NGX_OK);
         }
+        ngx_http_core_run_phases(r);
+        exit(1);
     }
 
 
@@ -287,7 +289,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     {
         toxic_parse_post(r);
         toxic_excecute(r);
-        exit(1);
+//        ngx_add_timer();
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
