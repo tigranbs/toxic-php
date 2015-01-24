@@ -283,7 +283,7 @@ static void end_event(ngx_event_t *ev)
 {
     ngx_connection_t *c;
     c = (ngx_connection_t *)ev->data;
-    if (c->close)
+    if (c->write->complete)
     {
         exit(1);
     }
