@@ -287,6 +287,7 @@ static void end_event(ngx_event_t *ev)
     {
         exit(1);
     }
+    ngx_add_timer(ev, 100);
 }
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
