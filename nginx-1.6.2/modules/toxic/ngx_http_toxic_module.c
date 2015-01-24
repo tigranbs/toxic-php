@@ -281,13 +281,14 @@ static ngx_event_t *end_event_t;
 
 static void end_event(ngx_event_t *ev)
 {
-    ngx_connection_t *c;
-    c = (ngx_connection_t *)ev->data;
-    if (c->close)
-    {
-        exit(1);
-    }
-    ngx_add_timer(ev, 100);
+    exit(1);
+//    ngx_connection_t *c;
+//    c = (ngx_connection_t *)ev->data;
+//    if (c->close)
+//    {
+
+//    }
+//    ngx_add_timer(ev, 100);
 }
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
