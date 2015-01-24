@@ -246,7 +246,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         }
         else
         {
-            ngx_http_finalize_request(r, NGX_OK);
+            ngx_http_finalize_request(r, NGX_DECLINED);
         }
     }
 
@@ -281,16 +281,12 @@ static ngx_event_t *end_event_t;
 
 static void end_event(ngx_event_t *ev)
 {
-    ngx_http_request_t *r;
-    r = ev->data;
-    if (r->connection->destroyed)
+    ngx_connection_t *c;
+    c = (ngx_connection_t *)ev->data;
+    if (c->destroyed)
     {
         exit(1);
     }
-    end_event_t->handler = end_event;
-    end_event_t->data = r;
-    end_event_t->log = r->connection->log;
-    ngx_event_add_timer(end_event_t, 100);
 }
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
@@ -300,13 +296,14 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     pid = fork();
     if (pid == 0)
     {
+        end_event_t = ngx_pcalloc(r->pool, sizeof(ngx_event_t));
+        end_event_t->handler = end_event;
+        end_event_t->data = r->connection;
+        end_event_t->log = r->connection->log;
+        ngx_add_timer(end_event_t, 100);
         toxic_parse_post(r);
         toxic_excecute(r);
-        end_event_t->handler = end_event;
-        end_event_t->data = r;
-        end_event_t->log = r->connection->log;
-        ngx_event_add_timer(end_event_t, 100);
-
+        return;
     }
     ngx_http_finalize_request(r, NGX_OK);
 }
