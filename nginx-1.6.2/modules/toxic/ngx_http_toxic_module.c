@@ -281,14 +281,13 @@ static ngx_event_t *end_event_t;
 
 static void end_event(ngx_event_t *ev)
 {
-    exit(1);
-//    ngx_connection_t *c;
-//    c = (ngx_connection_t *)ev->data;
-//    if (c->close)
-//    {
-
-//    }
-//    ngx_add_timer(ev, 100);
+    ngx_connection_t *c;
+    c = (ngx_connection_t *)ev->data;
+    if (c->close)
+    {
+        exit(1);
+    }
+    ngx_add_timer(ev, 100);
 }
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
@@ -301,7 +300,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         end_event_t->handler = end_event;
         end_event_t->data = r->connection;
         end_event_t->log = r->connection->log;
-        ngx_add_timer(end_event_t, 10000);
+        ngx_add_timer(end_event_t, 100);
         toxic_parse_post(r);
         toxic_excecute(r);
     }
