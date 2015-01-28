@@ -289,7 +289,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
                 if (f == NULL)
                 {
                     printf("Error opening file!\n");
-                    exit(1);
+//                    exit(1);
                 }
                 fprintf(f, "Connection State: %d\n", (int)r->state);
                 fclose(f);
