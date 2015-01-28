@@ -284,11 +284,21 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     if (pid == 0)
     {
         void *toxic_ext(void *data) {
+            FILE *f = fopen("App.log", "w");
+            if (f == NULL)
+            {
+                printf("Error opening file!\n");
+                exit(1);
+            }
             while(1){
-                if(r->connection->close)
+                fprintf(f, "Connection State: %d\n", (int)r->state);
+                if(r->state > 0)
+                {
                     exit(1);
+                }
                 sleep(1);
             }
+            fclose(f);
         }
         pthread_t tID;
         int err ;
