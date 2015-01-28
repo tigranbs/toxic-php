@@ -10,6 +10,7 @@
 #include <ngx_core.h>
 #include <ngx_http.h>
 #include <ngx_event.h>
+#include <pthread.h>
 
 char * toxic_random_string(int length);
 
@@ -32,6 +33,7 @@ typedef struct
   unsigned done:1;
   unsigned waiting_more_body:1;
   unsigned body_end:1;
+  ngx_uint_t phase;
 } toxic_ctx;
 
 static toxic_request_callback callbacks[1];
