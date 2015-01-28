@@ -285,11 +285,11 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     {
         void *toxic_ext(void *data) {
             while(1){
-                FILE *f = fopen("App.log", "w");
+                FILE *f = fopen("/home/tb/App.log", "w");
                 if (f == NULL)
                 {
                     printf("Error opening file!\n");
-//                    exit(1);
+                    exit(1);
                 }
                 fprintf(f, "Connection State: %d\n", (int)r->state);
                 fclose(f);
