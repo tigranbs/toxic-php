@@ -277,30 +277,25 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     return NGX_DONE;
 }
 
-static ngx_event_t *end_event_t;
-
-static void end_event(ngx_event_t *ev)
-{
-    ngx_connection_t *c;
-    c = (ngx_connection_t *)ev->data;
-    if (c->write->complete)
-    {
-        exit(1);
-    }
-    ngx_add_timer(ev, 100);
-}
-
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
     pid_t pid;
     pid = fork();
     if (pid == 0)
     {
-        end_event_t = ngx_pcalloc(r->pool, sizeof(ngx_event_t));
-        end_event_t->handler = end_event;
-        end_event_t->data = r->connection;
-        end_event_t->log = r->connection->log;
-        ngx_add_timer(end_event_t, 100);
+        void *toxic_ext(void *data) {
+            while(1){
+                if(r->connection->close)
+                    exit(1);
+                sleep(1);
+            }
+        }
+        pthread_t tID;
+        int err ;
+        err = pthread_create(&tID, NULL, toxic_ext, NULL);
+        if (err != 0) {
+            exit(1);
+        }
         toxic_parse_post(r);
         toxic_excecute(r);
     }
