@@ -384,13 +384,14 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
     }
     else
     {
-        pid_t pid;
-        pid = fork();
-        if (pid == 0)
-        {
-            toxic_excecute(r);
-//            exit(0);
-        }
+        toxic_excecute(r);
+//        pid_t pid;
+//        pid = fork();
+//        if (pid == 0)
+//        {
+//            toxic_excecute(r);
+////            exit(0);
+//        }
     }
 
     return NGX_OK;
