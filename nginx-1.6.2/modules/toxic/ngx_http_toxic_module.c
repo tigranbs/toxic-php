@@ -125,14 +125,14 @@ static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r);
 
 
-//static unsigned int check_headers(char *header_str)
-//{
-//    if(strstr(header_str, "Content-Type") == NULL) return 1;
-//    return 0;
-//}
+//static int shmStrid, shmLockid, shmLenid;
+//static char *strX;
 
 static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 {
+//    shmStrid = shmget(IPC_PRIVATE, 100 * sizeof(char), 0777|IPC_CREAT);
+//    shmLockid = shmget(IPC_PRIVATE, sizeof(int), 0777|IPC_CREAT);
+//    shmLenid = shmget(IPC_PRIVATE, sizeof(int), 0777|IPC_CREAT);
 //    char * base_str;
     ngx_chain_t *out_chain, *temp_chain;
     out_chain = ngx_pcalloc(r->pool, sizeof(ngx_chain_t));
@@ -144,6 +144,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
     void callback_output(const char *str, unsigned int len) {
         if(len <= 0) return;
+
         if(temp_chain->buf)
         {
             temp_chain->buf->last_buf = 0;
@@ -269,46 +270,95 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
         ZVAL_STRINGL(request_index_arg, output.key, strlen(output.key), 0);
         start_args[0] = &request_index_arg;
-
-        call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
+call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
+//        pid_t pid;
+//        pid = fork();
+//        if (pid == 0)
+//        {
+//            call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
+//            int *lock, *lenX;
+//            lock = (int *) shmat(shmLockid, 0, 0);
+//            lenX = (int *) shmat(shmLenid, 0, 0);
+//            (*lenX) = base_len;
+//            strX = (char *) shmat(shmStrid, 0, 0);
+//            int end_chain=0, k=0, temp_index;
+//            ngx_buf_t * temp_buf;
+//            temp_chain = out_chain;
+//            temp_buf = temp_chain->buf;
+//            temp_index = 0;
+//            while(end_chain != 1)
+//            {
+//                for(k=0; k< 100; k++)
+//                {
+//                    if(temp_index >= (temp_buf->pos - temp_buf->last))
+//                    {
+//                        if(temp_chain->next)
+//                        {
+//                            temp_chain = temp_chain->next;
+//                            temp_buf = temp_chain->buf;
+//                            temp_index = 0;
+//                        }
+//                        else
+//                        {
+//                            strX[k] = '\0';
+//                            (*lock) = 1;
+//                            end_chain = 1;
+//                            shmdt(strX);
+//                            shmdt(lock);
+//                            exit(1);
+//                        }
+//                    }
+//                    strX[k] = temp_buf->pos[temp_index];
+//                    temp_index++;
+//                }
+//                (*lock) = 1;
+//                while((*lock) != 0)
+//                {
+//                    //Wait until next process reads
+//                }
+//            }
+//            shmdt(strX);
+//            shmdt(lock);
+//            exit(1);
+//        }
+//        wait(&status);
+//        int *lock, *lenX;
+//        char * strx, *base_str;
+//        lock = (int *) shmat(shmLockid, 0, 0);
+//        lenX = (int *) shmat(shmLenid, 0, 0);
+//        strx = (char *) shmat(shmStrid, 0, 0);
+//        base_str = (char*)ngx_pcalloc(r->pool, (*lenX) * sizeof(char));
+//        int l=0, tm=0;
+//        while((*lock) != 1) {}
+//        while(l < (*lenX))
+//        {
+//            if((*lenX) == 0) {
+//                while((*lock) != 1) {}
+//                continue;
+//            }
+//            for(tm=0;tm<100;tm++)
+//            {
+//                if(l >= (*lenX) || strx[tm] == '\0')
+//                {
+//                    break;
+//                }
+//                base_str[l] = strx[tm];
+//                l++;
+//            }
+//            if(strx[tm] == '\0') break;
+//            (*lock) = 0;
+//            while((*lock) != 1) {}
+//        }
+//        callback_output((const char *)base_str, (unsigned int) (*lenX));
 
         ngx_toxic_exit(1);
-
     return NGX_DONE;
 }
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-    pid_t pid;
-    pid = fork();
-    if (pid == 0)
-    {
-        void *toxic_ext(void *data) {
-            while(1){
-                FILE *f = fopen("/home/tb/App.log", "w");
-                if (f == NULL)
-                {
-                    printf("Error opening file!\n");
-                    exit(1);
-                }
-                fprintf(f, "Connection State: %d\n", (int)r->state);
-                fclose(f);
-                if(r->state > 0)
-                {
-                    exit(1);
-                }
-                sleep(1);
-            }
-        }
-        pthread_t tID;
-        int err ;
-        err = pthread_create(&tID, NULL, toxic_ext, NULL);
-        if (err != 0) {
-            exit(1);
-        }
         toxic_parse_post(r);
         toxic_excecute(r);
-    }
 }
 
 /*
@@ -317,24 +367,31 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
-    ngx_int_t                   rc;
-    toxic_parse_get(r);
-//    toxic_parse_server_vars(r);
-    if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
-        rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
-        if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-                return rc;
-        }
-    }
-    else
+    pid_t pid;
+    pid = fork();
+    if (pid == 0)
     {
-        pid_t pid;
-        pid = fork();
-        if (pid == 0)
+        ngx_int_t                   rc;
+        toxic_parse_get(r);
+    //    toxic_parse_server_vars(r);
+        if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
+            rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
+            if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
+                    return rc;
+            }
+        }
+        else
         {
             toxic_excecute(r);
-            exit(0);
+    //        pid_t pid;
+    //        pid = fork();
+    //        if (pid == 0)
+    //        {
+    //            toxic_excecute(r);
+    //            exit(0);
+    //        }
         }
+        exit(1);
     }
 
     return NGX_OK;
