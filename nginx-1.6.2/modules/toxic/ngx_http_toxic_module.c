@@ -290,8 +290,8 @@ static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
     ngx_int_t                   rc;
-    toxic_parse_get(r);
-    toxic_parse_server_vars(r);
+//    toxic_parse_get(r);
+//    toxic_parse_server_vars(r);
     if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
         rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
         if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
