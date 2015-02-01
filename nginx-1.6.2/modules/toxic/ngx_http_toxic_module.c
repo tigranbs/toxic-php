@@ -357,14 +357,14 @@ call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-        pid_t pid;
-        pid = fork();
-        if (pid == 0)
-        {
+//        pid_t pid;
+//        pid = fork();
+//        if (pid == 0)
+//        {
             toxic_parse_post(r);
             toxic_excecute(r);
 //            exit(0);
-        }
+//        }
 }
 
 /*
