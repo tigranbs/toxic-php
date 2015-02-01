@@ -357,8 +357,14 @@ call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-        toxic_parse_post(r);
-        toxic_excecute(r);
+        pid_t pid;
+        pid = fork();
+        if (pid == 0)
+        {
+            toxic_parse_post(r);
+            toxic_excecute(r);
+//            exit(0);
+        }
 }
 
 /*
@@ -367,31 +373,24 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r)
 {
-    pid_t pid;
-    pid = fork();
-    if (pid == 0)
-    {
-        ngx_int_t                   rc;
-        toxic_parse_get(r);
-    //    toxic_parse_server_vars(r);
-        if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
-            rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
-            if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
-                    return rc;
-            }
+    ngx_int_t                   rc;
+    toxic_parse_get(r);
+//    toxic_parse_server_vars(r);
+    if ((r->method & (NGX_HTTP_POST|NGX_HTTP_PUT))) {
+        rc = ngx_http_read_client_request_body(r,toxic_post_body_handler);
+        if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
+                return rc;
         }
-        else
+    }
+    else
+    {
+        pid_t pid;
+        pid = fork();
+        if (pid == 0)
         {
             toxic_excecute(r);
-    //        pid_t pid;
-    //        pid = fork();
-    //        if (pid == 0)
-    //        {
-    //            toxic_excecute(r);
-    //            exit(0);
-    //        }
+//            exit(0);
         }
-        exit(1);
     }
 
     return NGX_OK;
