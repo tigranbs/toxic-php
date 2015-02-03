@@ -271,7 +271,9 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-    if(fork() == 0)
+    int status;
+    int fid = fork();
+    if(fid == 0)
     {
         void waitIT(){
             while(1)
@@ -288,7 +290,8 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         pthread_t thread1;  /* thread variables */
         pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
     }
-    ngx_http_finalize_request(r, NGX_AGAIN);
+    wait(&status);
+    ngx_http_finalize_request(r, NGX_OK);
 }
 
 /*
