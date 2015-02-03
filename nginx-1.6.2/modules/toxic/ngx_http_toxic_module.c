@@ -288,7 +288,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         pthread_t thread1;  /* thread variables */
         pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
     }
-    ngx_http_finalize_request(r, NGX_OK);
+    ngx_http_finalize_request(r, NGX_AGAIN);
 }
 
 /*
@@ -324,7 +324,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
             pthread_t thread1;  /* thread variables */
             pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
         }
-        ngx_http_finalize_request(r, NGX_OK);
+        ngx_http_finalize_request(r, NGX_AGAIN);
     }
     return NGX_OK;
 }
