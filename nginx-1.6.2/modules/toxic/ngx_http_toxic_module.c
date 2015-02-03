@@ -288,6 +288,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         pthread_t thread1;  /* thread variables */
         pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
     }
+    ngx_http_finalize_request(r, NGX_OK);
 }
 
 /*
@@ -304,7 +305,6 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
                 return rc;
         }
-        ngx_http_finalize_request(r, NGX_OK);
     }
     else
     {
@@ -324,6 +324,7 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
             pthread_t thread1;  /* thread variables */
             pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
         }
+        ngx_http_finalize_request(r, NGX_OK);
     }
     return NGX_OK;
 }
