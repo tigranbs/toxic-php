@@ -276,7 +276,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     if(fid == 0)
     {
         void waitIT(){
-            while(r->connection->sent <= base_len)
+            while(r->connection->sent < base_len)
             {
             }
             exit(1);
