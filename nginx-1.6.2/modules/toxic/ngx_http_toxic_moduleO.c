@@ -125,13 +125,14 @@ ngx_module_t ngx_http_toxic_module = {
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r);
 
-static ngx_chain_t *out_chain, *temp_chain;
-int base_len = 0;
+
 static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 {
 //    char * base_str;
+    ngx_chain_t *out_chain, *temp_chain;
     out_chain = ngx_pcalloc(r->pool, sizeof(ngx_chain_t));
     temp_chain = out_chain;
+    int base_len = 0;
     SG(headers_sent) = 0;
     SG(callback_run) = 0;
     SG(request_info).no_headers = 0;
@@ -269,25 +270,11 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     return NGX_DONE;
 }
 
+
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-    void waitIT(){
-        while(1)
-        {
-            if(r->connection->sent >= base_len)
-            {
-                exit(1);
-            }
-            sleep(0.2);
-        }
-    }
-    if(fork() == 0)
-    {
-        toxic_parse_post(r);
-        toxic_excecute(r);
-        pthread_t thread1;  /* thread variables */
-        pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
-    }
+    toxic_parse_post(r);
+    toxic_excecute(r);
 }
 
 /*
@@ -304,7 +291,6 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
                 return rc;
         }
-        ngx_http_finalize_request(r, NGX_OK);
     }
     else
     {

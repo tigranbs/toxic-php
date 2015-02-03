@@ -124,19 +124,26 @@ ngx_module_t ngx_http_toxic_module = {
 
 static ngx_int_t
 ngx_http_toxic_handler(ngx_http_request_t *r);
-
-static ngx_chain_t *out_chain, *temp_chain;
-int base_len = 0;
+static int shmidNext, shmidVal, shmidLen;
+static int ForkTransferSize = 1024;
 static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 {
+    char * tranferData;
+    int *transferNext, pid, *transferLen;
+    shmidVal = shmget(1569, ForkTransferSize, IPC_CREAT | 0666);
+    shmidNext = shmget(1589, sizeof(int), IPC_CREAT | 0666);
+    shmidLen = shmget(1589, sizeof(int), IPC_CREAT | 0666);
+
 //    char * base_str;
+    ngx_chain_t *out_chain, *temp_chain;
     out_chain = ngx_pcalloc(r->pool, sizeof(ngx_chain_t));
     temp_chain = out_chain;
+    int base_len = 0;
     SG(headers_sent) = 0;
     SG(callback_run) = 0;
     SG(request_info).no_headers = 0;
 
-    void callback_output(const char *str, unsigned int len) {
+    void parent_callback(const char *str, unsigned int len) {
         if(len <= 0) return;
         if(temp_chain->buf)
         {
@@ -167,6 +174,32 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
         base_len += len;
         temp_chain->next = NULL;
+    }
+
+    void callback_output(const char *str, unsigned int len) {
+        int i, index;
+        index=0;
+        for(i=0; i< (int)len; i++)
+        {
+            if(index >= ForkTransferSize)
+            {
+                (*transferLen) = ForkTransferSize;
+                (*transferNext) = 1;
+                while((*transferNext) == 1) {sleep(0.2);}
+                index=0;
+            }
+            else
+            {
+                tranferData[index] = str[i];
+                index++;
+            }
+        }
+        if(index > 0)
+        {
+            (*transferLen) = index;
+            (*transferNext) = 1;
+            while ((*transferNext) == 1) {sleep(0.2);}
+        }
     };
 
     void header_callback(sapi_headers_struct *sapi_headers TSRMLS_DC) {
@@ -229,7 +262,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     MAKE_STD_ZVAL(request_index_arg);
 
     void exit_request(int status){
-        zend_eval_string("$_POST = array();", ret_val, "Cleen");
+        //zend_eval_string("$_POST = array();", ret_val, "Cleen");
 
         /* send the buffer chain of your response */
         r->headers_out.content_length_n = base_len;
@@ -262,32 +295,41 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
         ZVAL_STRINGL(request_index_arg, output.key, strlen(output.key), 0);
         start_args[0] = &request_index_arg;
 
-        call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
+        pid = fork();
+        if(pid == 0)
+        {
+            tranferData = (char *) shmat(shmidVal, NULL, 0);
+            transferNext = (int *) shmat(shmidNext, NULL, 0);
+            transferLen = (int *) shmat(shmidLen, NULL, 0);
+            (*transferNext) = 0;
+            call_user_function_ex(EG(function_table), &obj, &start_function_name, &ret_val, 1, start_args, 0, NULL TSRMLS_CC);
+            (*transferNext) = -1;
+            exit(1);
+        }
+        else
+        {
+            tranferData = (char *) shmat(shmidVal, NULL, 0);
+            transferNext = (int *) shmat(shmidNext, NULL, 0);
+            transferLen = (int *) shmat(shmidLen, NULL, 0);
+            while((*transferNext) != -1)
+            {
+                while((*transferNext) == 0) { sleep(0.2); }
+                parent_callback((const char*) tranferData, (unsigned int)(*transferLen));
+                (*transferNext) = 0;
+                sleep(0.2);
+            }
+        }
 
         ngx_toxic_exit(1);
 
     return NGX_DONE;
 }
 
+
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-    void waitIT(){
-        while(1)
-        {
-            if(r->connection->sent >= base_len)
-            {
-                exit(1);
-            }
-            sleep(0.2);
-        }
-    }
-    if(fork() == 0)
-    {
-        toxic_parse_post(r);
-        toxic_excecute(r);
-        pthread_t thread1;  /* thread variables */
-        pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
-    }
+    toxic_parse_post(r);
+    toxic_excecute(r);
 }
 
 /*
@@ -304,7 +346,6 @@ ngx_http_toxic_handler(ngx_http_request_t *r)
         if (rc == NGX_ERROR || rc >= NGX_HTTP_SPECIAL_RESPONSE) {
                 return rc;
         }
-        ngx_http_finalize_request(r, NGX_OK);
     }
     else
     {

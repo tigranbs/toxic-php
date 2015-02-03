@@ -10,7 +10,9 @@
 #include <ngx_core.h>
 #include <ngx_http.h>
 #include <ngx_event.h>
-#include <pthread.h>
+#include <sys/shm.h>
+#include <unistd.h>
+#include <pthread.h>    /* POSIX Threads */
 
 char * toxic_random_string(int length);
 
