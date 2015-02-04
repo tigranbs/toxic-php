@@ -277,7 +277,6 @@ static ngx_pool_cleanup_t *cln;
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-    int status;
     int fid = fork();
     if(fid == 0)
     {
@@ -294,7 +293,8 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     }
     else
     {
-        wait(&status);
+//        int status;
+//        wait(&status);
         ngx_http_finalize_request(r, NGX_OK);
     }
 }
