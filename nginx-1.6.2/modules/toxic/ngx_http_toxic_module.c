@@ -271,7 +271,7 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
 
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
-//    int status;
+    int status;
     int fid = fork();
     if(fid == 0)
     {
@@ -284,7 +284,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         toxic_excecute(r);
         r->pool->cleanup->handler = waitIT;
     }
-//    wait(&status);
+    wait(&status);
     ngx_http_finalize_request(r, NGX_OK);
 }
 
