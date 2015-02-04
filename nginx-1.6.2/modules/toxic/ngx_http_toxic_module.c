@@ -269,20 +269,28 @@ static ngx_int_t toxic_excecute(ngx_http_request_t *r)
     return NGX_DONE;
 }
 
+static void waitIT(void *data){
+    exit(1);
+}
+
+static ngx_pool_cleanup_t *cln;
+
 static void toxic_post_body_handler(ngx_http_request_t *r)
 {
     int status;
     int fid = fork();
     if(fid == 0)
     {
-        void waitIT(void *data){
-            exit(1);
+        cln = ngx_pool_cleanup_add(r->pool, 0);
+        if (cln == NULL) {
+            return;
         }
+        cln->handler = waitIT;
+        cln->data = r->cache;
 //        pthread_t thread1;  /* thread variables */
 //        pthread_create (&thread1, NULL, (void *) &waitIT, NULL);
         toxic_parse_post(r);
         toxic_excecute(r);
-        r->pool->cleanup->handler = waitIT;
     }
     else
     {
