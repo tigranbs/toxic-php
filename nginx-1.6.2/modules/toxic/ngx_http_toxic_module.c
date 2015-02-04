@@ -284,8 +284,11 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
         toxic_excecute(r);
         r->pool->cleanup->handler = waitIT;
     }
-    wait(&status);
-    ngx_http_finalize_request(r, NGX_OK);
+    else
+    {
+        wait(&status);
+        ngx_http_finalize_request(r, NGX_OK);
+    }
 }
 
 /*
