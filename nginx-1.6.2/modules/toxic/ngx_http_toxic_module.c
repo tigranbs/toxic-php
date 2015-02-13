@@ -293,8 +293,7 @@ static void toxic_post_body_handler(ngx_http_request_t *r)
     }
     else
     {
-        int status;
-        wait(&status);
+        ngx_shutdown_socket(r->connection->fd, SHUT_RD);
         ngx_http_finalize_request(r, NGX_OK);
     }
 }
